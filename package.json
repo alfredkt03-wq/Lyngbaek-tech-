@@ -1,0 +1,21 @@
+{
+  "name": "data-platform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "verify": "node verify.js",
+    "test": "node verify.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node-cron": "^4.6.0",
+    "node-fetch": "^2.7.0",
+    "rss-parser": "^3.13.0"
+  }
+}

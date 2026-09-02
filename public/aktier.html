@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recession Check — 1-100 Score</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Newsreader', 'Georgia', serif; background: #F8F7F4; color: #2C2818; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+    
+    h1 { font-size: 32px; margin-bottom: 10px; }
+    .subtitle { font-size: 13px; color: #7C8F93; margin-bottom: 30px; }
+    
+    /* Hovedscore */
+    .score-card { background: white; border: 1px solid #E0DDD8; border-radius: 8px; padding: 40px; margin-bottom: 30px; text-align: center; }
+    .score-number { font-size: 120px; font-weight: 700; font-family: 'IBM Plex Mono', monospace; line-height: 1; }
+    .score-label { font-size: 16px; margin-top: 10px; color: #7C8F93; text-transform: uppercase; letter-spacing: 1px; }
+    .score-bar { width: 100%; height: 12px; background: #E0DDD8; border-radius: 999px; margin: 20px 0; overflow: hidden; }
+    .score-fill { height: 100%; background: linear-gradient(to right, #2E6B4F 0%, #C9A227 50%, #B8492F 100%); transition: width 0.3s; }
+    
+    /* Komponenter */
+    .components { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 30px; }
+    .component { background: #F8F7F4; border: 1px solid #E0DDD8; border-radius: 6px; padding: 12px; font-size: 12px; }
+    .component-name { font-weight: 600; margin-bottom: 4px; }
+    .component-value { font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 700; }
+    
+    /* Historisk sammenligning */
+    .history-section { margin-top: 50px; }
+    .history-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+    .history-card { background: white; border: 1px solid #E0DDD8; border-radius: 8px; padding: 16px; }
+    .history-year { font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; }
+    .history-name { font-size: 12px; color: #7C8F93; margin: 4px 0; }
+    .history-score { font-size: 28px; font-weight: 700; margin-top: 8px; }
+    
+    /* Indikator-detaljer */
+    .indicators-section { margin-top: 40px; }
+    .indicators-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 15px; }
+    .indicator-card { background: white; border: 1px solid #E0DDD8; border-radius: 8px; padding: 16px; }
+    .indicator-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    .indicator-name { font-weight: 600; font-size: 13px; }
+    .indicator-value { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; }
+    .indicator-unit { font-size: 11px; color: #7C8F93; margin-top: 4px; }
+    
+    /* Loading */
+    .loading { text-align: center; padding: 40px; font-size: 14px; color: #7C8F93; }
+    .error { background: #FBE9E7; border: 1px solid #D7A8A0; border-radius: 6px; padding: 16px; color: #B8492F; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Recession Check</h1>
+    <p class="subtitle">Live score 1-100 baseret på Warren Buffett, hedge funds, spreads, vækst, arbejdsløshed — sammenlignet med før 1987, 2000, 2008, 2020 krakket</p>
+
+    <div id="score-container" class="loading">Henter data fra API...</div>
+    
+    <div id="components-container" style="display: none;">
+      <h2 style="margin-top: 30px; font-size: 18px; margin-bottom: 15px;">Komponent-scores (bidrag til samlet score)</h2>
+      <div id="components-grid" class="components"></div>
+    </div>
+
+    <div id="history-container" style="display: none;">
+      <div class="history-section">
+        <h2 style="font-size: 18px; margin-bottom: 15px;">Historiske recession-scores (før krakket)</h2>
+        <div id="history-grid" class="history-grid"></div>
+      </div>
+    </div>
+
+    <div id="indicators-container" style="display: none;">
+      <div class="indicators-section">
+        <h2 style="font-size: 18px; margin-bottom: 15px;">Alle indikatorer (rå data)</h2>
+        <div id="indicators-grid" class="indicators-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function loadRecessionData() {
+      try {
+        const res = await fetch('/api/recession-check');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        renderScore(data);
+      } catch (err) {
+        document.getElementById('score-container').innerHTML = 
+          `<div class="error">Kunne ikke hente data: ${err.message}</div>`;
+      }
+    }
+
+    function renderScore(data) {
+      const current = data.current;
+      const score = current.score_2026;
+      const avgHistorical = data.comparison.avg_pre_crash_score;
+      
+      // Hovedscore
+      const scoreCard = `
+        <div class="score-card">
+          <div style="font-size: 13px; color: #7C8F93; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px;">
+            Nuværende recession-risiko (2026)
+          </div>
+          <div class="score-number">${score}</div>
+          <div class="score-label">${current.interpretation}</div>
+          
+          <div style="margin-top: 20px; text-align: left;">
+            <div class="score-bar">
+              <div class="score-fill" style="width: ${score}%;"></div>
+            </div>
+            <div style="font-size: 11px; color: #7C8F93; margin-top: 6px;">
+              1 = Roligt | 50 = Moderat varsel | 100 = Recession starter nu
+            </div>
+          </div>
+          
+          <div style="margin-top: 20px; font-size: 12px; color: #7C8F93;">
+            Sammenligning: Før 1987/2000/2008/2020 krakket var score i gennemsnit <strong>${Math.round(avgHistorical)}</strong><br>
+            Du er nu <strong>${score < 50 ? 'under' : 'over'} gennemsnittet</strong> for pre-crash miljø
+          </div>
+        </div>
+      `;
+      document.getElementById('score-container').innerHTML = scoreCard;
+      
+      // Komponenter
+      document.getElementById('components-container').style.display = 'block';
+      const compGrid = document.getElementById('components-grid');
+      compGrid.innerHTML = Object.entries(current.components).map(([key, val]) => {
+        const labels = {
+          buffett: 'Buffett cash',
+          shorts: 'Hedge shorts',
+          spreads: 'Credit spreads',
+          gdp: 'GDP vækst (lav)',
+          unemployment: 'Ledighed',
+          housing: 'Boligsalg (fald)',
+          volatility: 'Volatilitet (VIX)'
+        };
+        return `
+          <div class="component">
+            <div class="component-name">${labels[key] || key}</div>
+            <div class="component-value">${Math.round(val)}</div>
+          </div>
+        `;
+      }).join('');
+      
+      // Historie
+      document.getElementById('history-container').style.display = 'block';
+      const histGrid = document.getElementById('history-grid');
+      histGrid.innerHTML = Object.entries(data.history).map(([key, recession]) => `
+        <div class="history-card">
+          <div class="history-year">${recession.år} — ${recession.navn}</div>
+          <div class="history-score">${recession.score_pre_crash}</div>
+          <div class="history-name">Score før krakh</div>
+        </div>
+      `).join('');
+      
+      // Alle indikatorer
+      document.getElementById('indicators-container').style.display = 'block';
+      const indGrid = document.getElementById('indicators-grid');
+      const indicators = current.data;
+      const indLabels = {
+        buffett_cash_pct: 'Buffett cash %',
+        hedge_fund_shorts_pct: 'Hedge fund shorts %',
+        yield_curve_steepness_bp: 'Yield curve steepness (bp)',
+        vix_level: 'VIX level',
+        move_index: 'MOVE index',
+        credit_spreads_bp: 'Credit spreads (bp)',
+        gdp_growth_pct: 'GDP growth %',
+        unemployment_pct: 'Unemployment %',
+        housing_starts_yoy_pct: 'Housing YoY %',
+        consumer_confidence: 'Consumer confidence',
+        debt_to_gdp_usa: 'USA debt/GDP %',
+        debt_to_gdp_dk: 'Denmark debt/GDP %'
+      };
+      indGrid.innerHTML = Object.entries(indicators)
+        .filter(([key]) => !key.includes('_inverted'))
+        .map(([key, val]) => {
+          const label = indLabels[key] || key;
+          const numVal = typeof val === 'number' ? val.toFixed(1) : val;
+          return `
+            <div class="indicator-card">
+              <div class="indicator-header">
+                <span class="indicator-name">${label}</span>
+                <span class="indicator-value">${numVal}</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+    }
+
+    loadRecessionData();
+  </script>
+</body>
+</html>
