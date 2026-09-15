@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nyheder — DR live-feed</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ffffff'/%3E%3Cg stroke='%23111' stroke-width='7' fill='none' stroke-linecap='square'%3E%3Cpath d='M50 20L20 78'/%3E%3Cpath d='M50 20L80 78'/%3E%3Cpath d='M33 64H55'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfbfa; --paper: #FFFFFF; --ink: #1B2A2E; --ink-soft: #52666B; --line: #DDE3E2;
+    --accent: #1D4E4A; --accent-soft: #E4EDEB;
+    --pos: #2E6B4F; --pos-bg: #E3EFE8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'IBM Plex Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  header { border-bottom: 1px solid var(--line); background: var(--paper); padding: 24px 32px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 6px; }
+  h1 { font-family: 'Newsreader', serif; font-weight: 500; font-size: 24px; margin: 0; letter-spacing: -0.01em; }
+  nav a { font-size: 13px; color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; margin-left: 16px; }
+  main { max-width: 800px; margin: 0 auto; padding: 24px; }
+  .auto-note { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 8px 14px; margin-bottom: 16px; display: inline-block; }
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px; }
+  .filter-chip { font-size: 12px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink-soft); cursor: pointer; }
+  .filter-chip.active { background: var(--accent); color: white; border-color: var(--accent); }
+  .news-card { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; margin-bottom: 10px; }
+  .news-cat { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 3px; display: inline-block; margin-bottom: 6px; }
+  .news-title { font-family: 'Newsreader', serif; font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+  .news-title a { color: var(--ink); text-decoration: none; }
+  .news-title a:hover { text-decoration: underline; }
+  .news-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+  .news-date { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-soft); margin-top: 8px; }
+  .loading, .empty { font-family: 'Newsreader', serif; font-style: italic; color: var(--ink-soft); padding: 30px 0; text-align: center; }
+</style>
+
+<style id="lt-nav-css">
+.lt-nav{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid #e6e5e0;font-family:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif}
+.lt-nav__in{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:24px;height:54px}
+.lt-nav__b{display:flex;align-items:center;gap:9px;text-decoration:none;color:#111;flex:none}
+.lt-nav__b svg{width:18px;height:18px}
+.lt-nav__b svg path,.lt-nav__b svg line{stroke:#111;stroke-width:3.4;fill:none;stroke-linecap:square}
+.lt-nav__b b{font-size:10.5px;font-weight:600;letter-spacing:.2em;white-space:nowrap}
+.lt-nav__l{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.lt-nav__l::-webkit-scrollbar{display:none}
+.lt-nav__l a{font-size:13px;color:#4a4944;text-decoration:none;padding:6px 11px;border-radius:7px;white-space:nowrap}
+.lt-nav__l a:hover{background:#f2f1ee;color:#111}
+.lt-nav__l a[aria-current]{background:#111;color:#fff;font-weight:500}
+@media(max-width:640px){.lt-nav__in{gap:14px;padding:0 16px}.lt-nav__b b{display:none}}
+</style>
+</head>
+<body>
+<div class="lt-nav"><div class="lt-nav__in"><a class="lt-nav__b" href="/"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M 50 14 L 15 84"/><path d="M 50 14 L 85 84"/><line x1="30" y1="70" x2="52" y2="70"/></svg><b>LYNGBÆK TECH</b></a><nav class="lt-nav__l"><a href="/">Overblik</a><a href="/aktier.html">Recession</a><a href="/kort.html">Kort</a><a href="/udbud.html">Udbud</a><a href="/earnings.html">Earnings</a><a href="/nyheder.html" aria-current="page">Nyheder</a></nav></div></div>
+
+
+<header>
+  <div>
+    <p class="eyebrow">Nyheder</p>
+    <h1>Erhvervsnyheder — automatisk</h1>
+  </div>
+</header>
+
+<main>
+  <div class="auto-note" id="auto-note">Henter …</div>
+  <div class="filters" id="filters"></div>
+  <div id="news-list"><div class="loading">Henter nyheder …</div></div>
+</main>
+
+<script>
+let ALL_NEWS = [];
+let activeFilter = 'Alle';
+
+async function load() {
+  try {
+    const res = await fetch('/api/news');
+    if (!res.ok) throw new Error(`Serveren svarede med fejl (${res.status})`);
+    const { fetchedAt, data } = await res.json();
+
+    ALL_NEWS = data;
+    const isLive = data.some(n => n.id && n.id.startsWith('dr-'));
+    document.getElementById('auto-note').textContent = isLive
+      ? `Live DR-feed — automatisk opdateret hver dag kl. 06:00 (og igen når du genindlæser efter et cron-kørsel)`
+      : `Erhvervs- og kommunerelevante nyheder, automatisk vist — snapshot fra ${fetchedAt}.`;
+
+    const categories = ['Alle', ...new Set(data.map(n => n.kategori))];
+    document.getElementById('filters').innerHTML = categories.map(c =>
+      `<button class="filter-chip ${c === activeFilter ? 'active' : ''}" data-cat="${c}">${c}</button>`
+    ).join('');
+    document.querySelectorAll('.filter-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeFilter = btn.dataset.cat;
+        document.querySelectorAll('.filter-chip').forEach(b => b.classList.toggle('active', b === btn));
+        renderList();
+      });
+    });
+
+    renderList();
+  } catch (err) {
+    document.getElementById('auto-note').textContent = 'Kunne ikke hente data — tjek at serveren kører (node src/server.js)';
+    document.getElementById('news-list').innerHTML = `<div class="empty">${err.message}</div>`;
+  }
+}
+
+function renderList() {
+  const listEl = document.getElementById('news-list');
+  const filtered = activeFilter === 'Alle' ? ALL_NEWS : ALL_NEWS.filter(n => n.kategori === activeFilter);
+
+  if (filtered.length === 0) {
+    listEl.innerHTML = '<div class="empty">Ingen nyheder i denne kategori.</div>';
+    return;
+  }
+
+  listEl.innerHTML = filtered.map(n => `
+    <div class="news-card">
+      <span class="news-cat">${n.kategori}</span>
+      <div class="news-title">${n.link ? `<a href="${n.link}" target="_blank" rel="noopener">${n.titel}</a>` : n.titel}</div>
+      ${n.resume ? `<div class="news-desc">${n.resume}</div>` : ''}
+      <div class="news-date">${n.kilde}${n.dato ? ' · ' + n.dato : ''}${n.lokation ? ' · ' + n.lokation : ''}</div>
+    </div>
+  `).join('');
+}
+
+load();
+</script>
+
+</body>
+</html>
