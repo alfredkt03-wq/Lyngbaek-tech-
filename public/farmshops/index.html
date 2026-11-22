@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find a farm shop in England | Farm Shop Finder</title>
+<meta name="description" content="Search farm shops, raw milk producers and milk vending machines across England on a map.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-mode="all">
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./" aria-label="Farm Shop Finder home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 18 20 6l15 12v16H5z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M14 34V23h12v11M14 23l12 11M26 23 14 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <span>Farm Shop Finder</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="./" aria-current="page">Find a farm shop</a>
+    <a href="raw-milk.html">Raw milk</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">Direct from the farm</p>
+    <h1>Find your farm shop in England.</h1>
+    <p class="lede">Find farm shops that sell local food directly from the farm.</p>
+      <div class="filters">
+        <div class="full"><label for="q">Search all of England</label>
+        <input id="q" type="search" placeholder="Name, town, postcode or product" autocomplete="off"></div>
+        <div><label for="region">Region</label><select id="region"><option value="">All of England</option></select></div>
+        <div><label for="kind">Type</label><select id="kind"><option value="all">Everything</option><option value="farm_shop">Farm shops</option><option value="raw_milk">Raw milk producers</option><option value="milk_vending">Milk vending machines</option></select></div>
+      </div>
+      <div class="tools">
+        <label class="toggle"><input id="organic" type="checkbox"><i></i>Organic</label>
+        <button class="btn" id="near" type="button">Near me</button>
+      </div>
+      <p class="count" id="total">Loading…</p>
+  </div>
+    <div class="mapbox">
+      <p class="maphead"><span>↗ Pick a pin on the map</span></p>
+      <div id="map" role="region" aria-label="Map of results"></div>
+      <div class="legend">
+        <span><i style="background:#3f7a52"></i>Farm shop</span>
+        <span><i style="background:#b5651d;opacity:.6"></i>Raw milk producer (approximate)</span>
+        <span><i style="background:#3d5a80"></i>Milk vending machine</span>
+      </div>
+    </div>
+</section>
+<section class="results" id="results" aria-live="polite">
+  <div class="rhead"><h2>Farm shops</h2><span class="n" id="rcount"></span></div>
+  <div id="list"><p class="status">Loading…</p></div>
+  <p class="more" id="more" hidden><button class="btn" type="button">Show more</button></p>
+</section>
+<section class="block" id="about">
+  <h2>More than a list of farm shops.</h2>
+  <div class="cols">
+    <div>
+      <p>Farm shops sell food straight from the farm: eggs, meat, vegetables, dairy and more. Buying there keeps money with small producers and tells you where your food comes from.</p>
+      <p>This finder combines open map data with the official register of raw drinking milk producers, so you can search one place for both.</p>
+    </div>
+    <div>
+      <p><b>How the data is built.</b> Farm shops are mapped by volunteers on OpenStreetMap, so coverage is uneven and some shops are missing or have closed. The list is rebuilt weekly.</p>
+      <p>Looking for raw milk? Use the <a href="raw-milk.html">raw milk finder</a> and read the rules first.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <p><b>Check before you travel.</b> Details come from volunteers and public registers and can be out of date. Phone the shop for opening hours and stock.</p>
+  <p>Farm shop and milk vending machine data: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> (ODbL). Raw milk producers: <a href="https://www.food.gov.uk/safety-hygiene/raw-drinking-milk" target="_blank" rel="noopener">Food Standards Agency</a> register, published under the Open Government Licence v3.0. Postcodes and regions: postcodes.io.</p>
+  <p id="updated"></p>
+</footer>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

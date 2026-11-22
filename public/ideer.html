@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ideer — Lyngbæk Tech</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ffffff'/%3E%3Cg stroke='%23111' stroke-width='7' fill='none' stroke-linecap='square'%3E%3Cpath d='M50 20L20 78'/%3E%3Cpath d='M50 20L80 78'/%3E%3Cpath d='M33 64H55'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fbfbfa;--panel:#ffffff;--panel-2:#f7f6f3;--ink:#111;--ink2:#4a4944;--muted:#8a8983;--line-1:#e6e5e0;--line-2:#d3d2cc;--good:#177a3c;--warn:#a67206;}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.55}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .lt-nav{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-1)}
+  .lt-nav__in{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:24px;height:54px}
+  .lt-nav__b{display:flex;align-items:center;gap:9px;text-decoration:none;color:#111;flex:none}
+  .lt-nav__b svg{width:18px;height:18px}
+  .lt-nav__b svg path,.lt-nav__b svg line{stroke:#111;stroke-width:3.4;fill:none;stroke-linecap:square}
+  .lt-nav__b b{font-size:10.5px;font-weight:600;letter-spacing:.2em;white-space:nowrap}
+  .lt-nav__l{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+  .lt-nav__l::-webkit-scrollbar{display:none}
+  .lt-nav__l a{font-size:13px;color:var(--ink2);padding:6px 11px;border-radius:7px;white-space:nowrap}
+  .lt-nav__l a:hover{background:var(--panel-2);color:#111}
+  .lt-nav__l a[aria-current]{background:#111;color:#fff;font-weight:500}
+  @media(max-width:640px){.lt-nav__in{gap:14px;padding:0 16px}.lt-nav__b b{display:none}}
+
+  main{padding:64px 0 40px}
+  h1{font-size:clamp(28px,4.5vw,40px);font-weight:600;letter-spacing:-.02em;margin:0 0 10px}
+  .lede{color:var(--ink2);max-width:60ch;margin:0 0 28px}
+  .jump{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
+  .jump a{font-size:12px;border:1px solid var(--line-2);border-radius:99px;padding:5px 12px;color:var(--ink2)}
+  .jump a:hover{background:var(--panel-2);color:#111}
+
+  .sec{margin-top:60px}
+  .sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line-1);padding-bottom:10px;margin-bottom:22px}
+  .sec-h h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0;font-weight:600}
+  .sec-h .meta{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted)}
+  h3{font-size:19px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px}
+  h4{font-size:13px;font-weight:600;margin:0 0 8px}
+  p{margin:0 0 12px}
+  .sub{color:var(--ink2);max-width:66ch}
+  .mono{font-family:"IBM Plex Mono",monospace;font-size:12px}
+
+  .pill{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-2);border-radius:99px;padding:3px 9px;white-space:nowrap}
+  .pill.on{color:var(--good);border-color:#b8dcc6;background:#e7f4ec}
+  .pill.wip{color:var(--warn);border-color:#ecd9ab;background:#fdf3e0}
+
+  .panel{background:var(--panel);border:1px solid var(--line-1);border-radius:14px;padding:26px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.two{grid-template-columns:1fr}}
+
+  .rows{border:1px solid var(--line-1);border-radius:12px;background:var(--panel);overflow:hidden}
+  .row{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:16px 18px;border-bottom:1px solid var(--line-1);font-size:14px}
+  .row:last-child{border-bottom:0}
+  .row .k{font-weight:600}
+  .row .v{color:var(--ink2)}
+  .row .v ul{margin:6px 0 0;padding-left:18px}
+  .row .v li{margin:2px 0}
+  .row .src{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+  .row .src a{text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:2px}
+  .row .src a:hover{color:#111}
+  @media(max-width:600px){.row{grid-template-columns:1fr;gap:4px}}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line-1);vertical-align:top}
+  th{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--panel-2)}
+  td:first-child{font-family:"IBM Plex Mono",monospace;font-size:12px;white-space:nowrap}
+  td{color:var(--ink2)}
+  .tbl{border:1px solid var(--line-1);border-radius:12px;background:var(--panel);overflow-x:auto}
+
+  .steps{counter-reset:s;list-style:none;margin:0;padding:0}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line-1)}
+  .steps li:last-child{border-bottom:0}
+  .steps li::before{content:counter(s,decimal-leading-zero);font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);padding-top:3px}
+  .steps b{display:block;font-weight:600}
+  .steps span{color:var(--ink2);font-size:14px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line-1);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+  a.card{transition:border-color .16s,background .16s,transform .16s}
+  a.card:hover{border-color:var(--line-2);background:var(--panel-2);transform:translateY(-2px)}
+  .card .no{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.08em}
+  .card h3{font-size:17px;margin:9px 0 0}
+  .card .d{font-size:13.5px;color:var(--ink2);margin:7px 0 0}
+  .card ul{margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--ink2)}
+  .card li{margin:3px 0}
+  .card .pill{align-self:flex-start;margin-top:16px}
+  .card .grow{flex:1}
+
+  .note{border-left:2px solid var(--line-2);padding:2px 0 2px 14px;color:var(--ink2);font-size:13.5px;margin:14px 0 0}
+  .note.warn{border-color:#d9b24a}
+  footer{border-top:1px solid var(--line-1);margin-top:64px;padding:26px 0 54px}
+  footer .wrap{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="lt-nav"><div class="lt-nav__in"><a class="lt-nav__b" href="/"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M 50 14 L 15 84"/><path d="M 50 14 L 85 84"/><line x1="30" y1="70" x2="52" y2="70"/></svg><b>LYNGBÆK TECH</b></a><nav class="lt-nav__l"><a href="/">Overblik</a><a href="/aktier.html">Recession</a><a href="/kort.html">Kort</a><a href="/udbud.html">Udbud</a><a href="/earnings.html">Earnings</a><a href="/nyheder.html">Nyheder</a><a href="/tiktok.html">TikTok</a><a href="/valg.html">Valg</a><a href="/ideer.html" aria-current="page">Ideer</a></nav></div></div>
+
+<div class="wrap">
+  <main>
+    <h1>Ideer</h1>
+    <p class="lede">Alt det jeg overvejer at bygge, med status og research samlet ét sted. Det aktive projekt lige nu er en database over gårdbutikker i Norge, England og Sverige.</p>
+    <div class="jump">
+      <a href="#gaardbutik">Gårdbutik-database</a>
+      <a href="#alle">Alle idéer</a>
+      <a href="#igang">I gang</a>
+      <a href="#kilder">Kilder</a>
+    </div>
+
+    <!-- ===================== AKTIV: GÅRDBUTIK ===================== -->
+    <section class="sec" id="gaardbutik">
+      <div class="sec-h"><h2>Nu · Gårdbutik-database</h2><span class="meta">research pr. 22. nov 2026</span></div>
+
+      <div class="panel">
+        <span class="pill wip">Aktiv</span>
+        <h3 style="margin-top:14px">En samlet database over gårdbutikker i Norge, England og Sverige</h3>
+        <p class="sub">Udgangspunktet er <span class="mono">dingaardbutik.dk</span>: et uafhængigt kort og en søgning over danske gårdbutikker, 259 butikker, opdelt i fem regionssider. Idéen er at lave samme slags overblik for tre nye lande, på engelsk, og bygge det på en rigtig database i stedet for en håndholdt liste.</p>
+        <p class="sub">Prototype for England: <a href="/farmshops/" style="text-decoration:underline">/farmshops/</a> og <a href="/farmshops/raw-milk.html" style="text-decoration:underline">/farmshops/raw-milk.html</a>. Serveren bygger data fra OpenStreetMap og FSA's register over rå mælk.</p>
+        <div class="two" style="margin-top:18px">
+          <div>
+            <h4>Mål</h4>
+            <ul style="margin:0;padding-left:18px;color:var(--ink2);font-size:14px">
+              <li>Én struktureret database pr. land, samme felter overalt</li>
+              <li>Hver række har kilde og dato, så den kan genkontrolleres</li>
+              <li>Bagefter: engelsk webside, evt. app</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Det den danske side ikke gør (mulig forskel)</h4>
+            <ul style="margin:0;padding-left:18px;color:var(--ink2);font-size:14px">
+              <li>Ingen åbningstider som eget felt</li>
+              <li>Ingen enkeltsider pr. butik, kun lister pr. region</li>
+              <li>Kun ét filter (Økologisk)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h4 style="margin:34px 0 12px">Hvad research viser pr. land</h4>
+      <div class="rows">
+        <div class="row">
+          <div class="k">England</div>
+          <div class="v">
+            <p style="margin:0">Det mest dokumenterede marked. Farm Retail Association har omkring 300 medlemmer, mens branchens egne skøn for hele sektoren ligger langt højere: en undersøgelse fra FRA og Harper Adams University tæller omkring 1.581 gårdbutikker med 25.000 ansatte og et salg på ca. 1,4 mia. £.</p>
+            <ul>
+              <li>Tallene varierer meget efter definition: fra "1.000+" til "4.000" i forskellige kilder</li>
+              <li>Kataloget Fabulous Farm Shops listede for nogle år siden over 1.200 i England</li>
+              <li>FRA har advaret om, at op mod hver anden gårdbutik kan lukke (budgetændringer), så data forældes hurtigt</li>
+            </ul>
+            <span class="src">Kilder: <a href="https://www.fwi.co.uk/business/diversification/pandemic-demand-helps-lift-farm-shops-to-1-4bn-sales" target="_blank" rel="noopener">Farmers Weekly</a> · <a href="https://www.thegrocer.co.uk/specialist-retailers/farm-retail-association-issues-call-for-members-following-overhaul/695603.article" target="_blank" rel="noopener">The Grocer</a> · <a href="https://www.yorkshirepost.co.uk/lifestyle/food-and-drink/patriotic-pride-linked-resurgent-trade-farm-shops-public-backs-british-1754363" target="_blank" rel="noopener">Yorkshire Post</a> · <a href="https://finance.yahoo.com/news/hundreds-british-farm-shops-risk-171923545.html" target="_blank" rel="noopener">Yahoo Finance</a></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Norge</div>
+          <div class="v">
+            <p style="margin:0">Branchenetværket Hanen har en egen oversigt over gårdbutikker pr. region, og hver virksomhed har en egen profilside under <span class="mono">hanen.no/bedrift/…</span>. Hanen kårer også "Norges beste gårdsbutikk" hvert år. Derudover sælges meget direkte via REKO-ringe, som kører i Facebook-grupper og ikke står i noget register.</p>
+            <ul>
+              <li>Jeg har ikke fundet et samlet antal gårdbutikker i Norge</li>
+              <li>De første REKO-ringe startede i efteråret 2017</li>
+              <li>Statsforvalteren i flere fylker har egne pdf-lister over salgssteder (fx økologisk mat i Rogaland)</li>
+            </ul>
+            <span class="src">Kilder: <a href="https://www.hanen.no/en/utforsk/32?page=6" target="_blank" rel="noopener">Hanen, gårdbutikker</a> · <a href="https://www.hanen.no/en/prosjekt/norges-beste-gardsbutikk/" target="_blank" rel="noopener">Norges beste gårdsbutikk</a> · <a href="https://www.smabrukarlaget.no/media/uurhrkcz/handbok-for-reko-ringen.pdf" target="_blank" rel="noopener">REKO-håndbog</a></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="k">Sverige</div>
+          <div class="v">
+            <p style="margin:0">Der er ikke fundet noget nationalt register. En SLU-kortlægning af alternative salgskanaler for oksekød og lam identificerede 395 virksomheder, heraf 95 gårdbutikker, men den dækker kun den del af markedet. Gårdbutikker har et officielt vejskilt (H25), og regionale turistguider (fx Västsverige) har lister.</p>
+            <ul>
+              <li>Antallet 95 er et delsæt, ikke et totaltal</li>
+              <li>Data ligger spredt i regionale guider, derfor mest arbejde her</li>
+            </ul>
+            <span class="src">Kilder: <a href="https://pub.epsilon.slu.se/id/document/3924960" target="_blank" rel="noopener">SLU-rapport</a> · <a href="https://www.transportstyrelsen.se/sv/vagtrafik/trafikregler-och-vagmarken/vagmarken/lokaliseringsmarken-for-upplysning-om-serviceanlaggningar-med-mera/gardsbutik" target="_blank" rel="noopener">Transportstyrelsen H25</a> · <a href="https://www.vastsverige.com/mat-och-dryck/gardsbutiker/" target="_blank" rel="noopener">Västsverige</a></span>
+          </div>
+        </div>
+      </div>
+
+      <h4 style="margin:34px 0 12px">Mulige datakilder</h4>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Kilde</th><th>Dækker</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>OpenStreetMap <span class="mono">shop=farm</span></td><td>Alle tre lande. Tagget er "de facto"-standard for en butik på en gård; kan også have <span class="mono">opening_hours</span> og <span class="mono">organic=yes</span>.</td><td>Bedste startpunkt. Antal pr. land er ikke talt endnu. Licens (ODbL) skal tjekkes.</td></tr>
+            <tr><td>Hanen</td><td>Norge</td><td>Brugbar til afstemning. Vilkår for genbrug skal tjekkes.</td></tr>
+            <tr><td>Farm Retail Association</td><td>UK (medlemmer, ca. 300)</td><td>Kun en del af markedet.</td></tr>
+            <tr><td>SLU-kortlægning</td><td>Sverige (95 gårdbutikker, delsæt)</td><td>Datasæt fra en rapport, ikke løbende opdateret.</td></tr>
+            <tr><td>Virksomhedsregistre</td><td>Brønnøysund (NO), Companies House (UK), Bolagsverket (SE)</td><td>Ikke undersøgt endnu: om branchekoder kan isolere gårdbutikker.</td></tr>
+            <tr><td>Google Places</td><td>Alle</td><td>Dækker bredt, men koster penge og har strenge vilkår for lagring.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 style="margin:34px 0 12px">Datamodel (forslag)</h4>
+      <div class="panel" style="padding:18px 22px">
+        <p class="mono" style="margin:0;color:var(--ink2);line-height:1.9">id · name · country · region · address · postcode · lat · lon · phone · website · social_url · products[] · organic · opening_hours · seasonal · sources[] · source_url · retrieved_at · last_verified · status (active / closed / unverified)</p>
+        <p class="note" style="margin-top:14px">Nøglen er <span class="mono">sources[]</span> + <span class="mono">last_verified</span> pr. række. Så kan jeg vise, hvor tallet kommer fra, og genkontrollere de ældste først.</p>
+      </div>
+
+      <h4 style="margin:34px 0 4px">Plan</h4>
+      <ol class="steps">
+        <li><div><b>Træk rådata fra OpenStreetMap</b><span>Alle <span class="mono">shop=farm</span> i Norge, England og Sverige til én CSV. Tæl pr. land, så der er et ægte udgangstal.</span></div></li>
+        <li><div><b>Afstem mod de lokale kilder</b><span>Hanen (NO), FRA og kataloger (UK), regionale guider og SLU (SE). Tjek vilkår, før noget hentes automatisk.</span></div></li>
+        <li><div><b>Ryd op</b><span>Fjern dubletter, normalisér adresser og postnumre, geokod det der mangler, gem kilde og dato pr. række.</span></div></li>
+        <li><div><b>Verificér</b><span>Er hjemmeside eller Facebook-side stadig aktiv? Er butikken lukket? Marker status i stedet for at slette.</span></div></li>
+        <li><div><b>Udgiv</b><span>Engelsk side i samme flade stil som dingaardbutik.dk, med enkeltsider pr. butik og åbningstider. App først, når websiden virker.</span></div></li>
+      </ol>
+
+      <div class="note warn"><b>Åbne risici.</b> (1) Jeg har ikke tjekket, hvad de enkelte kilder tillader af genbrug. Det skal afklares, før noget kopieres. (2) Butikker lukker hurtigt, så uden en vedligeholdelsesplan bliver databasen forældet. (3) Hvis et land viser sig at have få registrerede butikker, er en samlet database svær at gøre komplet.</div>
+    </section>
+
+    <!-- ===================== ALLE IDÉER ===================== -->
+    <section class="sec" id="alle">
+      <div class="sec-h"><h2>Alle idéer</h2><span class="meta">status fra mine notater</span></div>
+      <div class="grid">
+
+        <a class="card" href="#gaardbutik">
+          <div class="no">01</div>
+          <h3>Gårdbutik-database</h3>
+          <div class="d grow">Database over gårdbutikker i Norge, England og Sverige. Se research ovenfor.</div>
+          <span class="pill wip">Aktiv</span>
+        </a>
+
+        <div class="card">
+          <div class="no">02</div>
+          <h3>Engelsk udgave af dingaardbutik</h3>
+          <div class="d grow">Min egen butik skal ligne dingaardbutik.dk: flad, redaktionel stil med creme baggrund, mørkegrøn tekst og serif-overskrifter. Evt. en app i app store. Ikke besluttet.</div>
+          <span class="pill">Idé</span>
+        </div>
+
+        <div class="card">
+          <div class="no">03</div>
+          <h3>Data firma</h3>
+          <div class="d">Et Palantir-lignende dataintegrationsfirma til den danske offentlige sektor.</div>
+          <ul class="grow">
+            <li>Start med teknisk fundament: connectors og datalag</li>
+            <li>Første produkt til kommuner: overblik over økonomi og budget, flagger afvigelser uden selv at træffe beslutninger</li>
+            <li>Særligt mindre ressourcestærke kommuner</li>
+            <li>Senere ejendomme, energi, HR, skoler og velfærd. Overvejer også staten direkte</li>
+          </ul>
+          <span class="pill">Idé</span>
+        </div>
+
+        <div class="card">
+          <div class="no">04</div>
+          <h3>Softwarefirma i Indien</h3>
+          <div class="d grow">Lille softwarefirma i Indien, uden investorer, med ét enkelt produkt der er svært at kopiere. Appsene til indiske Shopify-butikker (Metaglow SEO, Pakka COD) er første skridt.</div>
+          <span class="pill">Idé</span>
+        </div>
+
+        <div class="card">
+          <div class="no">05</div>
+          <h3>AI-mødeoptager</h3>
+          <div class="d grow">En meget simpel AI, der optager og skriver alt, der bliver sagt i et møde eller videoopkald. Inspireret af fjernmøder siden 2020.</div>
+          <span class="pill">Idé</span>
+        </div>
+
+        <div class="card">
+          <div class="no">06</div>
+          <h3>Eget europæisk AI</h3>
+          <div class="d grow">Et dansk/europæisk alternativ, så staten ikke afhænger af amerikanske selskaber. Jeg er villig til at bruge meget tid på det.</div>
+          <span class="pill">Idé</span>
+        </div>
+
+        <div class="card">
+          <div class="no">07</div>
+          <h3>Handelssystem til råolie</h3>
+          <div class="d">Kvantitativt system baseret på skibsdata og optionsflow.</div>
+          <ul class="grow">
+            <li>Datastack: oilpriceapi.com, Barchart, Yahoo Finance, aisstream.io</li>
+            <li>Broker-integration (Saxo, Trading 212) udskudt</li>
+            <li>Estimat ca. 30–40 timers byggetid</li>
+            <li>Evt. senere som signaltjeneste</li>
+          </ul>
+          <span class="pill">Udforsket</span>
+        </div>
+
+        <div class="card">
+          <div class="no">08</div>
+          <h3>Simpelt produkt til Indien</h3>
+          <div class="d grow">Leder efter noget simpelt at sælge i Indien, evt. med fokus på Hyderabad.</div>
+          <span class="pill">Udforsker</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== I GANG ===================== -->
+    <section class="sec" id="igang">
+      <div class="sec-h"><h2>I gang</h2><span class="meta">allerede bygget eller live</span></div>
+      <div class="rows">
+        <div class="row"><div class="k">Metaglow SEO</div><div class="v">Shopify SEO-app til indiske butikker. Live i Shopify App Store siden november 2026.</div></div>
+        <div class="row"><div class="k">Pakka COD</div><div class="v">Shopify-app, der skal mindske mislykkede Cash on Delivery-ordrer (RTO) for indiske butikker.</div></div>
+        <div class="row"><div class="k">Lyngbæk Web</div><div class="v">Webdesign og SEO til virksomheder i Nordsjælland. <a href="https://www.lyngbaekweb.dk" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-color:var(--line-2)">lyngbaekweb.dk</a></div></div>
+        <div class="row"><div class="k">Indukta</div><div class="v">Udvalgt induktionskogeplade-butik rettet mod Indien.</div></div>
+        <div class="row"><div class="k">Google AI-blokker</div><div class="v">Chrome-udvidelse, der blokerer Googles AI Overviews i søgning. Skal ud i Chrome Web Store.</div></div>
+        <div class="row"><div class="k">YouTube Shorts</div><div class="v">Kanal med indhold via vidIQ og en plan for indtjening.</div></div>
+      </div>
+    </section>
+
+    <!-- ===================== KILDER ===================== -->
+    <section class="sec" id="kilder">
+      <div class="sec-h"><h2>Kilder</h2></div>
+      <ul style="margin:0;padding-left:18px;color:var(--ink2);font-size:13.5px;line-height:1.9">
+        <li><a href="https://www.dingaardbutik.dk/" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-color:var(--line-2)">dingaardbutik.dk</a> — forbilledet (259 danske gårdbutikker)</li>
+        <li><a href="https://wiki.openstreetmap.org/wiki/Tag:shop=farm" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-color:var(--line-2)">OpenStreetMap wiki: shop=farm</a></li>
+        <li><a href="https://www.fwi.co.uk/business/diversification/pandemic-demand-helps-lift-farm-shops-to-1-4bn-sales" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-color:var(--line-2)">Farmers Weekly: farm shops £1.4bn</a></li>
+        <li><a href="https://www.thegrocer.co.uk/specialist-retailers/farm-retail-association-issues-call-for-members-following-overhaul/695603.article" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-color:var(--line-2)">The Grocer: Farm Retail Association</a></li>
+        <li><a href="https://www.hanen.no/en/utforsk/32?page=6" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-color:var(--line-2)">Hanen: gårdbutikker</a></li>
+        <li><a href="https://pub.epsilon.slu.se/id/document/3924960" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-color:var(--line-2)">SLU: kartläggning av alternativa försäljningskanaler</a></li>
+      </ul>
+      <p class="note" style="margin-top:18px">Tal og påstande ovenfor er hentet fra de linkede kilder den 22. november 2026. Det der står som "ikke undersøgt" eller "ikke fundet" er stadig åbent.</p>
+    </section>
+  </main>
+</div>
+
+<footer><div class="wrap"><span>Lyngbæk Tech</span><span>Sidst opdateret 22. nov 2026</span></div></footer>
+</body>
+</html>

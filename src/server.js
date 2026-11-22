@@ -3,6 +3,7 @@ const express = require('express');
 const cron = require('node-cron');
 const { listEntities, getEntity, getAuditLog } = require('./lib/db');
 const { syncOne, syncMany } = require('./lib/sync');
+const farmshops = require('./lib/farmshops');
 
 // -- Robusthed: hvis noget uventet går galt et sted (fx en connector der fejler på en
 // måde vi ikke havde forudset), logger vi det og fortsætter i stedet for at serveren
@@ -238,6 +239,14 @@ app.get('/api', (req, res) => {
   });
 });
 
+// -- Farm shops in England (see public/farmshops/). Data is built by src/lib/farmshops.js --
+app.get('/api/farmshops', (req, res) => {
+  const data = farmshops.load();
+  if (!data) return res.status(503).json({ error: 'Farm-shop data is being prepared. Try again in a few minutes.' });
+  res.set('Cache-Control', 'public, max-age=3600');
+  res.json(data);
+});
+
 // -- Global fejl-opsamling: fanger alt der ikke allerede er håndteret ovenfor,
 // og giver en pæn JSON-fejl i stedet for et teknisk stacktrace i browseren.
 // Skal stå EFTER alle app.get/app.post ovenfor, ellers fanger den intet. --
@@ -268,9 +277,22 @@ function runAutoRefresh() {
 // Til udvikling/test, hvor du vil se det ske hurtigere, skift til fx '*/5 * * * *' (hvert 5. min).
 cron.schedule('0 * * * *', runAutoRefresh);
 
+// Farm-shop data: rebuilt weekly (Mondays 04:00) and on startup if missing or older than 7 days.
+let farmshopsBuilding = false;
+function refreshFarmShops() {
+  if (farmshopsBuilding) return;
+  farmshopsBuilding = true;
+  farmshops.build()
+    .then(d => console.log('[farmshops] built', JSON.stringify(d.count)))
+    .catch(err => console.error('[farmshops] build failed:', err.message))
+    .finally(() => { farmshopsBuilding = false; });
+}
+cron.schedule('0 4 * * 1', refreshFarmShops);
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Data platform running on http://localhost:${PORT}`);
   console.log('Automatisk opdatering hver time — se AUTO_REFRESH_CONNECTORS i server.js');
   runAutoRefresh(); // kør også én gang med det samme ved opstart, så data ikke er tomt
+  if (farmshops.isStale(7)) refreshFarmShops();
 });
