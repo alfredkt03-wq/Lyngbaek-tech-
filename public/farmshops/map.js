@@ -13,6 +13,7 @@
   // England and Ireland only: the map cannot be zoomed out or panned beyond this box.
   var BOUNDS = L_bounds();
   function L_bounds() { return window.L ? L.latLngBounds([49.85, -10.8], [55.85, 1.85]) : null; }
+  var PREC = { exact: 'exact point', street: 'on the street', postcode: 'postcode centre (within about 100 m)', area: 'postcode area, approximate', town: 'town centre, approximate' };
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
   var origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
 
@@ -43,7 +44,7 @@
     links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + s.lat + ',' + s.lon + '" target="_blank" rel="noopener">Directions ↗</a>');
     return '<div class="popup"><h4>' + esc(s.name) + '</h4><p>' + esc(KINDS[s.kind].label) + ' · ' + esc(milkOf(s).raw) + '</p><p>' + esc(milkOf(s).note) + '</p>' +
       (where ? '<p>' + esc(where) + '</p>' : '') + (s.description && s.sources && s.sources.indexOf('getrawmilk') !== -1 ? '<p>' + esc(s.description) + '</p>' : '') +
-      (s.approx ? '<p><i>Approximate location</i></p>' : '') + '<p>' + links.join(' · ') + '</p></div>';
+      '<p><i>Location: ' + esc(PREC[s.precision || (s.approx ? 'town' : 'exact')] || 'approximate') + '</i></p>' + '<p>' + links.join(' · ') + '</p></div>';
   }
 
   function renderTypes() {
@@ -114,6 +115,13 @@
       Array.prototype.forEach.call(map.getContainer().querySelectorAll('.fcluster'), function (el) {
         var r = el.getBoundingClientRect();
         soft.push([r.left - cr.left - 2, r.top - cr.top - 2, r.width + 4, r.height + 4]);
+      });
+    } catch (e) { /* no layout available */ }
+    try {
+      var cr2 = map.getContainer().getBoundingClientRect();
+      Array.prototype.forEach.call(map.getContainer().parentNode.querySelectorAll('.tag, .jump, .leaflet-control'), function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.width) taken.push([r.left - cr2.left - 4, r.top - cr2.top - 4, r.width + 8, r.height + 8]);
       });
     } catch (e) { /* no layout available */ }
     var min = z < 6.5 ? 400000 : z < 7 ? 150000 : z < 7.5 ? 80000 : z < 8 ? 45000 : z < 9 ? 22000 : z < 10 ? 11000 : z < 11 ? 6000 : z < 12 ? 2500 : 0;
@@ -284,6 +292,13 @@
       L.popup({ offset: [0, -6] }).setLatLng([s.lat, s.lon]).setContent(popup(s)).openOn(map);
     });
     setupFinder();
+    var ring = null;
+    function unring() { if (ring) { map.removeLayer(ring); ring = null; } }
+    $('inview').addEventListener('mouseover', function (e) {
+      var b = e.target.closest && e.target.closest('button[data-id]'), s = b && dataOf[b.getAttribute('data-id')];
+      unring(); if (s) ring = L.circleMarker([s.lat, s.lon], { radius: 14, color: '#173c29', weight: 2, fillOpacity: 0, interactive: false }).addTo(map);
+    });
+    $('inview').addEventListener('mouseleave', unring);
     var t;
     $('q').addEventListener('input', function (e) { clearTimeout(t); t = setTimeout(function () { q = e.target.value; render(true); }, 200); });
     $('country').addEventListener('change', function (e) { country = e.target.value; render(true); });

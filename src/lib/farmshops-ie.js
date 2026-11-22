@@ -16,31 +16,44 @@ const round = n => Math.round(n * 1e5) / 1e5;
 
 const readJson = (f, d) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return d; } };
 
+const hav = (a, b, c, d) => { const r = x => x * Math.PI / 180, t = Math.sin(r(c - a) / 2) ** 2 + Math.cos(r(a)) * Math.cos(r(c)) * Math.sin(r(d - b) / 2) ** 2; return 12742 * Math.asin(Math.sqrt(t)); };
+const BUILDING = new Set(['building', 'house', 'farm', 'farmyard', 'shop', 'amenity', 'craft', 'office', 'industrial', 'commercial', 'retail', 'yes', 'barn', 'dairy']);
+
 async function nominatim(q) {
-  const url = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=ie&q=' + encodeURIComponent(q);
+  const url = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&addressdetails=1&countrycodes=ie&q=' + encodeURIComponent(q);
   const res = await fetch(url, { headers: { 'User-Agent': UA, 'Accept-Language': 'en' }, timeout: 30000 });
   if (!res.ok) throw new Error('Nominatim ' + res.status);
-  const j = await res.json();
-  return j[0] ? { lat: round(parseFloat(j[0].lat)), lon: round(parseFloat(j[0].lon)) } : null;
+  return (await res.json()).map(r => ({
+    lat: round(parseFloat(r.lat)), lon: round(parseFloat(r.lon)), cls: r.category || r.class, type: r.type,
+    county: String((r.address && (r.address.county || r.address.state)) || ''), box: r.boundingbox ? r.boundingbox.map(Number) : null,
+  }));
 }
 
+const precisionOf = h => (h.cls === 'place' || h.cls === 'boundary') ? 'town'
+  : (h.cls === 'highway' ? 'street' : (BUILDING.has(h.cls) || BUILDING.has(h.type) ? 'exact' : 'street'));
+
+// Several lookups, most precise first: the business itself, then its street address, then the town. Every hit is sanity-checked
+// against the town centre (and county) so a same-named place elsewhere in Ireland can never win.
 async function geocode(e, cache, stats) {
+  const county = 'County ' + e.region;
+  const lookup = async (key, q) => {
+    if (key in cache) return cache[key];
+    try { const hits = await nominatim(q); stats.calls++; await sleep(1100); cache[key] = hits; return hits; }
+    catch (err) { stats.errors++; console.warn('[farmshops-ie] geocode', q, '-', err.message); await sleep(2000); return null; }
+  };
+  const town = (await lookup('t2|' + e.town + '|' + e.region, [e.town, county, 'Ireland'].join(', ')) || [])[0] || null;
+  const near = h => !town || hav(h.lat, h.lon, town.lat, town.lon) <= (e.address ? 8 : 4); // km
+  const countyOk = h => !h.county || !e.region || h.county.toLowerCase().includes(String(e.region).toLowerCase());
   const tries = [
-    { key: 'a|' + [e.name, e.address, e.town, e.region].join('|'), q: [e.address, e.town, 'County ' + e.region, 'Ireland'].filter(Boolean).join(', '), approx: !e.address },
-    { key: 't|' + e.town + '|' + e.region, q: [e.town, 'County ' + e.region, 'Ireland'].join(', '), approx: true },
-  ];
-  if (!e.address) tries.shift(); // nothing more precise than the town to look up
-  for (const t of tries) {
-    if (t.key in cache) { if (cache[t.key]) return { ...cache[t.key], approx: t.approx }; continue; }
-    try {
-      const hit = await nominatim(t.q);
-      stats.calls++;
-      await sleep(1100); // Nominatim usage policy: at most one request per second
-      cache[t.key] = hit;
-      if (hit) return { ...hit, approx: t.approx };
-    } catch (err) { stats.errors++; console.warn('[farmshops-ie] geocode', t.q, '-', err.message); await sleep(2000); }
+    ['n2|' + [e.name, e.town, e.region].join('|'), [e.name, e.town, county, 'Ireland'].join(', ')],
+    e.address ? ['a2|' + [e.address, e.town, e.region].join('|'), [e.address, e.town, county, 'Ireland'].join(', ')] : null,
+  ].filter(Boolean);
+  for (const [key, q] of tries) {
+    const hits = await lookup(key, q);
+    const hit = (hits || []).find(h => near(h) && countyOk(h) && precisionOf(h) !== 'town');
+    if (hit) return { lat: hit.lat, lon: hit.lon, approx: false, precision: precisionOf(hit) };
   }
-  return null;
+  return town ? { lat: town.lat, lon: town.lon, approx: true, precision: 'town' } : null;
 }
 
 async function build() {
@@ -54,11 +67,11 @@ async function build() {
   for (const e of seed.entries) {
     const g = await geocode(e, cache, stats);
     const old = prevById.get(e.id);
-    const pos = g || (old && typeof old.lat === 'number' ? { lat: old.lat, lon: old.lon, approx: true } : null);
+    const pos = g || (old && typeof old.lat === 'number' ? { lat: old.lat, lon: old.lon, approx: true, precision: 'town' } : null);
     if (!pos) continue; // cannot be placed on the map
     shops.push({
       id: e.id, kind: e.kind, name: e.name, address: e.address, town: e.town, postcode: '', region: e.region, area: e.region,
-      lat: pos.lat, lon: pos.lon, approx: pos.approx, phone: '', website: '', hours: '', organic: false,
+      lat: pos.lat, lon: pos.lon, approx: pos.approx, precision: pos.precision || 'town', phone: '', website: '', hours: '', organic: false,
       species: e.species, fluid: e.fluid, description: e.products, sourceUrl: e.source, sources: ['getrawmilk'],
     });
   }

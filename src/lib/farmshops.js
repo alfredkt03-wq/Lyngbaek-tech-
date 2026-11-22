@@ -227,7 +227,7 @@ async function geocodeRdm(list) {
     if (!res || typeof res.latitude !== 'number') continue;
     const countries = [].concat(res.country || []);
     if (!countries.includes('England')) continue; // Wales and Northern Ireland are in the FSA list too
-    out.push({ ...s, lat: round(res.latitude), lon: round(res.longitude), approx: !full });
+    out.push({ ...s, lat: round(res.latitude), lon: round(res.longitude), approx: !full, precision: full ? 'postcode' : 'area' });
   }
   return out;
 }
