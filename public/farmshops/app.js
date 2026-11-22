@@ -63,6 +63,15 @@
     return { raw: 'Raw milk: not recorded', note: 'Raw or low-temperature pasteurised is not recorded. Ask the seller.' };
   }
 
+  // Where "Directions" points. An exact pin uses its coordinates. Anything town-level or street-level searches the business by name and address
+  // instead, because a coordinate in a townland sends people to an empty field (the pin lands on the area, not the shop).
+  function mapsDest(s) {
+    var p = s.precision || (s.approx ? 'town' : 'exact');
+    if (p === 'exact' || p === 'postcode') return s.lat + ',' + s.lon;
+    var region = /^I:/.test(s.id || '') || s._c === 'Ireland' || COUNTRY === 'Ireland' ? 'Ireland' : 'England';
+    return encodeURIComponent([s.name, s.address, s.town || s.area, s.region ? 'County ' + s.region : '', region].filter(Boolean).join(', '));
+  }
+
   function card(s) {
     var k = KINDS[s.kind] || KINDS.farm_shop;
     var badges = '<span class="badge' + (s.kind === 'farm_shop' ? '' : ' milk') + '">' + esc(k.label) + '</span>';
@@ -75,8 +84,8 @@
     if (tel) links.push('<a href="tel:' + esc(tel) + '">Call ' + esc(s.phone) + '</a>');
     if (httpUrl(s.website)) links.push('<a href="' + esc(s.website) + '" target="_blank" rel="noopener nofollow">Website ↗</a>');
     if (/^https:\/\/getrawmilk\.com\//.test(s.sourceUrl || '')) links.push('<a href="' + esc(s.sourceUrl) + '" target="_blank" rel="noopener nofollow">Listing on getrawmilk.com ↗</a>');
-    links.push('<a href="https://www.google.com/maps/search/?api=1&query=' + s.lat + ',' + s.lon + '" target="_blank" rel="noopener">' + (s.approx ? 'View area on Google Maps' : 'View on Google Maps') + ' ↗</a>');
-    if (!s.approx) links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + s.lat + ',' + s.lon + '" target="_blank" rel="noopener">Directions ↗</a>');
+    links.push('<a href="https://www.google.com/maps/search/?api=1&query=' + mapsDest(s) + '" target="_blank" rel="noopener">View on Google Maps ↗</a>');
+    links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + mapsDest(s) + '" target="_blank" rel="noopener">Directions ↗</a>');
     var dist = s._d != null ? ' · ' + s._d.toFixed(s._d < 10 ? 1 : 0) + ' miles away' : '';
     return '<article class="shop"><h3>' + esc(s.name) + '</h3><div class="badges">' + badges + '</div>' +
       '<p class="meta"><b>Milk:</b> ' + esc(mk.note) + '</p>' +

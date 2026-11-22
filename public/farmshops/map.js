@@ -36,12 +36,21 @@
     return { raw: 'Raw milk: not recorded', note: 'Raw or low-temperature pasteurised is not recorded. Ask the seller.' };
   }
 
+  // Where "Directions" points. An exact pin uses its coordinates. Anything town-level or street-level searches the business by name and address
+  // instead, because a coordinate in a townland sends people to an empty field (the pin lands on the area, not the shop).
+  function mapsDest(s) {
+    var p = s.precision || (s.approx ? 'town' : 'exact');
+    if (p === 'exact' || p === 'postcode') return s.lat + ',' + s.lon;
+    var region = /^I:/.test(s.id || '') || s._c === 'Ireland' ? 'Ireland' : 'England';
+    return encodeURIComponent([s.name, s.address, s.town || s.area, s.region ? 'County ' + s.region : '', region].filter(Boolean).join(', '));
+  }
+
   function popup(s) {
     var where = [s.address, s.town || s.area, s.postcode].filter(Boolean).join(', ');
     var links = [];
     if (httpUrl(s.website)) links.push('<a href="' + esc(s.website) + '" target="_blank" rel="noopener nofollow">Website ↗</a>');
     if (/^https:\/\/getrawmilk\.com\//.test(s.sourceUrl || '')) links.push('<a href="' + esc(s.sourceUrl) + '" target="_blank" rel="noopener nofollow">Source listing ↗</a>');
-    links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + s.lat + ',' + s.lon + '" target="_blank" rel="noopener">Directions ↗</a>');
+    links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + mapsDest(s) + '" target="_blank" rel="noopener">Directions ↗</a>');
     return '<div class="popup"><h4>' + esc(s.name) + '</h4><p>' + esc(KINDS[s.kind].label) + ' · ' + esc(milkOf(s).raw) + '</p><p>' + esc(milkOf(s).note) + '</p>' +
       (where ? '<p>' + esc(where) + '</p>' : '') + (s.description && s.sources && s.sources.indexOf('getrawmilk') !== -1 ? '<p>' + esc(s.description) + '</p>' : '') +
       '<p><i>Location: ' + esc(PREC[s.precision || (s.approx ? 'town' : 'exact')] || 'approximate') + '</i></p>' + '<p>' + links.join(' · ') + '</p></div>';
