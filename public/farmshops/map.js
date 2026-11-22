@@ -124,8 +124,8 @@
       var pt2 = map.latLngToContainerPoint([p[1], p[2]]), big = (p[4] === 'E' && p[3] >= 450000) || (p[4] === 'I' && p[3] >= 80000) || (p[4] !== 'E' && p[4] !== 'I' && p[3] >= 150000);
       var w2 = p[0].length * (big ? 12 : 6.8) + 12, h2 = big ? 20 : 16;
       // try centred, then right, left, above, below the town
-      var spots = [[-w2 / 2, -h2 / 2], [10, -h2 / 2], [-w2 - 10, -h2 / 2], [-w2 / 2, -h2 - 10], [-w2 / 2, 10],
-        [10, -h2 - 6], [-w2 - 10, -h2 - 6], [10, 6], [-w2 - 10, 6], [24, -h2 / 2], [-w2 - 24, -h2 / 2], [-w2 / 2, -h2 - 26], [-w2 / 2, 26]], placed = false;
+      var spots = [[8, -h2 / 2], [-w2 - 8, -h2 / 2], [-w2 / 2, -h2 - 6], [-w2 / 2, 6],
+        [10, -h2 - 6], [-w2 - 10, -h2 - 6], [10, 6], [-w2 - 10, 6], [24, -h2 / 2], [-w2 - 24, -h2 / 2], [-w2 / 2, -h2 - 26], [-w2 / 2, 26], [-w2 / 2, -h2 / 2]], placed = false; // dot marks the exact spot; centred over it only as a last resort
       var size = map.getSize();
       for (var k = 0; k < spots.length && !placed; k++) {
         var lx = pt2.x + spots[k][0], ly = pt2.y + spots[k][1];
@@ -214,7 +214,7 @@
       s._pc = String(s.postcode || '').replace(/\s+/g, '').toUpperCase();
       s.id = c.charAt(0) + ':' + s.id;
       if (map) markerOf[s.id] = L.circleMarker([s.lat, s.lon], {
-        radius: s.approx ? 9 : 7, color: '#f3f0e7', weight: 2, fillColor: KINDS[s.kind].color, fillOpacity: s.approx ? 0.6 : 1
+        radius: s.approx ? 10 : 6, color: s.approx ? KINDS[s.kind].color : '#fff', weight: s.approx ? 2 : 2.5, dashArray: s.approx ? '3 3' : null, fillColor: KINDS[s.kind].color, fillOpacity: s.approx ? 0.25 : 1
       }).bindPopup(function () { return popup(s); });
       dataOf[s.id] = s;
       all.push(s);
@@ -242,12 +242,17 @@
   function init() {
     if (!window.L) { $('mcount').textContent = 'The map library did not load. Check your connection and reload.'; return; }
     map = L.map('bigmap', { scrollWheelZoom: true, zoomControl: false, zoomSnap: 0.5, zoomDelta: 1, wheelPxPerZoomLevel: 28, wheelDebounceTime: 20, zoomAnimation: true, maxBoundsViscosity: 1 }).setView([53.6, -4.5], 5);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+    var BASE = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', FALLBACK = 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png';
+    var tiles = L.tileLayer(BASE, {
       maxZoom: 19, subdomains: 'abcd',
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(map);
+    var tOk = 0, tBad = 0; // if the road style cannot be loaded, fall back to the plain one
+    tiles.on('tileload', function () { tOk++; });
+    tiles.on('tileerror', function () { if (++tBad > 6 && !tOk && tiles.setUrl) { tiles.setUrl(FALLBACK); tBad = -999; } });
+    if (L.control.scale) L.control.scale({ position: 'bottomright', maxWidth: 110, imperial: true, metric: true }).addTo(map);
     cluster = L.markerClusterGroup ? L.markerClusterGroup({
-      showCoverageOnHover: false, maxClusterRadius: 48, chunkedLoading: true,
+      showCoverageOnHover: false, maxClusterRadius: 40, disableClusteringAtZoom: 14, spiderfyOnMaxZoom: true, chunkedLoading: true,
       iconCreateFunction: function (c) {
         var n = c.getChildCount(), d = n < 10 ? 28 : n < 100 ? 34 : 42;
         return L.divIcon({ html: '<div class="fcluster" style="width:' + d + 'px;height:' + d + 'px">' + n + '</div>', className: '', iconSize: [d, d] });
