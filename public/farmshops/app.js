@@ -1,14 +1,21 @@
-/* Farm shop finder for England. Data comes from /api/farmshops. */
+/* Farm shop / raw milk finder. Data comes from the endpoint named in <body data-api>. */
 (function () {
   'use strict';
 
   var MODE = document.body.getAttribute('data-mode') || 'all'; // 'all' or 'milk'
+  var API = document.body.getAttribute('data-api') || '/api/farmshops';
+  var COUNTRY = document.body.getAttribute('data-country') || 'England';
+  var CENTER = (document.body.getAttribute('data-center') || '52.8,-1.6').split(',').map(Number);
+  var ZOOM = Number(document.body.getAttribute('data-zoom') || 6);
   var PAGE = 30;
+  var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
   var KINDS = {
     farm_shop: { label: 'Farm shop', color: '#3f7a52' },
     farm: { label: 'Farm (food business register)', color: '#8a8f3a' },
     raw_milk: { label: 'Raw milk producer', color: '#b5651d' },
-    milk_vending: { label: 'Milk vending machine', color: '#3d5a80' }
+    milk_vending: { label: 'Milk vending machine', color: '#3d5a80' },
+    stockist: { label: 'Shop or delivery point', color: '#7a6a3a' },
+    cheese: { label: 'Raw milk cheese producer', color: '#8a6d9b' }
   };
 
   function $(id) { return document.getElementById(id); }
@@ -51,19 +58,21 @@
     var badges = '<span class="badge' + (s.kind === 'farm_shop' ? '' : ' milk') + '">' + esc(k.label) + '</span>';
     if (s.organic) badges += '<span class="badge eco">Organic</span>';
     if (s.species) badges += '<span class="badge">' + esc(s.species) + '</span>';
+    if (FLUID[s.fluid]) badges += '<span class="badge">' + esc(FLUID[s.fluid]) + '</span>';
     var links = [];
     var tel = String(s.phone || '').replace(/[^\d+]/g, '');
     if (tel) links.push('<a href="tel:' + esc(tel) + '">Call ' + esc(s.phone) + '</a>');
     if (httpUrl(s.website)) links.push('<a href="' + esc(s.website) + '" target="_blank" rel="noopener nofollow">Website ↗</a>');
+    if (/^https:\/\/getrawmilk\.com\//.test(s.sourceUrl || '')) links.push('<a href="' + esc(s.sourceUrl) + '" target="_blank" rel="noopener nofollow">Listing on getrawmilk.com ↗</a>');
     links.push('<a href="https://www.google.com/maps/search/?api=1&query=' + s.lat + ',' + s.lon + '" target="_blank" rel="noopener">' + (s.approx ? 'View area on Google Maps' : 'View on Google Maps') + ' ↗</a>');
     if (!s.approx) links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + s.lat + ',' + s.lon + '" target="_blank" rel="noopener">Directions ↗</a>');
     var dist = s._d != null ? ' · ' + s._d.toFixed(s._d < 10 ? 1 : 0) + ' miles away' : '';
     return '<article class="shop"><h3>' + esc(s.name) + '</h3><div class="badges">' + badges + '</div>' +
       (s.description ? '<p>' + esc(s.description) + '</p>' : '') +
-      '<p class="addr">' + esc(where(s) || (s.region || 'England')) + '</p>' +
+      '<p class="addr">' + esc(where(s) || (s.region || COUNTRY)) + '</p>' +
       (s.hours ? '<p class="meta">Opening hours (from OpenStreetMap): ' + esc(s.hours) + '</p>' : '') +
       '<p class="meta">' + esc(s.region || '') + dist + '</p>' +
-      (s.approx ? '<p class="meta">Approximate location: the Food Standards Agency lists only the town and postcode area. Contact the producer to confirm where and when you can buy.</p>' : '') +
+      (s.approx ? '<p class="meta">' + esc(s.sources && s.sources.indexOf('getrawmilk') !== -1 ? 'Approximate location: placed by town. Contact the seller to confirm the address, and where and when you can buy.' : 'Approximate location: the Food Standards Agency lists only the town and postcode area. Contact the producer to confirm where and when you can buy.') + '</p>' : '') +
       '<div class="links">' + links.join('') + '</div></article>';
   }
 
@@ -126,7 +135,7 @@
 
   function initMap() {
     if (!window.L || !$('map')) return;
-    map = L.map('map', { scrollWheelZoom: false }).setView([52.8, -1.6], 6);
+    map = L.map('map', { scrollWheelZoom: false }).setView(CENTER, ZOOM);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
@@ -149,12 +158,12 @@
     });
     var regions = {};
     state.all.forEach(function (s) { if (s.region) regions[s.region] = 1; });
-    $('region').innerHTML = '<option value="">All of England</option>' +
+    $('region').innerHTML = '<option value="">All of ' + esc(COUNTRY) + '</option>' +
       Object.keys(regions).sort().map(function (r) { return '<option>' + esc(r) + '</option>'; }).join('');
     var n = state.all.filter(function (s) { return MODE === 'milk' ? (s.kind !== 'farm_shop' && s.kind !== 'farm') : true; }).length;
     $('total').textContent = MODE === 'milk'
-      ? 'Search among ' + n + ' raw milk producers and milk vending machines in England.'
-      : 'Search among ' + state.all.length + ' farm shops, farms, raw milk producers and milk vending machines in England.';
+      ? 'Search among ' + n + ' raw milk sources in ' + COUNTRY + '.'
+      : 'Search among ' + state.all.length + ' farm shops, farms, raw milk producers and milk vending machines in ' + COUNTRY + '.';
     if (data.generatedAt && $('updated')) {
       $('updated').textContent = 'Data last built ' + new Date(data.generatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + '.';
     }
@@ -166,7 +175,7 @@
 
   function load(attempt) {
     attempt = attempt || 0;
-    fetch('/api/farmshops').then(function (r) {
+    fetch(API).then(function (r) {
       if (r.status === 503 && attempt < 12) {
         $('list').innerHTML = '<p class="status">The farm shop data is being prepared on the server. This page will retry automatically.</p>';
         setTimeout(function () { load(attempt + 1); }, 15000);

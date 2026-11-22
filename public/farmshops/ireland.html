@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find raw milk in Ireland | Farm Shop Finder</title>
+<meta name="description" content="Farms, shops and delivery points in Ireland that list raw milk, with the rules for buying it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-mode="milk" data-api="/api/farmshops-ie" data-country="Ireland" data-center="53.3,-7.9" data-zoom="7">
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./" aria-label="Farm Shop Finder home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 18 20 6l15 12v16H5z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M14 34V23h12v11M14 23l12 11M26 23 14 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <span>Farm Shop Finder</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="./">Find a farm shop</a>
+    <a href="raw-milk.html" aria-current="page">Raw milk</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">Raw drinking milk</p>
+    <h1>Find raw milk in Ireland.</h1>
+    <p class="lede">Farms, shops and delivery points that list raw milk, county by county.</p>
+      <div class="filters">
+        <div class="full"><label for="q">Search raw milk producers</label>
+        <input id="q" type="search" placeholder="Name, town, postcode or product" autocomplete="off"></div>
+        <div><label for="region">County</label><select id="region"><option value="">All of Ireland</option></select></div>
+        <div><label for="kind">Type</label><select id="kind"><option value="milk_any">All raw milk sources</option><option value="raw_milk">Farms selling raw milk</option><option value="stockist">Shops and delivery points</option><option value="cheese">Raw milk cheese producers</option></select></div>
+      </div>
+      <div class="tools">
+
+        <button class="btn" id="near" type="button">Near me</button>
+      </div>
+      <p class="count" id="total">Loading…</p>
+  </div>
+    <div class="mapbox">
+      <p class="maphead"><span>↗ Pick a pin on the map</span></p>
+      <div id="map" role="region" aria-label="Map of results"></div>
+      <div class="legend">
+        <span><i style="background:#b5651d"></i>Farm</span>
+        <span><i style="background:#7a6a3a"></i>Shop or delivery point</span>
+        <span><i style="background:#8a6d9b"></i>Cheese producer</span>
+      </div>
+    </div>
+</section>
+<section class="results" id="results" aria-live="polite">
+  <div class="rhead"><h2>Raw milk in Ireland</h2><span class="n" id="rcount"></span></div>
+  <div id="list"><p class="status">Loading…</p></div>
+  <p class="more" id="more" hidden><button class="btn" type="button">Show more</button></p>
+</section>
+<section class="block" id="rules">
+  <h2>How raw milk works in Ireland.</h2>
+  <div class="cols">
+    <div>
+      <p>The sale of raw cows’ milk was banned in Ireland in 1996. EU hygiene rules later let each country regulate it instead, and Irish regulations introduced in 2015 and guidance agreed with the Department of Agriculture in 2018 now set the conditions for producers.</p>
+      <p>A farm selling raw milk outside the small-scale exemption must be approved or registered with the Department of Agriculture, Food and the Marine (DAFM) and label the milk with a health advisory. The Food Safety Authority of Ireland (FSAI) still advises against drinking it, and calls raw milk high-risk.</p>
+    </div>
+    <div>
+      <p><b>Before you buy,</b> ask the seller whether the farm is approved or registered with DAFM, and read the FSAI’s advice on raw milk, including who should avoid it.</p>
+      <p><a href="https://www.fsai.ie/" target="_blank" rel="noopener">Food Safety Authority of Ireland ↗</a></p>
+      <p><a href="https://getrawmilk.com/browse/Ireland" target="_blank" rel="noopener">getrawmilk.com, Ireland ↗</a> is the community directory these listings come from. It is not an official register.</p>
+    </div>
+  </div>
+  <div class="callout"><b>About this list</b><p>Listings come from a community-run directory, collected by hand on 22 November 2026, and are not verified by an authority. “Shop or delivery point” entries stock milk from a farm and may not sell raw milk all year. Pins are placed from the address, or from the town when no street address is given (shown as approximate). Always contact the seller to confirm.</p></div>
+</section>
+</main>
+<footer class="foot">
+  <p><b>Check before you travel.</b> Details come from a community directory and can be out of date. Phone the seller for stock and collection times.</p>
+  <p>Listings: <a href="https://getrawmilk.com/browse/Ireland" target="_blank" rel="noopener">getrawmilk.com</a> (facts only, each card links to its source listing). Map and geocoding: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> (ODbL).</p>
+  <p id="updated"></p>
+</footer>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

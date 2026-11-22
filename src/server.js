@@ -5,6 +5,7 @@ const cron = require('node-cron');
 const { listEntities, getEntity, getAuditLog } = require('./lib/db');
 const { syncOne, syncMany } = require('./lib/sync');
 const farmshops = require('./lib/farmshops');
+const farmshopsIe = require('./lib/farmshops-ie');
 
 // -- Robusthed: hvis noget uventet går galt et sted (fx en connector der fejler på en
 // måde vi ikke havde forudset), logger vi det og fortsætter i stedet for at serveren
@@ -248,6 +249,13 @@ app.get('/api/farmshops', (req, res) => {
   res.set('Cache-Control', 'public, max-age=3600');
   res.json(data);
 });
+// -- Raw milk finder for Ireland (src/lib/farmshops-ie.js) --
+app.get('/api/farmshops-ie', (req, res) => {
+  const data = farmshopsIe.load();
+  if (!data) return res.status(503).json({ error: 'Farm-shop data is being prepared. Try again in a few minutes.' });
+  res.set('Cache-Control', 'public, max-age=3600');
+  res.json(data);
+});
 
 // -- Global fejl-opsamling: fanger alt der ikke allerede er håndteret ovenfor,
 // og giver en pæn JSON-fejl i stedet for et teknisk stacktrace i browseren.
@@ -297,4 +305,5 @@ app.listen(PORT, () => {
   console.log('Automatisk opdatering hver time — se AUTO_REFRESH_CONNECTORS i server.js');
   runAutoRefresh(); // kør også én gang med det samme ved opstart, så data ikke er tomt
   if (farmshops.isStale(7)) refreshFarmShops();
+  if (farmshopsIe.isStale(30)) farmshopsIe.build().then(d => console.log('[farmshops-ie] built', JSON.stringify(d.count))).catch(err => console.error('[farmshops-ie] build failed:', err.message));
 });
