@@ -53,12 +53,23 @@
       (s.approx ? '<p><i>Approximate location</i></p>' : '') + '</div>';
   }
 
+  // Milk status for every listing. Only what a source states is shown: nothing here claims "pasteurised" or "raw" without data behind it.
+  function milkOf(s) {
+    if (s.kind === 'raw_milk' && !s.fluid) return { raw: 'Raw: yes', note: 'Registered with the Food Standards Agency to sell raw drinking milk.' };
+    if (s.fluid === 'yes') return { raw: 'Raw: yes', note: 'Raw drinking milk sold, per the source listing.' };
+    if (s.fluid === 'likely') return { raw: 'Raw: likely', note: 'Source suggests raw milk. Confirm with the seller.' };
+    if (s.fluid === 'no') return { raw: 'Raw milk: not sold', note: 'Listed for cheese or other products, not fluid raw milk.' };
+    if (s.fluid === 'unknown') return { raw: 'Raw: unconfirmed', note: 'Raw or low-temperature pasteurised is not recorded. Ask the seller.' };
+    return { raw: 'Raw milk: not recorded', note: 'Raw or low-temperature pasteurised is not recorded. Ask the seller.' };
+  }
+
   function card(s) {
     var k = KINDS[s.kind] || KINDS.farm_shop;
     var badges = '<span class="badge' + (s.kind === 'farm_shop' ? '' : ' milk') + '">' + esc(k.label) + '</span>';
     if (s.organic) badges += '<span class="badge eco">Organic</span>';
     if (s.species) badges += '<span class="badge">' + esc(s.species) + '</span>';
-    if (FLUID[s.fluid]) badges += '<span class="badge">' + esc(FLUID[s.fluid]) + '</span>';
+    var mk = milkOf(s);
+    badges += '<span class="badge' + (/yes/.test(mk.raw) ? ' eco' : '') + '">' + esc(mk.raw) + '</span>';
     var links = [];
     var tel = String(s.phone || '').replace(/[^\d+]/g, '');
     if (tel) links.push('<a href="tel:' + esc(tel) + '">Call ' + esc(s.phone) + '</a>');
@@ -68,6 +79,7 @@
     if (!s.approx) links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + s.lat + ',' + s.lon + '" target="_blank" rel="noopener">Directions ↗</a>');
     var dist = s._d != null ? ' · ' + s._d.toFixed(s._d < 10 ? 1 : 0) + ' miles away' : '';
     return '<article class="shop"><h3>' + esc(s.name) + '</h3><div class="badges">' + badges + '</div>' +
+      '<p class="meta"><b>Milk:</b> ' + esc(mk.note) + '</p>' +
       (s.description ? '<p>' + esc(s.description) + '</p>' : '') +
       '<p class="addr">' + esc(where(s) || (s.region || COUNTRY)) + '</p>' +
       (s.hours ? '<p class="meta">Opening hours (from OpenStreetMap): ' + esc(s.hours) + '</p>' : '') +

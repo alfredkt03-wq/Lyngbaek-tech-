@@ -25,13 +25,23 @@
   }
   function httpUrl(u) { return /^https?:\/\//i.test(u || '') ? u : ''; }
 
+  // Milk status for every listing. Only what a source states is shown: nothing here claims "pasteurised" or "raw" without data behind it.
+  function milkOf(s) {
+    if (s.kind === 'raw_milk' && !s.fluid) return { raw: 'Raw: yes', note: 'Registered with the Food Standards Agency to sell raw drinking milk.' };
+    if (s.fluid === 'yes') return { raw: 'Raw: yes', note: 'Raw drinking milk sold, per the source listing.' };
+    if (s.fluid === 'likely') return { raw: 'Raw: likely', note: 'Source suggests raw milk. Confirm with the seller.' };
+    if (s.fluid === 'no') return { raw: 'Raw milk: not sold', note: 'Listed for cheese or other products, not fluid raw milk.' };
+    if (s.fluid === 'unknown') return { raw: 'Raw: unconfirmed', note: 'Raw or low-temperature pasteurised is not recorded. Ask the seller.' };
+    return { raw: 'Raw milk: not recorded', note: 'Raw or low-temperature pasteurised is not recorded. Ask the seller.' };
+  }
+
   function popup(s) {
     var where = [s.address, s.town || s.area, s.postcode].filter(Boolean).join(', ');
     var links = [];
     if (httpUrl(s.website)) links.push('<a href="' + esc(s.website) + '" target="_blank" rel="noopener nofollow">Website ↗</a>');
     if (/^https:\/\/getrawmilk\.com\//.test(s.sourceUrl || '')) links.push('<a href="' + esc(s.sourceUrl) + '" target="_blank" rel="noopener nofollow">Source listing ↗</a>');
     links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + s.lat + ',' + s.lon + '" target="_blank" rel="noopener">Directions ↗</a>');
-    return '<div class="popup"><h4>' + esc(s.name) + '</h4><p>' + esc(KINDS[s.kind].label) + (FLUID[s.fluid] ? ' · ' + esc(FLUID[s.fluid]) : '') + '</p>' +
+    return '<div class="popup"><h4>' + esc(s.name) + '</h4><p>' + esc(KINDS[s.kind].label) + ' · ' + esc(milkOf(s).raw) + '</p><p>' + esc(milkOf(s).note) + '</p>' +
       (where ? '<p>' + esc(where) + '</p>' : '') + (s.description && s.sources && s.sources.indexOf('getrawmilk') !== -1 ? '<p>' + esc(s.description) + '</p>' : '') +
       (s.approx ? '<p><i>Approximate location</i></p>' : '') + '<p>' + links.join(' · ') + '</p></div>';
   }
@@ -139,7 +149,7 @@
     list.sort(function (a, z) { return origin ? a._d - z._d : a.name.localeCompare(z.name, 'en'); });
     $('inview').innerHTML = list.length ? list.slice(0, 60).map(function (s) {
       return '<li><button type="button" data-id="' + esc(s.id) + '"><b>' + esc(s.name) + '</b><small><i style="background:' + KINDS[s.kind].color + '"></i>' +
-        esc(KINDS[s.kind].label + (s.town || s.area ? ' · ' + (s.town || s.area) : '') + (origin ? ' · ' + (s._d / 1609.34 < 10 ? (s._d / 1609.34).toFixed(1) : Math.round(s._d / 1609.34)) + ' mi' : '')) + '</small></button></li>';
+        esc(KINDS[s.kind].label + ' · ' + milkOf(s).raw + (s.town || s.area ? ' · ' + (s.town || s.area) : '') + (origin ? ' · ' + (s._d / 1609.34 < 10 ? (s._d / 1609.34).toFixed(1) : Math.round(s._d / 1609.34)) + ' mi' : '')) + '</small></button></li>';
     }).join('') + (list.length > 60 ? '<li class="none">Zoom in to see the other ' + (list.length - 60) + '.</li>' : '') : '<li class="none">Nothing in this part of the map. Zoom out or move the map.</li>';
   }
 
