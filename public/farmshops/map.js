@@ -231,7 +231,7 @@
 
   function init() {
     if (!window.L) { $('mcount').textContent = 'The map library did not load. Check your connection and reload.'; return; }
-    map = L.map('bigmap', { scrollWheelZoom: true, zoomControl: false, zoomSnap: 0.5, maxBoundsViscosity: 1 }).setView([53.6, -4.5], 5);
+    map = L.map('bigmap', { scrollWheelZoom: true, zoomControl: false, zoomSnap: 0.5, zoomDelta: 1, wheelPxPerZoomLevel: 28, wheelDebounceTime: 20, zoomAnimation: true, maxBoundsViscosity: 1 }).setView([53.6, -4.5], 5);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
       maxZoom: 19, subdomains: 'abcd',
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
