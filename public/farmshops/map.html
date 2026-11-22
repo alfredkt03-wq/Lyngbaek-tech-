@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Map of farm shops and raw milk in the UK and Ireland | Farm Shop Finder</title>
+<meta name="description" content="One map of farm shops, farms, raw milk producers, milk vending machines and raw milk sellers across England and Ireland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,560&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.bigmap{padding:28px 0 8px}
+.bigmap h1{font-size:clamp(30px,4.4vw,46px);margin-bottom:18px}
+.bar{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:18px;align-items:end;margin-bottom:14px}
+@media(max-width:760px){.bar{grid-template-columns:1fr}}
+.types{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 14px;padding:0;list-style:none}
+.types label{display:flex;align-items:center;gap:8px;margin:0;font-weight:500;font-size:14px;cursor:pointer}
+.types input{accent-color:#173c29;width:16px;height:16px;margin:0}
+.types i{width:11px;height:11px;border-radius:50%;border:1px solid #173c29;display:inline-block}
+.types .n{color:var(--ink2);font-size:13px}
+#bigmap{height:min(72vh,720px);min-height:420px;border:1px solid var(--line);background:#e9e5d8}
+.bigmap .count{margin:12px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./" aria-label="Farm Shop Finder home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 18 20 6l15 12v16H5z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M14 34V23h12v11M14 23l12 11M26 23 14 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <span>Farm Shop Finder</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="./">Find a farm shop</a>
+    <a href="raw-milk.html">Raw milk</a>
+    <a href="ireland.html">Ireland</a>
+    <a href="map.html" aria-current="page">Map</a>
+  </nav>
+</header>
+<main>
+<section class="bigmap">
+  <p class="eyebrow">Everything on one map</p>
+  <h1>England and Ireland, in one place.</h1>
+  <div class="bar">
+    <div><label for="q">Search the map</label><input id="q" type="search" placeholder="Name, town, county or postcode" autocomplete="off"></div>
+    <div><label for="country">Country</label><select id="country"><option value="">England and Ireland</option><option value="England">England</option><option value="Ireland">Ireland</option></select></div>
+  </div>
+  <ul class="types" id="types" aria-label="Types to show"></ul>
+  <div id="bigmap" role="region" aria-label="Map of farm shops and raw milk sellers"></div>
+  <p class="count" id="mcount">Loading…</p>
+  <p class="count" id="mstatus"></p>
+</section>
+</main>
+<footer class="foot">
+  <p><b>Check before you travel.</b> Details come from volunteers, public registers and a community directory, and can be out of date. Pins marked lighter are approximate. Phone the seller before you go.</p>
+  <p>England: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> (ODbL), <a href="https://www.food.gov.uk/safety-hygiene/raw-drinking-milk" target="_blank" rel="noopener">Food Standards Agency</a> registers (Open Government Licence v3.0) and postcodes.io. Ireland: <a href="https://getrawmilk.com/browse/Ireland" target="_blank" rel="noopener">getrawmilk.com</a> listings (facts only, each pin links to its source).</p>
+</footer>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="map.js"></script>
+</body>
+</html>
