@@ -10,8 +10,11 @@
     stockist: { label: 'Shop or delivery point (raw milk)', color: '#7a6a3a' },
     cheese: { label: 'Raw milk cheese producer', color: '#8a6d9b' }
   };
+  // England and Ireland only: the map cannot be zoomed out or panned beyond this box.
+  var BOUNDS = L_bounds();
+  function L_bounds() { return window.L ? L.latLngBounds([49.85, -10.8], [55.85, 1.85]) : null; }
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
-  var all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
+  var places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -62,6 +65,72 @@
     listInView();
   }
 
+  // Shows all of England and Ireland, and locks the map to that view: no zooming out or panning beyond it.
+  function lockView() {
+    map.setMaxBounds(null);
+    map.setMinZoom(0);
+    map.fitBounds(BOUNDS, { animate: false });
+    map.setMinZoom(map.getZoom());
+    map.setMaxBounds(map.getBounds().pad(0.04));
+  }
+
+  // Place and shop names drawn on the map. Shop names come first and win any overlap; town names fill the gaps.
+  function updateLabels() {
+    if (!map || !labelLayer) return;
+    labelLayer.clearLayers();
+    var z = map.getZoom(), size = map.getSize(), taken = [], made = 0;
+    var soft = []; // pins and cluster badges: small towns avoid them, big cities are drawn on top of them
+    function free(x, y, w, h, big) {
+      if (x + w < 0 || y + h < 0 || x - w > size.x || y - h > size.y) return false;
+      var all = big ? taken : taken.concat(soft);
+      for (var i = 0; i < all.length; i++) { var t = all[i]; if (x < t[0] + t[2] && x + w > t[0] && y < t[1] + t[3] && y + h > t[1]) return false; }
+      taken.push([x, y, w, h]); return true;
+    }
+    function label(ll, text, cls, dx, dy) {
+      var at = dx == null ? '' : ' style="left:' + Math.round(dx) + 'px;top:' + Math.round(dy) + 'px"';
+      L.marker(ll, { icon: L.divIcon({ className: 'lbl ' + cls, html: '<span' + at + '>' + esc(text) + '</span>', iconSize: [0, 0] }), interactive: false, keyboard: false, pane: 'names' }).addTo(labelLayer);
+    }
+    var b = map.getBounds().pad(0.1), shown = [];
+    visible().filter(function (s) { return b.contains([s.lat, s.lon]); }).slice(0, 600).forEach(function (s) {
+      var m = markerOf[s.id];
+      if (!m || (map.hasLayer && !map.hasLayer(m))) return; // still inside a cluster
+      var pt = map.latLngToContainerPoint([s.lat, s.lon]);
+      soft.push([pt.x - 8, pt.y - 8, 16, 16]); // keep town names off the pins
+      shown.push([s, pt]);
+    });
+    // Cluster badges are drawn by the cluster layer: read their screen boxes so town names are placed beside them, not under them.
+    try {
+      var cr = map.getContainer().getBoundingClientRect();
+      Array.prototype.forEach.call(map.getContainer().querySelectorAll('.fcluster'), function (el) {
+        var r = el.getBoundingClientRect();
+        soft.push([r.left - cr.left - 2, r.top - cr.top - 2, r.width + 4, r.height + 4]);
+      });
+    } catch (e) { /* no layout available */ }
+    var min = z < 6.5 ? 400000 : z < 7 ? 150000 : z < 7.5 ? 80000 : z < 8 ? 45000 : z < 9 ? 22000 : z < 10 ? 11000 : z < 11 ? 6000 : 0;
+    for (var i = 0; i < places.length && made < 220; i++) {
+      var p = places[i];
+      if (p[3] * (p[4] === 'I' ? 2.5 : 1) < min) continue; // Irish towns are smaller, so they count for more
+      if (!b.contains([p[1], p[2]])) continue;
+      var pt2 = map.latLngToContainerPoint([p[1], p[2]]), big = (p[4] === 'E' && p[3] >= 450000) || (p[4] === 'I' && p[3] >= 80000) || (p[4] !== 'E' && p[4] !== 'I' && p[3] >= 150000);
+      var w2 = p[0].length * (big ? 12 : 6.8) + 12, h2 = big ? 20 : 16;
+      // try centred, then right, left, above, below the town
+      var spots = [[-w2 / 2, -h2 / 2], [10, -h2 / 2], [-w2 - 10, -h2 / 2], [-w2 / 2, -h2 - 10], [-w2 / 2, 10],
+        [10, -h2 - 6], [-w2 - 10, -h2 - 6], [10, 6], [-w2 - 10, 6], [24, -h2 / 2], [-w2 - 24, -h2 / 2], [-w2 / 2, -h2 - 26], [-w2 / 2, 26]], placed = false;
+      var size = map.getSize();
+      for (var k = 0; k < spots.length && !placed; k++) {
+        var lx = pt2.x + spots[k][0], ly = pt2.y + spots[k][1];
+        if (lx < 4 || ly < 4 || lx + w2 > size.x - 4 || ly + h2 > size.y - 4) continue; // keep names fully on screen
+        if (free(lx, ly, w2, h2, big)) { label([p[1], p[2]], p[0], big ? 'plc big' : 'plc', spots[k][0], spots[k][1]); placed = true; made++; }
+      }
+    }
+    if (z >= 9) { // farm and shop names, from regional zoom; crowded areas show fewer until you zoom in
+      shown.forEach(function (e) {
+        var s = e[0], pt = e[1], w = Math.min(s.name.length, 28) * 7.2 + 14;
+        if (free(pt.x + 9, pt.y - 9, w, 18)) label([s.lat, s.lon], s.name.length > 30 ? s.name.slice(0, 29) + '…' : s.name, 'shl');
+      });
+    }
+  }
+
   function listInView() {
     if (!map || !$('inview')) return;
     var b = map.getBounds(), list = visible().filter(function (s) { return b.contains([s.lat, s.lon]); });
@@ -108,27 +177,35 @@
 
   function init() {
     if (!window.L) { $('mcount').textContent = 'The map library did not load. Check your connection and reload.'; return; }
-    map = L.map('bigmap', { scrollWheelZoom: true, zoomControl: false }).setView([53.6, -4.5], 5);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    map = L.map('bigmap', { scrollWheelZoom: true, zoomControl: false, zoomSnap: 0.5, maxBoundsViscosity: 1 }).setView([53.6, -4.5], 5);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
       maxZoom: 19, subdomains: 'abcd',
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(map);
     cluster = L.markerClusterGroup ? L.markerClusterGroup({
       showCoverageOnHover: false, maxClusterRadius: 48, chunkedLoading: true,
       iconCreateFunction: function (c) {
-        var n = c.getChildCount(), d = n < 10 ? 32 : n < 100 ? 38 : 46;
+        var n = c.getChildCount(), d = n < 10 ? 28 : n < 100 ? 34 : 42;
         return L.divIcon({ html: '<div class="fcluster" style="width:' + d + 'px;height:' + d + 'px">' + n + '</div>', className: '', iconSize: [d, d] });
       }
     }) : L.layerGroup();
     if (!cluster.addLayers) cluster.addLayers = function (a) { a.forEach(function (m) { cluster.addLayer(m); }); };
     if (!cluster.getBounds) cluster.getBounds = function () { return L.featureGroup(cluster.getLayers()).getBounds(); };
     map.addLayer(cluster);
+    map.createPane('names').style.zIndex = 650; // town and farm names sit above the pins and cluster badges
+    labelLayer = L.layerGroup().addTo(map);
+    lockView();
+    var rz; window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(function () { map.invalidateSize(); lockView(); }, 150); });
     L.control.zoom({ position: 'topright' }).addTo(map);
     map.on('moveend', listInView);
+    map.on('moveend zoomend', updateLabels);
+    if (cluster.on) cluster.on('animationend', updateLabels);
+    map.on('layeradd layerremove', function (e) { if (e.layer === cluster) updateLabels(); });
+    fetch('places.json').then(function (r) { return r.ok ? r.json() : []; }).then(function (a) { places = a; updateLabels(); }).catch(function () {});
     document.querySelector('.jump').addEventListener('click', function (e) {
       var c = e.target.getAttribute && e.target.getAttribute('data-go');
       if (c == null) return;
-      country = c; $('country').value = c; render(true);
+      country = c; $('country').value = c; if (c === '') { render(false); lockView(); } else render(true);
     });
     $('inview').addEventListener('click', function (e) {
       var b = e.target.closest && e.target.closest('button[data-id]');
