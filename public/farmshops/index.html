@@ -36,7 +36,7 @@
         <div class="full"><label for="q">Search all of England</label>
         <input id="q" type="search" placeholder="Name, town, postcode or product" autocomplete="off"></div>
         <div><label for="region">Region</label><select id="region"><option value="">All of England</option></select></div>
-        <div><label for="kind">Type</label><select id="kind"><option value="all">Everything</option><option value="farm_shop">Farm shops</option><option value="raw_milk">Raw milk producers</option><option value="milk_vending">Milk vending machines</option></select></div>
+        <div><label for="kind">Type</label><select id="kind"><option value="all">Everything</option><option value="farm_shop">Farm shops</option><option value="farm">Farms (food business register)</option><option value="raw_milk">Raw milk producers</option><option value="milk_vending">Milk vending machines</option></select></div>
       </div>
       <div class="tools">
         <label class="toggle"><input id="organic" type="checkbox"><i></i>Organic</label>
@@ -49,6 +49,7 @@
       <div id="map" role="region" aria-label="Map of results"></div>
       <div class="legend">
         <span><i style="background:#3f7a52"></i>Farm shop</span>
+        <span><i style="background:#8a8f3a"></i>Farm</span>
         <span><i style="background:#b5651d;opacity:.6"></i>Raw milk producer (approximate)</span>
         <span><i style="background:#3d5a80"></i>Milk vending machine</span>
       </div>
@@ -75,7 +76,7 @@
 </main>
 <footer class="foot">
   <p><b>Check before you travel.</b> Details come from volunteers and public registers and can be out of date. Phone the shop for opening hours and stock.</p>
-  <p>Farm shop and milk vending machine data: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> (ODbL). Raw milk producers: <a href="https://www.food.gov.uk/safety-hygiene/raw-drinking-milk" target="_blank" rel="noopener">Food Standards Agency</a> register, published under the Open Government Licence v3.0. Postcodes and regions: postcodes.io.</p>
+  <p>Farm shop and milk vending machine data: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> (ODbL). Raw milk producers: <a href="https://www.food.gov.uk/safety-hygiene/raw-drinking-milk" target="_blank" rel="noopener">Food Standards Agency</a> register, published under the Open Government Licence v3.0. Registered farms: <a href="https://www.food.gov.uk/uk-food-hygiene-rating-data-api" target="_blank" rel="noopener">Food Standards Agency Food Hygiene Rating Scheme</a> (only farms with a public address; the FSA withholds home addresses). Postcodes and regions: postcodes.io.</p>
   <p id="updated"></p>
 </footer>
 </div>

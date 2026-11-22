@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const compression = require('compression');
 const cron = require('node-cron');
 const { listEntities, getEntity, getAuditLog } = require('./lib/db');
 const { syncOne, syncMany } = require('./lib/sync');
@@ -31,6 +32,7 @@ const anomaly = require('./lib/anomaly');
 const cartel = require('./lib/cartelDetection');
 
 const app = express();
+app.use(compression());
 app.use(express.json());
 // Som standard holdes siden UDE af Google. Sæt SOEGEMASKINER=ja i Render
 // (Environment) den dag den skal kunne findes i søgning.

@@ -232,6 +232,69 @@ async function geocodeRdm(list) {
   return out;
 }
 
+// ---------- FSA Food Hygiene Rating Scheme: businesses of type "Farmers/growers" ----------
+// Free API, no key, needs the x-api-version header. Farms registered at a private (home) address have
+// their address withheld by the FSA, so those are skipped: only farms with a public address are listed.
+
+const FHRS = 'https://api.ratings.food.gov.uk';
+const FHRS_HEADERS = { 'x-api-version': '2', Accept: 'application/json' };
+const gk = (o, re) => { if (!o || typeof o !== 'object') return undefined; const k = Object.keys(o).find(x => re.test(x)); return k ? o[k] : undefined; };
+const fhrsJson = async p => (await request(FHRS + p, { headers: FHRS_HEADERS, timeout: 90000 }, 3)).json();
+
+async function fetchFhrsFarms() {
+  const types = (gk(await fhrsJson('/BusinessTypes'), /^businesstypes$/i) || [])
+    .filter(t => /farm|grower/i.test(String(gk(t, /^businesstypename$/i) || '')));
+  if (!types.length) throw new Error('FHRS: no Farmers/growers business type found');
+  const countries = gk(await fhrsJson('/Countries'), /^countries$/i) || [];
+  const eng = countries.find(c => /^england$/i.test(String(gk(c, /^name$/i) || '')));
+  const countryId = eng ? gk(eng, /^(id|countryid)$/i) : null;
+  const out = [];
+  for (const t of types) {
+    const tid = gk(t, /^businesstypeid$/i);
+    for (let page = 1; page <= 100; page++) {
+      const j = await fhrsJson(`/Establishments?businessTypeId=${tid}${countryId != null ? '&countryId=' + countryId : ''}&pageNumber=${page}&pageSize=2000`);
+      const list = gk(j, /^establishments$/i) || [];
+      out.push(...list);
+      const pages = Number(gk(gk(j, /^meta$/i), /^totalpages$/i) || 1);
+      if (!list.length || page >= pages) break;
+    }
+  }
+  return out;
+}
+
+function normaliseFhrs(list) {
+  const out = [];
+  for (const e of list) {
+    const name = clean(gk(e, /^businessname$/i));
+    const geo = gk(e, /^geocode$/i) || {};
+    const lat = parseFloat(gk(geo, /^lat/i)), lon = parseFloat(gk(geo, /^lon/i));
+    const addr = [1, 2, 3, 4].map(i => clean(gk(e, new RegExp('^addressline' + i + '$', 'i')))).filter(Boolean);
+    const postcode = clean(gk(e, /^postcode$/i)).toUpperCase();
+    if (!name || !isFinite(lat) || !isFinite(lon) || (lat === 0 && lon === 0)) continue;
+    if (!addr.length || !FULL_PC.test(postcode)) continue; // private address withheld by the FSA
+    out.push({
+      id: 'fhrs-' + clean(gk(e, /^fhrsid$/i)),
+      kind: 'farm', name, address: addr.join(', '), town: '', postcode,
+      lat: round(lat), lon: round(lon),
+      phone: clean(gk(e, /^phone$/i)), website: '', hours: '', organic: false, description: '',
+      approx: false, sources: ['fhrs'],
+    });
+  }
+  return out;
+}
+
+// A farm shop that is in both OpenStreetMap and the FSA register stays one entry (the OSM one).
+function mergeFhrs(osm, fhrs) {
+  const key = n => n.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const byName = new Map();
+  osm.forEach(s => { const k = key(s.name); if (!byName.has(k)) byName.set(k, []); byName.get(k).push(s); });
+  return fhrs.filter(f => {
+    const twin = (byName.get(key(f.name)) || []).find(o => Math.abs(o.lat - f.lat) < 0.01 && Math.abs(o.lon - f.lon) < 0.01);
+    if (twin) { if (!twin.sources.includes('fhrs')) twin.sources.push('fhrs'); return false; }
+    return true;
+  });
+}
+
 // ---------- Regions ----------
 
 async function enrichRegions(list) {
@@ -291,11 +354,19 @@ async function build() {
     console.log('[farmshops] FSA raw milk producers in England:', rdm.length);
   } catch (e) { warnings.push('FSA raw milk register unavailable, kept previous data: ' + e.message); rdm = prevOf('fsa'); }
 
-  if (!osm.length && !rdm.length) throw new Error('No data fetched. ' + warnings.join(' | '));
+  let farms;
+  try {
+    farms = mergeFhrs(osm, normaliseFhrs(await fetchFhrsFarms()));
+    console.log('[farmshops] FSA registered farms with a public address:', farms.length);
+  } catch (e) { warnings.push('FSA food business register unavailable, kept previous data: ' + e.message); farms = prevOf('fhrs').filter(s => s.kind === 'farm'); }
+
+  if (!osm.length && !rdm.length && !farms.length) throw new Error('No data fetched. ' + warnings.join(' | '));
 
   const prevById = new Map((prev ? prev.shops : []).map(s => [s.id, s]));
-  const shops = [...osm, ...rdm].map(s => { const p = prevById.get(s.id); return p && p.region ? { ...s, region: p.region, area: p.area } : s; });
+  const shops = [...osm, ...rdm, ...farms].map(s => { const p = prevById.get(s.id); return p && p.region ? { ...s, region: p.region, area: p.area } : s; });
   await enrichRegions(shops);
+  // The FSA farm list is UK-wide in places; keep only what the region lookup places in England.
+  for (let i = shops.length - 1; i >= 0; i--) if (shops[i].kind === 'farm' && !shops[i].region) shops.splice(i, 1);
 
   const count = {};
   shops.forEach(s => { count[s.kind] = (count[s.kind] || 0) + 1; });
@@ -305,6 +376,7 @@ async function build() {
     sources: {
       osm: { name: 'OpenStreetMap contributors', licence: 'ODbL', url: 'https://www.openstreetmap.org/copyright' },
       fsa: fsa ? { ...fsa, licence: 'Open Government Licence v3.0' } : null,
+      fhrs: { name: 'Food Standards Agency, Food Hygiene Rating Scheme (business type Farmers/growers)', url: 'https://www.food.gov.uk/uk-food-hygiene-rating-data-api' },
     },
     warnings,
     shops,
@@ -317,4 +389,4 @@ async function build() {
   return data;
 }
 
-module.exports = { build, load, isStale, DATA_FILE, _t: { fetchOsm, normaliseOsm, normaliseRdm, parseCsv, dedupe, safeUrl, outwardOf } };
+module.exports = { build, load, isStale, DATA_FILE, _t: { fetchOsm, normaliseFhrs, mergeFhrs, normaliseOsm, normaliseRdm, parseCsv, dedupe, safeUrl, outwardOf } };

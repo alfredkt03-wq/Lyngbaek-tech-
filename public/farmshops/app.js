@@ -6,6 +6,7 @@
   var PAGE = 30;
   var KINDS = {
     farm_shop: { label: 'Farm shop', color: '#3f7a52' },
+    farm: { label: 'Farm (food business register)', color: '#8a8f3a' },
     raw_milk: { label: 'Raw milk producer', color: '#b5651d' },
     milk_vending: { label: 'Milk vending machine', color: '#3d5a80' }
   };
@@ -96,7 +97,7 @@
     var tokens = norm(state.q).split(' ').filter(Boolean);
     var pc = state.q.replace(/\s+/g, '').toUpperCase();
     var res = state.all.filter(function (s) {
-      if (state.kind === 'milk_any' ? s.kind === 'farm_shop' : (state.kind !== 'all' && s.kind !== state.kind)) return false;
+      if (state.kind === 'milk_any' ? (s.kind === 'farm_shop' || s.kind === 'farm') : (state.kind !== 'all' && s.kind !== state.kind)) return false;
       if (state.region && s.region !== state.region) return false;
       if (state.organic && !s.organic) return false;
       if (!tokens.length) return true;
@@ -150,10 +151,10 @@
     state.all.forEach(function (s) { if (s.region) regions[s.region] = 1; });
     $('region').innerHTML = '<option value="">All of England</option>' +
       Object.keys(regions).sort().map(function (r) { return '<option>' + esc(r) + '</option>'; }).join('');
-    var n = state.all.filter(function (s) { return MODE === 'milk' ? s.kind !== 'farm_shop' : true; }).length;
+    var n = state.all.filter(function (s) { return MODE === 'milk' ? (s.kind !== 'farm_shop' && s.kind !== 'farm') : true; }).length;
     $('total').textContent = MODE === 'milk'
       ? 'Search among ' + n + ' raw milk producers and milk vending machines in England.'
-      : 'Search among ' + state.all.length + ' farm shops, raw milk producers and milk vending machines in England.';
+      : 'Search among ' + state.all.length + ' farm shops, farms, raw milk producers and milk vending machines in England.';
     if (data.generatedAt && $('updated')) {
       $('updated').textContent = 'Data last built ' + new Date(data.generatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + '.';
     }
