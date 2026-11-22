@@ -12,7 +12,10 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat milk, goat cheese, yoghurt, A2",
-   "source": "https://getrawmilk.com/map/orchard-cottage-dairy-farm-cork"
+   "source": "https://getrawmilk.com/map/orchard-cottage-dairy-farm-cork",
+   "lat": 51.81219,
+   "lon": -8.5286,
+   "precision": "town"
   },
   {
    "id": "ie-organico-bantry",
@@ -24,7 +27,10 @@
    "species": "cow, goat",
    "fluid": "likely",
    "products": "Cow, goat and A2 milk",
-   "source": "https://getrawmilk.com/map/organico-bantry-co"
+   "source": "https://getrawmilk.com/map/organico-bantry-co",
+   "lat": 51.68016,
+   "lon": -9.44947,
+   "precision": "exact"
   },
   {
    "id": "ie-coolkelure-farm-gardens-carrigskullihy",
@@ -36,7 +42,10 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Raw goat milk, raw A2 milk",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Cork/Carrigskullihy"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Cork/Carrigskullihy",
+   "lat": 51.73289,
+   "lon": -9.17753,
+   "precision": "town"
   },
   {
    "id": "ie-moldova-stores-cork-cork",
@@ -48,7 +57,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw cow milk (delivery location)",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Cork/Cork"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Cork/Cork",
+   "lat": 51.92032,
+   "lon": -8.48487,
+   "precision": "street"
   },
   {
    "id": "ie-newfoundland-farm-nohoval",
@@ -60,7 +72,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw cow milk",
-   "source": "https://getrawmilk.com/map/newfoundland-farm-nohoval"
+   "source": "https://getrawmilk.com/map/newfoundland-farm-nohoval",
+   "lat": 51.72246,
+   "lon": -8.40176,
+   "precision": "town"
   },
   {
    "id": "ie-the-little-farm-fermoy",
@@ -72,7 +87,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw cow milk, raw A2 milk",
-   "source": "https://getrawmilk.com/map/the-little-farm-fermoy"
+   "source": "https://getrawmilk.com/map/the-little-farm-fermoy",
+   "lat": 52.13817,
+   "lon": -8.27522,
+   "precision": "town"
   },
   {
    "id": "ie-fermoy-natural-cheese-company-fermoy",
@@ -84,7 +102,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk, cheese, kefir",
-   "source": "https://getrawmilk.com/map/fermoy-natural-cheese-company-fermoy"
+   "source": "https://getrawmilk.com/map/fermoy-natural-cheese-company-fermoy",
+   "lat": 52.13817,
+   "lon": -8.27522,
+   "precision": "town"
   },
   {
    "id": "ie-sheridans-cheesemongers-cork",
@@ -96,7 +117,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Cork/Cork"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Cork/Cork",
+   "lat": 51.89851,
+   "lon": -8.47264,
+   "precision": "town"
   },
   {
    "id": "ie-cork-rooftop-farm-cork",
@@ -108,7 +132,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Cork/Cork"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Cork/Cork",
+   "lat": 51.89786,
+   "lon": -8.47426,
+   "precision": "exact"
   },
   {
    "id": "ie-ballymaloe-cookery-school-garden-shop-shanagarry",
@@ -120,7 +147,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream",
-   "source": "https://getrawmilk.com/map/ballymaloe-cookery-school-garden-shop-shanagarry-ireland"
+   "source": "https://getrawmilk.com/map/ballymaloe-cookery-school-garden-shop-shanagarry-ireland",
+   "lat": 51.85185,
+   "lon": -8.03624,
+   "precision": "town"
   },
   {
    "id": "ie-hegarty-cheese-whitechurch",
@@ -132,7 +162,10 @@
    "species": "cow",
    "fluid": "no",
    "products": "Raw milk cheese (no fluid milk)",
-   "source": "https://getrawmilk.com/map/hegarty-cheese-whitechurch-ireland"
+   "source": "https://getrawmilk.com/map/hegarty-cheese-whitechurch-ireland",
+   "lat": 51.98139,
+   "lon": -8.51389,
+   "precision": "town"
   },
   {
    "id": "ie-carlow-farmhouse-cheese-fenagh",
@@ -144,7 +177,10 @@
    "species": "goat, sheep",
    "fluid": "no",
    "products": "Goat and sheep cheese (no fluid milk)",
-   "source": "https://getrawmilk.com/map/carlow-farmhouse-cheese-fenagh-ireland"
+   "source": "https://getrawmilk.com/map/carlow-farmhouse-cheese-fenagh-ireland",
+   "lat": 52.72651,
+   "lon": -6.80395,
+   "precision": "town"
   },
   {
    "id": "ie-corleggy-cheeses-belturbet",
@@ -156,7 +192,10 @@
    "species": "cow, goat, sheep",
    "fluid": "no",
    "products": "Cheese (no fluid milk)",
-   "source": "https://getrawmilk.com/map/corleggy-cheeses-belturbet-ireland"
+   "source": "https://getrawmilk.com/map/corleggy-cheeses-belturbet-ireland",
+   "lat": 54.10074,
+   "lon": -7.44404,
+   "precision": "town"
   },
   {
    "id": "ie-fresh-today-virginia",
@@ -168,7 +207,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/map/fresh-today-virginia-cavan-ireland"
+   "source": "https://getrawmilk.com/map/fresh-today-virginia-cavan-ireland",
+   "lat": 53.83661,
+   "lon": -7.07262,
+   "precision": "exact"
   },
   {
    "id": "ie-the-health-connection-ennis",
@@ -180,7 +222,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/map/the-health-connection-ennis-ireland"
+   "source": "https://getrawmilk.com/map/the-health-connection-ennis-ireland",
+   "lat": 52.84086,
+   "lon": -8.98448,
+   "precision": "exact"
   },
   {
    "id": "ie-st-tola-irish-goat-cheese-inagh",
@@ -192,7 +237,10 @@
    "species": "goat",
    "fluid": "no",
    "products": "Goat cheese, some raw milk (no fluid milk)",
-   "source": "https://getrawmilk.com/map/st-tola-irish-goat-cheese-inagh-ireland"
+   "source": "https://getrawmilk.com/map/st-tola-irish-goat-cheese-inagh-ireland",
+   "lat": 52.90717,
+   "lon": -9.23451,
+   "precision": "town"
   },
   {
    "id": "ie-unnamed-honesty-box-rossnowlagh",
@@ -204,7 +252,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Organic raw milk in refillable bottles, eggs",
-   "source": "https://getrawmilk.com/map/unnamed-honesty-box-rossnowlagh-ie"
+   "source": "https://getrawmilk.com/map/unnamed-honesty-box-rossnowlagh-ie",
+   "lat": 54.55435,
+   "lon": -8.20978,
+   "precision": "town"
   },
   {
    "id": "ie-sheridans-cheesemongers-dublin",
@@ -216,7 +267,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-dublin"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-dublin",
+   "lat": 53.34117,
+   "lon": -6.25918,
+   "precision": "exact"
   },
   {
    "id": "ie-sheridans-cheesemongers-dunnes-stores-grange-rd-dublin",
@@ -228,7 +282,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-donaghmede-dublin-ie"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-donaghmede-dublin-ie",
+   "lat": 53.34938,
+   "lon": -6.26056,
+   "precision": "town"
   },
   {
    "id": "ie-sheridans-cheesemongers-ilac-centre-dublin",
@@ -240,7 +297,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-ilac-centre-dublin-ie"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-ilac-centre-dublin-ie",
+   "lat": 53.34947,
+   "lon": -6.26241,
+   "precision": "street"
   },
   {
    "id": "ie-sheridans-cheesemongers-rathmines-dublin",
@@ -252,7 +312,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-rathmines-dublin-ie"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-rathmines-dublin-ie",
+   "lat": 53.32324,
+   "lon": -6.26472,
+   "precision": "exact"
   },
   {
    "id": "ie-sheridans-cheesemongers-st-stephen-s-green-dublin",
@@ -264,7 +327,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-st-stephens-green-dublin-ie"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-st-stephens-green-dublin-ie",
+   "lat": 53.3402,
+   "lon": -6.26023,
+   "precision": "exact"
   },
   {
    "id": "ie-fallon-byrne-dublin",
@@ -276,7 +342,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream",
-   "source": "https://getrawmilk.com/map/fallon-and-byrne-dublin-ie"
+   "source": "https://getrawmilk.com/map/fallon-and-byrne-dublin-ie",
+   "lat": 53.34312,
+   "lon": -6.26329,
+   "precision": "exact"
   },
   {
    "id": "ie-sheridans-cheesemongers-beacon-court-dublin",
@@ -288,7 +357,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-beacon-court-dublin-ireland"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-beacon-court-dublin-ireland",
+   "lat": 53.34938,
+   "lon": -6.26056,
+   "precision": "town"
   },
   {
    "id": "ie-corleggy-cheeses-at-temple-bar-food-market-dublin",
@@ -300,7 +372,10 @@
    "species": "cow, goat, sheep",
    "fluid": "no",
    "products": "Cheese (no fluid milk)",
-   "source": "https://getrawmilk.com/map/corleggy-cheeses-at-temple-bar-food-market-dublin-ireland"
+   "source": "https://getrawmilk.com/map/corleggy-cheeses-at-temple-bar-food-market-dublin-ireland",
+   "lat": 53.34486,
+   "lon": -6.26538,
+   "precision": "street"
   },
   {
    "id": "ie-country-crest-farmshop-ballymadrough",
@@ -312,7 +387,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/map/country-crest-farmshop-dublin-ireland"
+   "source": "https://getrawmilk.com/map/country-crest-farmshop-dublin-ireland",
+   "lat": 53.44708,
+   "lon": -6.17633,
+   "precision": "street"
   },
   {
    "id": "ie-food-plus-blanchardstown-blanchardstown",
@@ -324,7 +402,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/map/food-plus-blanchardstown-dublin-ireland"
+   "source": "https://getrawmilk.com/map/food-plus-blanchardstown-dublin-ireland",
+   "lat": 53.38425,
+   "lon": -6.39978,
+   "precision": "exact"
   },
   {
    "id": "ie-sheridans-cheesemongers-blanchardstown-blanchardstown",
@@ -336,7 +417,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-blanchardstown-centre-ie"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-blanchardstown-centre-ie",
+   "lat": 53.38446,
+   "lon": -6.38294,
+   "precision": "town"
   },
   {
    "id": "ie-food-plus-balbriggan-balbriggan",
@@ -348,7 +432,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/map/food-plus-balbriggan-ireland"
+   "source": "https://getrawmilk.com/map/food-plus-balbriggan-ireland",
+   "lat": 53.60962,
+   "lon": -6.18926,
+   "precision": "street"
   },
   {
    "id": "ie-sheridans-cheesemongers-cornelscourt-cornelscourt",
@@ -360,7 +447,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-cornelscourt-dublin-ie"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-cornelscourt-dublin-ie",
+   "lat": 53.26657,
+   "lon": -6.16101,
+   "precision": "exact"
   },
   {
    "id": "ie-sheridans-cheesemongers-rathbeale-swords",
@@ -372,7 +462,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-rathbeale-swords-ie"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-rathbeale-swords-ie",
+   "lat": 53.46229,
+   "lon": -6.23002,
+   "precision": "exact"
   },
   {
    "id": "ie-sheridans-cheesemongers-galway",
@@ -384,7 +477,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-galway"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-galway",
+   "lat": 53.27237,
+   "lon": -9.05411,
+   "precision": "exact"
   },
   {
    "id": "ie-mccambridge-s-of-galway-galway",
@@ -396,7 +492,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/map/mccambridges-of-galway"
+   "source": "https://getrawmilk.com/map/mccambridges-of-galway",
+   "lat": 53.27309,
+   "lon": -9.0525,
+   "precision": "exact"
   },
   {
    "id": "ie-terryland-fruit-veg-market-galway",
@@ -408,7 +507,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/terryland-fruit-and-veg-market-galway-ie"
+   "source": "https://getrawmilk.com/map/terryland-fruit-and-veg-market-galway-ie",
+   "lat": 53.28253,
+   "lon": -9.04782,
+   "precision": "street"
   },
   {
    "id": "ie-the-health-store-galway",
@@ -420,7 +522,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/the-health-store-galway-ie"
+   "source": "https://getrawmilk.com/map/the-health-store-galway-ie",
+   "lat": 53.29047,
+   "lon": -8.98664,
+   "precision": "exact"
   },
   {
    "id": "ie-mad-yolk-farm-craughwell",
@@ -432,7 +537,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw milk from the farm shop, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/mad-yolk-farm-craughwell-ie"
+   "source": "https://getrawmilk.com/map/mad-yolk-farm-craughwell-ie",
+   "lat": 53.22513,
+   "lon": -8.73583,
+   "precision": "town"
   },
   {
    "id": "ie-killeen-farmhouse-cheese-portumna",
@@ -444,7 +552,10 @@
    "species": "goat",
    "fluid": "no",
    "products": "Raw milk goat cheddar (no fluid milk)",
-   "source": "https://getrawmilk.com/map/killeen-farmhouse-cheese-portumna-ireland"
+   "source": "https://getrawmilk.com/map/killeen-farmhouse-cheese-portumna-ireland",
+   "lat": 53.09233,
+   "lon": -8.21929,
+   "precision": "town"
   },
   {
    "id": "ie-coyne-family-butcher-maynooth",
@@ -456,7 +567,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/map/coyne-family-butcher-maynooth-kildare-ireland"
+   "source": "https://getrawmilk.com/map/coyne-family-butcher-maynooth-kildare-ireland",
+   "lat": 53.38117,
+   "lon": -6.58558,
+   "precision": "exact"
   },
   {
    "id": "ie-i-love-organic-maynooth",
@@ -468,7 +582,10 @@
    "species": "cow, goat",
    "fluid": "unknown",
    "products": "Cow milk, goat kefir",
-   "source": "https://getrawmilk.com/map/i-love-organic-maynooth-county-kildare"
+   "source": "https://getrawmilk.com/map/i-love-organic-maynooth-county-kildare",
+   "lat": 53.38086,
+   "lon": -6.59088,
+   "precision": "exact"
   },
   {
    "id": "ie-sheridans-cheesemongers-dunnes-stores-naas-naas",
@@ -480,7 +597,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-dunnes-stores-naas-ie"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-dunnes-stores-naas-ie",
+   "lat": 53.21889,
+   "lon": -6.66276,
+   "precision": "street"
   },
   {
    "id": "ie-goldsmith-goats-keelbaun",
@@ -492,7 +612,10 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Raw A2 goat milk",
-   "source": "https://getrawmilk.com/map/goldsmith-goats-keelbaun"
+   "source": "https://getrawmilk.com/map/goldsmith-goats-keelbaun",
+   "lat": 53.54168,
+   "lon": -7.74784,
+   "precision": "town"
   },
   {
    "id": "ie-gleann-bu-farm-aghamore",
@@ -504,7 +627,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Organic raw milk, butter, cream, yoghurt, kefir (Bainne Barn)",
-   "source": "https://getrawmilk.com/map/gleann-bui-farm-ie"
+   "source": "https://getrawmilk.com/map/gleann-bui-farm-ie",
+   "lat": 53.8278,
+   "lon": -8.82464,
+   "precision": "town"
   },
   {
    "id": "ie-caf-rua-castlebar",
@@ -516,7 +642,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/cafe-rua-castlebar-ie"
+   "source": "https://getrawmilk.com/map/cafe-rua-castlebar-ie",
+   "lat": 53.85926,
+   "lon": -9.29829,
+   "precision": "exact"
   },
   {
    "id": "ie-savoir-fare-westport",
@@ -528,7 +657,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/savoir-fare-westport-ie"
+   "source": "https://getrawmilk.com/map/savoir-fare-westport-ie",
+   "lat": 53.79913,
+   "lon": -9.5227,
+   "precision": "exact"
   },
   {
    "id": "ie-phaitch-s-raw-goats-milk-ballaghaderreen",
@@ -540,7 +672,10 @@
    "species": "goat",
    "fluid": "likely",
    "products": "Raw A2 goat milk",
-   "source": "https://getrawmilk.com/map/phaitchs-raw-goats-milk-ie"
+   "source": "https://getrawmilk.com/map/phaitchs-raw-goats-milk-ie",
+   "lat": 53.90137,
+   "lon": -8.57886,
+   "precision": "town"
   },
   {
    "id": "ie-duffy-s-supervalu-ballaghaderreen",
@@ -552,7 +687,10 @@
    "species": "goat",
    "fluid": "likely",
    "products": "A2 goat milk",
-   "source": "https://getrawmilk.com/map/duffys-supervalu-ballaghadereen-ireland"
+   "source": "https://getrawmilk.com/map/duffys-supervalu-ballaghadereen-ireland",
+   "lat": 53.90043,
+   "lon": -8.58304,
+   "precision": "street"
   },
   {
    "id": "ie-t-r-na-n-g-organic-healthstore-sligo",
@@ -564,7 +702,10 @@
    "species": "cow",
    "fluid": "likely",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/tir-na-nog-organic-healthstore-sligo-ie"
+   "source": "https://getrawmilk.com/map/tir-na-nog-organic-healthstore-sligo-ie",
+   "lat": 54.27053,
+   "lon": -8.47432,
+   "precision": "street"
   },
   {
    "id": "ie-knocknarea-farm-strandhill",
@@ -576,7 +717,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw cow milk, eggs, veg box",
-   "source": "https://getrawmilk.com/map/knocknarea-farm-strandhill"
+   "source": "https://getrawmilk.com/map/knocknarea-farm-strandhill",
+   "lat": 54.2661,
+   "lon": -8.56617,
+   "precision": "exact"
   },
   {
    "id": "ie-knocknarea-farm-shop-strandhill",
@@ -588,7 +732,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/knocknarea-farm-shop-standhill-ie"
+   "source": "https://getrawmilk.com/map/knocknarea-farm-shop-standhill-ie",
+   "lat": 54.2661,
+   "lon": -8.56617,
+   "precision": "street"
   },
   {
    "id": "ie-knockanore-farmhouse-cheese-knockanore",
@@ -600,7 +747,10 @@
    "species": "cow",
    "fluid": "no",
    "products": "Raw milk cheddar (no fluid milk)",
-   "source": "https://getrawmilk.com/map/knockanore-farmhouse-cheese-knockanore-ireland"
+   "source": "https://getrawmilk.com/map/knockanore-farmhouse-cheese-knockanore-ireland",
+   "lat": 52.05188,
+   "lon": -7.89015,
+   "precision": "town"
   },
   {
    "id": "ie-loughpark-farms-castlepollard",
@@ -612,7 +762,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw cow milk",
-   "source": "https://getrawmilk.com/map/loughpark-farms-castlepollard"
+   "source": "https://getrawmilk.com/map/loughpark-farms-castlepollard",
+   "lat": 53.67969,
+   "lon": -7.29819,
+   "precision": "town"
   },
   {
    "id": "ie-centra-glasson-glasson",
@@ -624,7 +777,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/map/centra-glasson-glasson-ireland"
+   "source": "https://getrawmilk.com/map/centra-glasson-glasson-ireland",
+   "lat": 53.4652,
+   "lon": -7.86979,
+   "precision": "street"
   },
   {
    "id": "ie-coolattin-cheddar-knockeen",
@@ -636,7 +792,10 @@
    "species": "cow",
    "fluid": "no",
    "products": "Raw milk cheddar (no fluid milk)",
-   "source": "https://getrawmilk.com/map/coolattin-cheddar-knockeen-ireland"
+   "source": "https://getrawmilk.com/map/coolattin-cheddar-knockeen-ireland",
+   "lat": 52.80982,
+   "lon": -6.66147,
+   "precision": "town"
   },
   {
    "id": "ie-limerick-milk-market-limerick",
@@ -648,7 +807,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/map/the-milk-market-limerick"
+   "source": "https://getrawmilk.com/map/the-milk-market-limerick",
+   "lat": 52.66355,
+   "lon": -8.62166,
+   "precision": "street"
   },
   {
    "id": "ie-sheridans-cheesemongers-dunnes-stores-limerick-limerick",
@@ -660,7 +822,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-dunnes-stores-limerick-ie"
+   "source": "https://getrawmilk.com/map/sheridans-cheesemongers-dunnes-stores-limerick-ie",
+   "lat": 52.66505,
+   "lon": -8.66612,
+   "precision": "street"
   },
   {
    "id": "ie-tory-hill-house-croom",
@@ -672,7 +837,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw milk dispenser at the farm shop, kefir",
-   "source": "https://getrawmilk.com/map/tory-hill-house-ie"
+   "source": "https://getrawmilk.com/map/tory-hill-house-ie",
+   "lat": 52.51549,
+   "lon": -8.71983,
+   "precision": "town"
   },
   {
    "id": "ie-dysert-farm-croom",
@@ -684,7 +852,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw cow milk",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Limerick/Croom"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Limerick/Croom",
+   "lat": 52.51549,
+   "lon": -8.71983,
+   "precision": "town"
   },
   {
    "id": "ie-centra-adare-adare",
@@ -696,7 +867,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw cow milk (delivery location)",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Limerick/Adare"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Limerick/Adare",
+   "lat": 52.56397,
+   "lon": -8.79168,
+   "precision": "exact"
   },
   {
    "id": "ie-condon-s-farm-crecora",
@@ -708,7 +882,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw cow milk",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Limerick/Crecora"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Limerick/Crecora",
+   "lat": 52.57157,
+   "lon": -8.69262,
+   "precision": "town"
   },
   {
    "id": "ie-the-urban-co-op-crossagalla",
@@ -720,7 +897,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Raw cow milk (delivery location)",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Limerick/Crossagalla"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Limerick/Crossagalla",
+   "lat": 52.64868,
+   "lon": -8.58578,
+   "precision": "street"
   },
   {
    "id": "ie-crawford-s-farm-cloughjordan",
@@ -732,7 +912,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Organic raw milk, cream, butter, kefir",
-   "source": "https://getrawmilk.com/map/crawfords-farm-cloughjordan"
+   "source": "https://getrawmilk.com/map/crawfords-farm-cloughjordan",
+   "lat": 52.93642,
+   "lon": -8.02449,
+   "precision": "town"
   },
   {
    "id": "ie-centra-cloughjordan-cloughjordan",
@@ -744,7 +927,10 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow milk, butter, cream",
-   "source": "https://getrawmilk.com/map/centra-cloughjordan-ie"
+   "source": "https://getrawmilk.com/map/centra-cloughjordan-ie",
+   "lat": 52.94256,
+   "lon": -8.03671,
+   "precision": "exact"
   },
   {
    "id": "ie-hugh-maguire-butchers-ashbourne",
@@ -756,7 +942,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Ashbourne"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Ashbourne",
+   "lat": 53.51155,
+   "lon": -6.40129,
+   "precision": "exact"
   },
   {
    "id": "ie-fresh-today-athboy",
@@ -768,7 +957,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Athboy"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Athboy",
+   "lat": 53.62015,
+   "lon": -6.92234,
+   "precision": "exact"
   },
   {
    "id": "ie-smith-s-supervalu-navan-navan",
@@ -780,7 +972,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk (delivery location)",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Navan"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Navan",
+   "lat": 53.64337,
+   "lon": -6.6605,
+   "precision": "exact"
   },
   {
    "id": "ie-moldova-stores-navan-navan",
@@ -792,7 +987,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk (delivery location)",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Navan"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Navan",
+   "lat": 53.65477,
+   "lon": -6.68897,
+   "precision": "street"
   },
   {
    "id": "ie-robert-s-butchery-smokehouse-navan",
@@ -804,7 +1002,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Navan"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Navan",
+   "lat": 53.6448,
+   "lon": -6.70641,
+   "precision": "exact"
   },
   {
    "id": "ie-fresh-today-cloneens-trim",
@@ -816,7 +1017,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Trim"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Trim",
+   "lat": 53.56478,
+   "lon": -6.8008,
+   "precision": "street"
   },
   {
    "id": "ie-circle-k-gillen-s-londis-trim",
@@ -828,7 +1032,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk (delivery location)",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Trim"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Trim",
+   "lat": 53.55429,
+   "lon": -6.78978,
+   "precision": "town"
   },
   {
    "id": "ie-o-brien-s-supervalu-kells-kells",
@@ -840,7 +1047,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk (delivery location)",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Kells"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Kells",
+   "lat": 53.72944,
+   "lon": -6.88271,
+   "precision": "exact"
   },
   {
    "id": "ie-sheridans-cheesemongers-kells-kells",
@@ -852,7 +1062,10 @@
    "species": "cow",
    "fluid": "unknown",
    "products": "Cow milk, butter, cream, cheese",
-   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Kells"
+   "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Kells",
+   "lat": 53.72718,
+   "lon": -6.87679,
+   "precision": "town"
   }
  ]
 }

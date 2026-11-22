@@ -65,7 +65,8 @@ async function build() {
   const stats = { calls: 0, errors: 0 };
   const shops = [];
   for (const e of seed.entries) {
-    const g = await geocode(e, cache, stats);
+    // Coordinates checked by hand (OpenStreetMap lookup, matched to town and county) are stored in the seed and win over a fresh lookup.
+    const g = typeof e.lat === 'number' ? { lat: e.lat, lon: e.lon, approx: e.precision === 'town', precision: e.precision || 'street' } : await geocode(e, cache, stats);
     const old = prevById.get(e.id);
     const pos = g || (old && typeof old.lat === 'number' ? { lat: old.lat, lon: old.lon, approx: true, precision: 'town' } : null);
     if (!pos) continue; // cannot be placed on the map

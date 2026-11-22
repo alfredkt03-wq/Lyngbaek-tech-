@@ -15,7 +15,7 @@
   function L_bounds() { return window.L ? L.latLngBounds([49.85, -10.8], [55.85, 1.85]) : null; }
   var PREC = { exact: 'exact point', street: 'on the street', postcode: 'postcode centre (within about 100 m)', area: 'postcode area, approximate', town: 'town centre, approximate' };
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
-  var origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
+  var regions = null, regionLayer = null, origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -75,6 +75,49 @@
     });
   }
 
+  // Region map: England's regions and Ireland's counties, shaded by how many listings each has. Click one to zoom to it.
+  function inRing(lat, lon, r) {
+    var c = false;
+    for (var i = 0, j = r.length - 1; i < r.length; j = i++) {
+      var xi = r[i][0], yi = r[i][1], xj = r[j][0], yj = r[j][1];
+      if ((yi > lat) !== (yj > lat) && lon < (xj - xi) * (lat - yi) / (yj - yi) + xi) c = !c;
+    }
+    return c;
+  }
+  function inFeature(lat, lon, f) {
+    var g = f.geometry, polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
+    for (var i = 0; i < polys.length; i++) if (inRing(lat, lon, polys[i][0])) return true;
+    return false;
+  }
+  function shadeRegions(list) {
+    if (!regions || !map) return;
+    regions.features.forEach(function (f) { f._n = 0; });
+    list.forEach(function (s) {
+      for (var i = 0; i < regions.features.length; i++) { var f = regions.features[i]; if (f._bb && f._bb.contains([s.lat, s.lon]) && inFeature(s.lat, s.lon, f)) { f._n++; break; } }
+    });
+    var max = 1; regions.features.forEach(function (f) { if (f._n > max) max = f._n; });
+    if (regionLayer) map.removeLayer(regionLayer);
+    regionLayer = L.geoJSON(regions, {
+      pane: 'regions',
+      style: function (f) {
+        var t = f._n ? 0.12 + 0.5 * Math.sqrt(f._n / max) : 0;
+        return { color: '#173c29', weight: 1, opacity: 0.55, fillColor: '#2f6b4a', fillOpacity: t };
+      },
+      onEachFeature: function (f, l) {
+        l.bindTooltip(esc(f.properties.name) + ' <b>' + f._n + '</b>', { sticky: true, className: 'rtip', direction: 'top' });
+        l.on('mouseover', function () { l.setStyle({ weight: 2.5, opacity: 1 }); });
+        l.on('mouseout', function () { regionLayer.resetStyle(l); });
+        l.on('click', function () { map.fitBounds(l.getBounds(), { padding: [20, 20] }); });
+      }
+    }).addTo(map);
+    toggleRegions();
+  }
+  function toggleRegions() {
+    if (!regionLayer) return;
+    var show = map.getZoom() < 8.5;
+    regionLayer.eachLayer(function (l) { l.setStyle(show ? {} : { fillOpacity: 0, opacity: 0 }); if (show) regionLayer.resetStyle(l); l.options.interactive = show; if (l._path) l._path.style.pointerEvents = show ? '' : 'none'; });
+  }
+
   function render(fit) {
     if (!map) return;
     var list = visible();
@@ -83,6 +126,7 @@
     $('mcount').textContent = list.length + (list.length === 1 ? ' place' : ' places') + ' shown of ' + all.length + '.';
     if (fit && list.length) { var b = cluster.getBounds(); if (b.isValid()) map.fitBounds(b, { maxZoom: 12, padding: [24, 24] }); }
     listInView();
+    shadeRegions(list);
   }
 
   // Shows all of England and Ireland, and locks the map to that view: no zooming out or panning beyond it.
@@ -278,12 +322,17 @@
     if (!cluster.addLayers) cluster.addLayers = function (a) { a.forEach(function (m) { cluster.addLayer(m); }); };
     if (!cluster.getBounds) cluster.getBounds = function () { return L.featureGroup(cluster.getLayers()).getBounds(); };
     map.addLayer(cluster);
-    map.createPane('names').style.zIndex = 650; // town and farm names sit above the pins and cluster badges
+    map.createPane('names').style.zIndex = 450; // town and farm names sit above the pins and cluster badges
     labelLayer = L.layerGroup().addTo(map);
     lockView();
     var rz; window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(function () { map.invalidateSize(); lockView(); }, 150); });
     L.control.zoom({ position: 'topright' }).addTo(map);
+    map.createPane('regions').style.zIndex = 350;
     map.on('moveend', listInView);
+    map.on('zoomend', toggleRegions);
+    fetch('regions.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (g) {
+      if (!g || !Array.isArray(g.features)) return; regions = g; regions.features.forEach(function (f) { f._bb = L.geoJSON(f).getBounds(); }); render(false);
+    }).catch(function () {});
     map.on('moveend zoomend', updateLabels);
     if (cluster.on) cluster.on('animationend', updateLabels);
     map.on('layeradd layerremove', function (e) { if (e.layer === cluster) updateLabels(); });
