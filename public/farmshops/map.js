@@ -11,7 +11,7 @@
     cheese: { label: 'Raw milk cheese producer', color: '#8a6d9b' }
   };
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
-  var all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, pending = SOURCES.length, failed = [];
+  var all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -37,7 +37,7 @@
     var counts = {};
     all.forEach(function (s) { counts[s.kind] = (counts[s.kind] || 0) + 1; });
     $('types').innerHTML = Object.keys(KINDS).filter(function (k) { return counts[k]; }).map(function (k) {
-      return '<li><label><input type="checkbox" data-kind="' + k + '"' + (on[k] === false ? '' : ' checked') + '><i style="background:' + KINDS[k].color + '"></i>' +
+      return '<li><label style="--dot:' + KINDS[k].color + '"><input type="checkbox" data-kind="' + k + '"' + (on[k] === false ? '' : ' checked') + '><i></i>' +
         esc(KINDS[k].label) + ' <span class="n">' + counts[k] + '</span></label></li>';
     }).join('');
   }
@@ -59,6 +59,18 @@
     cluster.addLayers(list.map(function (s) { return markerOf[s.id]; }));
     $('mcount').textContent = list.length + (list.length === 1 ? ' place' : ' places') + ' shown of ' + all.length + '.';
     if (fit && list.length) { var b = cluster.getBounds(); if (b.isValid()) map.fitBounds(b, { maxZoom: 12, padding: [24, 24] }); }
+    listInView();
+  }
+
+  function listInView() {
+    if (!map || !$('inview')) return;
+    var b = map.getBounds(), list = visible().filter(function (s) { return b.contains([s.lat, s.lon]); });
+    $('inviewn').textContent = list.length + (list.length === 1 ? ' place' : ' places') + ' on the map';
+    list.sort(function (a, z) { return a.name.localeCompare(z.name, 'en'); });
+    $('inview').innerHTML = list.length ? list.slice(0, 60).map(function (s) {
+      return '<li><button type="button" data-id="' + esc(s.id) + '"><b>' + esc(s.name) + '</b><small><i style="background:' + KINDS[s.kind].color + '"></i>' +
+        esc(KINDS[s.kind].label + (s.town || s.area ? ' · ' + (s.town || s.area) : '')) + '</small></button></li>';
+    }).join('') + (list.length > 60 ? '<li class="none">Zoom in to see the other ' + (list.length - 60) + '.</li>' : '') : '<li class="none">Nothing in this part of the map. Zoom out or move the map.</li>';
   }
 
   function add(data, c) {
@@ -69,8 +81,9 @@
       s._pc = String(s.postcode || '').replace(/\s+/g, '').toUpperCase();
       s.id = c.charAt(0) + ':' + s.id;
       if (map) markerOf[s.id] = L.circleMarker([s.lat, s.lon], {
-        radius: s.approx ? 8 : 6, color: '#173c29', weight: 1, fillColor: KINDS[s.kind].color, fillOpacity: s.approx ? 0.5 : 0.9
+        radius: s.approx ? 9 : 7, color: '#f3f0e7', weight: 2, fillColor: KINDS[s.kind].color, fillOpacity: s.approx ? 0.6 : 1
       }).bindPopup(function () { return popup(s); });
+      dataOf[s.id] = s;
       all.push(s);
     });
   }
@@ -95,14 +108,35 @@
 
   function init() {
     if (!window.L) { $('mcount').textContent = 'The map library did not load. Check your connection and reload.'; return; }
-    map = L.map('bigmap', { scrollWheelZoom: true }).setView([53.6, -4.5], 5);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    map = L.map('bigmap', { scrollWheelZoom: true, zoomControl: false }).setView([53.6, -4.5], 5);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19, subdomains: 'abcd',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(map);
-    cluster = L.markerClusterGroup ? L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 45, chunkedLoading: true }) : L.layerGroup();
+    cluster = L.markerClusterGroup ? L.markerClusterGroup({
+      showCoverageOnHover: false, maxClusterRadius: 48, chunkedLoading: true,
+      iconCreateFunction: function (c) {
+        var n = c.getChildCount(), d = n < 10 ? 32 : n < 100 ? 38 : 46;
+        return L.divIcon({ html: '<div class="fcluster" style="width:' + d + 'px;height:' + d + 'px">' + n + '</div>', className: '', iconSize: [d, d] });
+      }
+    }) : L.layerGroup();
     if (!cluster.addLayers) cluster.addLayers = function (a) { a.forEach(function (m) { cluster.addLayer(m); }); };
     if (!cluster.getBounds) cluster.getBounds = function () { return L.featureGroup(cluster.getLayers()).getBounds(); };
     map.addLayer(cluster);
+    L.control.zoom({ position: 'topright' }).addTo(map);
+    map.on('moveend', listInView);
+    document.querySelector('.jump').addEventListener('click', function (e) {
+      var c = e.target.getAttribute && e.target.getAttribute('data-go');
+      if (c == null) return;
+      country = c; $('country').value = c; render(true);
+    });
+    $('inview').addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('button[data-id]');
+      var s = b && dataOf[b.getAttribute('data-id')];
+      if (!s) return;
+      map.setView([s.lat, s.lon], Math.max(map.getZoom(), 15));
+      L.popup({ offset: [0, -6] }).setLatLng([s.lat, s.lon]).setContent(popup(s)).openOn(map);
+    });
     var t;
     $('q').addEventListener('input', function (e) { clearTimeout(t); t = setTimeout(function () { q = e.target.value; render(true); }, 200); });
     $('country').addEventListener('change', function (e) { country = e.target.value; render(true); });
