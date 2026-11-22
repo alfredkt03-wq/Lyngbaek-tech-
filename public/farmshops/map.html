@@ -33,6 +33,17 @@
 .jump button:hover{background:var(--ink);color:var(--bg)}
 .side{display:flex;flex-direction:column;height:min(74vh,740px);min-height:440px}
 @media(max-width:900px){.side{height:auto;max-height:520px;min-height:0}}
+.find{padding:14px 18px 12px;border-bottom:1px solid var(--soft);position:relative}
+.find label{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.findrow{display:flex;gap:8px}
+.findrow input{flex:1;min-width:0;font:inherit;font-size:15px;padding:9px 10px;border:1px solid var(--ink);background:var(--bg);color:var(--ink);border-radius:0}
+.findrow button{font:inherit;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--bg);border:1px solid var(--ink);padding:0 12px;cursor:pointer}
+#pfl{position:absolute;z-index:700;left:18px;right:18px;top:76px;margin:0;padding:0;list-style:none;background:var(--bg);border:1px solid var(--ink);max-height:260px;overflow:auto}
+#pfl li button{display:block;width:100%;text-align:left;font:inherit;font-size:14px;padding:9px 10px;background:none;border:0;border-bottom:1px solid var(--soft);color:var(--ink);cursor:pointer}
+#pfl li button:hover,#pfl li button:focus{background:var(--soft)}
+#pfl small{color:var(--ink2);margin-left:6px}
+#pfmsg{font-size:13px;color:var(--ink2);margin-top:6px;min-height:0}
+#pfmsg:empty{display:none}
 .side h2{font-size:20px;padding:16px 18px 12px;border-bottom:1px solid var(--soft)}
 .side h2 span{display:block;font:500 13px "DM Sans",sans-serif;color:var(--ink2);margin-top:3px}
 #inview{overflow:auto;flex:1;margin:0;padding:0;list-style:none}
@@ -96,6 +107,12 @@
       <div class="jump"><button type="button" data-go="England">England</button><button type="button" data-go="Ireland">Ireland</button><button type="button" data-go="">Both</button></div>
     </div>
     <aside class="side" aria-label="Places in view">
+      <div class="find">
+        <label for="pf">Find farms near</label>
+        <div class="findrow"><input id="pf" type="search" placeholder="Town, village or postcode" autocomplete="off" aria-controls="pfl"><button type="button" id="near">Near me</button></div>
+        <ul id="pfl" role="listbox" hidden></ul>
+        <p id="pfmsg" role="status"></p>
+      </div>
       <h2>In view<span id="inviewn">Loading…</span></h2>
       <ul id="inview"></ul>
     </aside>

@@ -14,7 +14,7 @@
   var BOUNDS = L_bounds();
   function L_bounds() { return window.L ? L.latLngBounds([49.85, -10.8], [55.85, 1.85]) : null; }
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
-  var places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
+  var origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -106,8 +106,8 @@
         soft.push([r.left - cr.left - 2, r.top - cr.top - 2, r.width + 4, r.height + 4]);
       });
     } catch (e) { /* no layout available */ }
-    var min = z < 6.5 ? 400000 : z < 7 ? 150000 : z < 7.5 ? 80000 : z < 8 ? 45000 : z < 9 ? 22000 : z < 10 ? 11000 : z < 11 ? 6000 : 0;
-    for (var i = 0; i < places.length && made < 220; i++) {
+    var min = z < 6.5 ? 400000 : z < 7 ? 150000 : z < 7.5 ? 80000 : z < 8 ? 45000 : z < 9 ? 22000 : z < 10 ? 11000 : z < 11 ? 6000 : z < 12 ? 2500 : 0;
+    for (var i = 0; i < places.length && made < 260; i++) {
       var p = places[i];
       if (p[3] * (p[4] === 'I' ? 2.5 : 1) < min) continue; // Irish towns are smaller, so they count for more
       if (!b.contains([p[1], p[2]])) continue;
@@ -135,11 +135,65 @@
     if (!map || !$('inview')) return;
     var b = map.getBounds(), list = visible().filter(function (s) { return b.contains([s.lat, s.lon]); });
     $('inviewn').textContent = list.length + (list.length === 1 ? ' place' : ' places') + ' on the map';
-    list.sort(function (a, z) { return a.name.localeCompare(z.name, 'en'); });
+    if (origin) list.forEach(function (s) { s._d = origin.distanceTo([s.lat, s.lon]); });
+    list.sort(function (a, z) { return origin ? a._d - z._d : a.name.localeCompare(z.name, 'en'); });
     $('inview').innerHTML = list.length ? list.slice(0, 60).map(function (s) {
       return '<li><button type="button" data-id="' + esc(s.id) + '"><b>' + esc(s.name) + '</b><small><i style="background:' + KINDS[s.kind].color + '"></i>' +
-        esc(KINDS[s.kind].label + (s.town || s.area ? ' · ' + (s.town || s.area) : '')) + '</small></button></li>';
+        esc(KINDS[s.kind].label + (s.town || s.area ? ' · ' + (s.town || s.area) : '') + (origin ? ' · ' + (s._d / 1609.34 < 10 ? (s._d / 1609.34).toFixed(1) : Math.round(s._d / 1609.34)) + ' mi' : '')) + '</small></button></li>';
     }).join('') + (list.length > 60 ? '<li class="none">Zoom in to see the other ' + (list.length - 60) + '.</li>' : '') : '<li class="none">Nothing in this part of the map. Zoom out or move the map.</li>';
+  }
+
+  // Place finder: type a town, village or postcode, or use your location. The list then sorts by distance.
+  function goTo(lat, lon, label) {
+    origin = L.latLng(lat, lon);
+    if (originMark) map.removeLayer(originMark);
+    originMark = L.circleMarker(origin, { radius: 6, color: '#fff', weight: 2, fillColor: '#1d4ed8', fillOpacity: 1, interactive: false }).addTo(map);
+    map.setView(origin, 11, { animate: false });
+    var near = all.filter(function (s) { return origin.distanceTo([s.lat, s.lon]) <= 25000; }).length;
+    $('pfmsg').textContent = label + ': ' + near + (near === 1 ? ' place' : ' places') + ' within 15 miles. Nearest first in the list.';
+    listInView(); updateLabels();
+  }
+  function setupFinder() {
+    var inp = $('pf'), list = $('pfl'), seq = 0;
+    function hide() { list.hidden = true; list.innerHTML = ''; }
+    function suggest() {
+      var v = norm(inp.value).trim(); if (v.length < 2) return hide();
+      var hit = [], i;
+      for (i = 0; i < places.length && hit.length < 8; i++) if (norm(places[i][0]).indexOf(v) === 0) hit.push(places[i]);
+      for (i = 0; i < places.length && hit.length < 8; i++) if (hit.indexOf(places[i]) < 0 && norm(places[i][0]).indexOf(v) > 0) hit.push(places[i]);
+      var rg = { E: 'England', I: 'Ireland', W: 'Wales', S: 'Scotland', N: 'Northern Ireland' };
+      list.innerHTML = hit.map(function (p, k) { return '<li><button type="button" data-k="' + k + '">' + esc(p[0]) + '<small>' + rg[p[4]] + '</small></button></li>'; }).join('');
+      list._hit = hit; list.hidden = !hit.length;
+    }
+    inp.addEventListener('input', suggest);
+    list.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('button[data-k]'); if (!b) return;
+      var p = list._hit[+b.getAttribute('data-k')]; inp.value = p[0]; hide(); goTo(p[1], p[2], p[0]);
+    });
+    inp.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') return hide();
+      if (e.key !== 'Enter') return;
+      e.preventDefault();
+      var v = inp.value.trim(), first = list._hit && list._hit[0];
+      if (/^[A-Za-z]{1,2}\d[A-Za-z\d]?\s*\d[A-Za-z]{2}$/.test(v)) { // UK postcode
+        var my = ++seq;
+        fetch('https://api.postcodes.io/postcodes/' + encodeURIComponent(v.replace(/\s+/g, ''))).then(function (r) { return r.json(); }).then(function (d) {
+          if (my !== seq) return;
+          if (d && d.result) { hide(); goTo(d.result.latitude, d.result.longitude, v.toUpperCase()); } else $('pfmsg').textContent = 'No match for that postcode.';
+        }).catch(function () { $('pfmsg').textContent = 'Postcode lookup is unavailable. Try a town name.'; });
+      } else if (first) { inp.value = first[0]; hide(); goTo(first[1], first[2], first[0]); }
+      else $('pfmsg').textContent = 'No place by that name. Try a nearby town.';
+    });
+    document.addEventListener('click', function (e) { if (!e.target.closest || !e.target.closest('.find')) hide(); });
+    $('near').addEventListener('click', function () {
+      if (!navigator.geolocation) { $('pfmsg').textContent = 'Your browser cannot share its location.'; return; }
+      $('pfmsg').textContent = 'Finding you…';
+      navigator.geolocation.getCurrentPosition(function (pos) {
+        var ll = L.latLng(pos.coords.latitude, pos.coords.longitude);
+        if (!map.options.maxBounds || !map.options.maxBounds.contains(ll)) { $('pfmsg').textContent = 'You are outside England and Ireland, so there is nothing to show near you.'; return; }
+        goTo(ll.lat, ll.lng, 'Your location');
+      }, function () { $('pfmsg').textContent = 'Location was blocked. Type a town or postcode instead.'; }, { timeout: 10000 });
+    });
   }
 
   function add(data, c) {
@@ -214,6 +268,7 @@
       map.setView([s.lat, s.lon], Math.max(map.getZoom(), 15));
       L.popup({ offset: [0, -6] }).setLatLng([s.lat, s.lon]).setContent(popup(s)).openOn(map);
     });
+    setupFinder();
     var t;
     $('q').addEventListener('input', function (e) { clearTimeout(t); t = setTimeout(function () { q = e.target.value; render(true); }, 200); });
     $('country').addEventListener('change', function (e) { country = e.target.value; render(true); });
