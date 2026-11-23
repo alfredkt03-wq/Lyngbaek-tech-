@@ -14,7 +14,6 @@
 .bigmap{padding:34px 0 8px}
 .bigmap h1{font-size:clamp(32px,5vw,54px);margin-bottom:22px}
 .bar{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:18px;align-items:end;margin-bottom:16px}
-@media(max-width:760px){.bar{grid-template-columns:1fr}}
 .types{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 16px;padding:0;list-style:none}
 .types label{display:flex;align-items:center;gap:8px;margin:0;font-weight:500;font-size:14px;cursor:pointer}
 .types input{position:absolute;opacity:0;width:0;height:0}
@@ -22,6 +21,14 @@
 .types input:checked+i{background:var(--dot)}
 .types input:focus-visible+i{outline:2px solid var(--ink);outline-offset:3px}
 .types .n{color:var(--ink2);font-size:13px}
+.animals{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:-4px 0 18px}
+.animals .al{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
+.animals button{font:inherit;font-size:14px;font-weight:500;color:var(--ink);background:transparent;border:1px solid var(--ink);padding:5px 12px;cursor:pointer}
+.animals button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.animals button .n{opacity:.7;font-size:12px;margin-left:5px}
+.popup .tags{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.popup .tags span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);padding:2px 6px}
+@media(max-width:760px){.bigmap h1{font-size:24px!important;line-height:1.15;margin:0 0 12px}.bar{grid-template-columns:1.6fr 1fr!important}.bar label{font-size:12px}.bar input,.bar select{padding:9px 10px;font-size:14px}.types label{font-size:13px}.types{margin-bottom:10px}.animals button{padding:4px 9px;font-size:13px}.tag{display:none}.bigmap .eyebrow{display:none}.bar{gap:10px}.types{gap:6px 14px}.animals{margin-bottom:12px}#bigmap{height:62vh!important}}
 .stage{display:grid;grid-template-columns:minmax(0,1fr) 340px;border:1px solid var(--ink);background:var(--field)}
 @media(max-width:900px){.stage{grid-template-columns:1fr}}
 .mapcol{position:relative;border-right:1px solid var(--ink)}
@@ -105,10 +112,11 @@
   <p class="eyebrow">Everything on one map</p>
   <h1>The UK and Ireland, in one place.</h1>
   <div class="bar">
-    <div><label for="q">Search the map</label><input id="q" type="search" placeholder="Name, town, county or postcode" autocomplete="off"></div>
+    <div><label for="q">Search the map</label><input id="q" type="search" placeholder="Name, town or postcode" autocomplete="off"></div>
     <div><label for="country">Country</label><select id="country"><option value="">UK and Ireland</option><option value="UK">UK</option><option value="Ireland">Ireland</option></select></div>
   </div>
   <ul class="types" id="types" aria-label="Types to show"></ul>
+  <div class="animals" role="group" aria-label="Animals"><span class="al">Animals</span><span id="animals"></span></div>
   <div class="stage">
     <div class="mapcol">
       <p class="tag">↗ Pick a region or a pin</p>

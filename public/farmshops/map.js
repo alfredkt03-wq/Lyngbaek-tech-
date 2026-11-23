@@ -15,7 +15,7 @@
   function L_bounds() { return window.L ? L.latLngBounds([49.8, -10.8], [60.95, 1.9]) : null; }
   var PREC = { exact: 'exact point', street: 'on the street', townland: 'townland, within about 1 km', listed: 'map point given by the listing', postcode: 'postcode centre (within about 100 m)', area: 'postcode area, approximate', town: 'town centre, approximate' };
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
-  var regions = null, regionLayer = null, origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
+  var animal = '', selRing = null, regions = null, regionLayer = null, origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -52,6 +52,7 @@
     if (/^https:\/\/getrawmilk\.com\//.test(s.sourceUrl || '')) links.push('<a href="' + esc(s.sourceUrl) + '" target="_blank" rel="noopener nofollow">Source listing ↗</a>');
     links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + mapsDest(s) + '" target="_blank" rel="noopener">Directions ↗</a>');
     return '<div class="popup"><h4>' + esc(s.name) + '</h4><p>' + esc(KINDS[s.kind].label) + ' · ' + esc(milkOf(s).raw) + '</p><p>' + esc(milkOf(s).note) + '</p>' +
+      (animalsOf(s).length ? '<div class="tags">' + animalsOf(s).map(function (a) { return '<span>' + esc(a) + '</span>'; }).join('') + '</div>' : '') +
       (where ? '<p>' + esc(where) + '</p>' : '') + (s.description && s.sources && s.sources.indexOf('getrawmilk') !== -1 ? '<p>' + esc(s.description) + '</p>' : '') +
       '<p><i>Location: ' + esc(PREC[s.precision || (s.approx ? 'town' : 'exact')] || 'approximate') + '</i></p>' + '<p>' + links.join(' · ') + '</p></div>';
   }
@@ -65,11 +66,28 @@
     }).join('');
   }
 
+  // Animals a listing names (from its species field). Listings without one are hidden while an animal is chosen.
+  var ANIMALS = [['cow', 'Cows'], ['goat', 'Goats'], ['sheep', 'Sheep'], ['buffalo', 'Buffalo']];
+  function animalsOf(s) {
+    if (s._an) return s._an;
+    var t = String(s.species || '').toLowerCase();
+    s._an = ANIMALS.map(function (a) { return a[0]; }).filter(function (a) { return t.indexOf(a) !== -1 || (a === 'cow' && /cattle|jersey|ayrshire|friesian|guernsey/.test(t)); });
+    return s._an;
+  }
+  function renderAnimals() {
+    var el = $('animals'); if (!el) return;
+    var c = {}; all.forEach(function (s) { if (!country || s._c === country) animalsOf(s).forEach(function (a) { c[a] = (c[a] || 0) + 1; }); });
+    el.innerHTML = '<button type="button" data-an="" aria-pressed="' + (!animal) + '">Any</button>' + ANIMALS.filter(function (a) { return c[a[0]]; }).map(function (a) {
+      return '<button type="button" data-an="' + a[0] + '" aria-pressed="' + (animal === a[0]) + '">' + a[1] + '<span class="n">' + c[a[0]] + '</span></button>';
+    }).join('');
+  }
+
   function visible() {
     var tokens = norm(q).split(' ').filter(Boolean), pc = q.replace(/\s+/g, '').toUpperCase();
     return all.filter(function (s) {
       if (on[s.kind] === false) return false;
       if (country && s._c !== country) return false;
+      if (animal && animalsOf(s).indexOf(animal) === -1) return false;
       if (!tokens.length) return true;
       return tokens.every(function (t) { return s._h.indexOf(t) !== -1; }) || (pc.length >= 2 && s._pc.indexOf(pc) === 0);
     });
@@ -100,7 +118,7 @@
     regionLayer = L.geoJSON(regions, {
       pane: 'regions',
       style: function (f) {
-        var t = f._n ? 0.12 + 0.5 * Math.sqrt(f._n / max) : 0;
+        var t = f._n ? 0.1 + 0.38 * Math.sqrt(f._n / max) : 0;
         return { color: '#173c29', weight: 1, opacity: 0.55, fillColor: '#2f6b4a', fillOpacity: t };
       },
       onEachFeature: function (f, l) {
@@ -163,31 +181,41 @@
       soft.push([pt.x - 8, pt.y - 8, 16, 16]); // keep town names off the pins
       shown.push([s, pt]);
     });
-    // Cluster badges are drawn by the cluster layer: read their screen boxes so town names are placed beside them, not under them.
+    // Cluster badges: work out where each one is from the data (the drawn badges may still be animating),
+    // so town names are placed beside them, never under them.
     try {
-      var cr = map.getContainer().getBoundingClientRect();
-      Array.prototype.forEach.call(map.getContainer().querySelectorAll('.fcluster'), function (el) {
-        var r = el.getBoundingClientRect();
-        taken.push([r.left - cr.left - 2, r.top - cr.top - 2, r.width + 4, r.height + 4]);
+      var seenC = {};
+      visible().forEach(function (st) {
+        var m = markerOf[st.id], par = m && cluster.getVisibleParent ? cluster.getVisibleParent(m) : null;
+        if (!par || par === m || seenC[L.stamp(par)]) return;
+        seenC[L.stamp(par)] = 1;
+        var cp = map.latLngToContainerPoint(par.getLatLng()), n = par.getChildCount ? par.getChildCount() : 2, d = (n < 10 ? 28 : n < 100 ? 34 : 42) + 6;
+        taken.push([cp.x - d / 2, cp.y - d / 2, d, d]);
       });
-    } catch (e) { /* no layout available */ }
+    } catch (e) { /* cluster layer not ready */ }
     try {
       var cr2 = map.getContainer().getBoundingClientRect();
-      Array.prototype.forEach.call(map.getContainer().parentNode.querySelectorAll('.tag, .jump, .leaflet-control'), function (el) {
+      Array.prototype.forEach.call(map.getContainer().parentNode.querySelectorAll('.tag, .jump, .rkey, .leaflet-control'), function (el) {
         var r = el.getBoundingClientRect();
         if (r.width) taken.push([r.left - cr2.left - 4, r.top - cr2.top - 4, r.width + 8, r.height + 8]);
       });
     } catch (e) { /* no layout available */ }
     var min = z < 6.5 ? 400000 : z < 7 ? 150000 : z < 7.5 ? 80000 : z < 8 ? 45000 : z < 9 ? 22000 : z < 10 ? 11000 : z < 11 ? 6000 : z < 12 ? 2500 : 0;
-    for (var i = 0; i < places.length && made < 260; i++) {
-      var p = places[i];
-      if (p[3] * (p[4] === 'I' ? 2.5 : 1) < min) continue; // Irish towns are smaller, so they count for more
-      if (!b.contains([p[1], p[2]])) continue;
+    var cand = [];
+    for (var i = 0; i < places.length && cand.length < 400; i++) {
+      var p0 = places[i];
+      if (p0[3] * (p0[4] === 'I' ? 2.5 : 1) < min) continue; // Irish towns are smaller, so they count for more
+      if (b.contains([p0[1], p0[2]])) cand.push(p0);
+    }
+    // Reserve the exact spots of the biggest towns first, so no name is ever drawn over another town's position.
+    cand.slice(0, 80).forEach(function (p0) { var d = map.latLngToContainerPoint([p0[1], p0[2]]); taken.push([d.x - 4, d.y - 4, 8, 8]); });
+    for (var ci = 0; ci < cand.length && made < 260; ci++) {
+      var p = cand[ci];
       var pt2 = map.latLngToContainerPoint([p[1], p[2]]), big = (p[4] === 'E' && p[3] >= 450000) || (p[4] === 'I' && p[3] >= 80000) || (p[4] !== 'E' && p[4] !== 'I' && p[3] >= 150000);
       var w2 = p[0].length * (big ? 12 : 6.8) + 12, h2 = big ? 20 : 16;
-      // try centred, then right, left, above, below the town
+      // right, left, above, below, then the corners
       var spots = [[8, -h2 / 2], [-w2 - 8, -h2 / 2], [-w2 / 2, -h2 - 6], [-w2 / 2, 6],
-        [10, -h2 - 6], [-w2 - 10, -h2 - 6], [10, 6], [-w2 - 10, 6], [24, -h2 / 2], [-w2 - 24, -h2 / 2], [-w2 / 2, -h2 - 26], [-w2 / 2, 26], [-w2 / 2, -h2 / 2]], placed = false; // dot marks the exact spot; centred over it only as a last resort
+        [10, -h2 - 6], [-w2 - 10, -h2 - 6], [10, 6], [-w2 - 10, 6]], placed = false; // always beside the dot that marks the exact spot
       var size = map.getSize();
       for (var k = 0; k < spots.length && !placed; k++) {
         var lx = pt2.x + spots[k][0], ly = pt2.y + spots[k][1];
@@ -300,6 +328,7 @@
   function done() {
     if (--pending > 0) return;
     renderTypes();
+    renderAnimals();
     $('mstatus').textContent = failed.length ? 'Could not load data for: ' + failed.join(', ') + '.' : '';
     render(true);
   }
@@ -344,7 +373,7 @@
     document.querySelector('.jump').addEventListener('click', function (e) {
       var c = e.target.getAttribute && e.target.getAttribute('data-go');
       if (c == null) return;
-      country = c; $('country').value = c; render(false);
+      country = c; $('country').value = c; renderAnimals(); render(false);
       var box = { UK: [[49.85, -8.3], [60.9, 1.85]], Ireland: [[51.35, -10.6], [55.45, -5.95]] }[c];
       if (box) map.fitBounds(box, { animate: false }); else lockView();
     });
@@ -365,7 +394,17 @@
     $('inview').addEventListener('mouseleave', unring);
     var t;
     $('q').addEventListener('input', function (e) { clearTimeout(t); t = setTimeout(function () { q = e.target.value; render(true); }, 200); });
-    $('country').addEventListener('change', function (e) { country = e.target.value; render(true); });
+    $('country').addEventListener('change', function (e) { country = e.target.value; renderAnimals(); render(true); });
+    if ($('animals')) $('animals').addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('button[data-an]'); if (!b) return;
+      animal = b.getAttribute('data-an'); renderAnimals(); render(false);
+    });
+    // Ring the pin whose popup is open, so it stands out among its neighbours.
+    map.on('popupopen', function (e) {
+      if (selRing) map.removeLayer(selRing);
+      selRing = L.circleMarker(e.popup.getLatLng(), { radius: 13, color: '#173c29', weight: 2.5, fillOpacity: 0, interactive: false }).addTo(map);
+    });
+    map.on('popupclose', function () { if (selRing) { map.removeLayer(selRing); selRing = null; } });
     $('types').addEventListener('change', function (e) { var k = e.target.getAttribute('data-kind'); if (k) { on[k] = e.target.checked; render(false); } });
     SOURCES.forEach(function (src) {
       fetchSource(src, 0).then(function (d) { add(d, src.country); }).catch(function () { failed.push(src.country); }).then(done);
