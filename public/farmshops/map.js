@@ -52,9 +52,18 @@
     if (/^https:\/\/getrawmilk\.com\//.test(s.sourceUrl || '')) links.push('<a href="' + esc(s.sourceUrl) + '" target="_blank" rel="noopener nofollow">Source listing ↗</a>');
     links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + mapsDest(s) + '" target="_blank" rel="noopener">Directions ↗</a>');
     links.push('<button type="button" class="share" data-share="' + esc(s.id) + '">Copy link</button>');
+    // Contact details as the listing gives them
+    var contact = [];
+    if (/^\+?[\d\s()-]{7,}$/.test(s.phone || '')) contact.push('<a href="tel:' + esc(String(s.phone).replace(/[^\d+]/g, '')) + '">' + esc(s.phone) + '</a>');
+    if (/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(s.email || '')) contact.push('<a href="mailto:' + esc(s.email) + '">' + esc(s.email) + '</a>');
+    (s.social || []).forEach(function (u) {
+      var m = /^(https:\/\/(?:www\.)?(facebook|instagram|tiktok|youtube|twitter|x|linkedin)\.com\/)/i.exec(u || '');
+      if (m) contact.push('<a href="' + esc(u) + '" target="_blank" rel="noopener nofollow">' + esc(m[2].charAt(0).toUpperCase() + m[2].slice(1).toLowerCase()) + ' ↗</a>');
+    });
     return '<div class="popup"><h4>' + esc(s.name) + '</h4><p>' + esc(KINDS[s.kind].label) + ' · ' + esc(milkOf(s).raw) + '</p><p>' + esc(milkOf(s).note) + '</p>' +
       (animalsOf(s).length || (s.also || []).length ? '<div class="tags">' + animalsOf(s).concat(s.also || []).map(function (a) { return '<span>' + esc(a) + '</span>'; }).join('') + '</div>' : '') +
       (where ? '<p>' + esc(where) + '</p>' : '') + (s.description && s.sources && s.sources.indexOf('getrawmilk') !== -1 ? '<p>' + esc(s.description) + '</p>' : '') +
+      (s.hours ? '<p>Hours: ' + esc(s.hours) + '</p>' : '') + (contact.length ? '<p>' + contact.join(' · ') + '</p>' : '') +
       '<p><i>Location: ' + esc(PREC[s.precision || (s.approx ? 'town' : 'exact')] || 'approximate') + '</i></p>' + '<p>' + links.join(' · ') + '</p></div>';
   }
 
@@ -210,6 +219,7 @@
       });
     } catch (e) { /* no layout available */ }
     var min = z < 6.5 ? 400000 : z < 7 ? 150000 : z < 7.5 ? 80000 : z < 8 ? 45000 : z < 9 ? 22000 : z < 10 ? 11000 : z < 11 ? 6000 : z < 12 ? 2500 : 0;
+    if (z >= 13) min = Infinity; // close up, the basemap's own street and place names take over
     var cand = [];
     for (var i = 0; i < places.length && cand.length < 400; i++) {
       var p0 = places[i];
@@ -390,6 +400,12 @@
     var tOk = 0, tBad = 0; // if the road style cannot be loaded, fall back to the plain one
     tiles.on('tileload', function () { tOk++; });
     tiles.on('tileerror', function () { if (++tBad > 6 && !tOk && tiles.setUrl) { tiles.setUrl(FALLBACK); tBad = -999; } });
+    // Close up, street, road and place names from the basemap appear on top, so a pin can be read against the actual lanes.
+    var STREETS = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png';
+    var sp = map.createPane('streets'); sp.style.zIndex = 390; sp.style.pointerEvents = 'none'; // under the pins, above the shading
+    var streetNames = L.tileLayer(STREETS, { maxZoom: 19, minZoom: 13, subdomains: 'abcd', pane: 'streets' });
+    function streetToggle() { var z = map.getZoom(); if (z >= 13 && !map.hasLayer(streetNames)) streetNames.addTo(map); else if (z < 13 && map.hasLayer(streetNames)) map.removeLayer(streetNames); }
+    map.on('zoomend', streetToggle);
     if (L.control.scale) L.control.scale({ position: 'bottomright', maxWidth: 110, imperial: true, metric: true }).addTo(map);
     cluster = L.markerClusterGroup ? L.markerClusterGroup({
       showCoverageOnHover: false, maxClusterRadius: 40, disableClusteringAtZoom: 14, spiderfyOnMaxZoom: true, chunkedLoading: true,
