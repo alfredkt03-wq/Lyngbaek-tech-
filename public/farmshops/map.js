@@ -15,7 +15,7 @@
   function L_bounds() { return window.L ? L.latLngBounds([49.8, -10.8], [60.95, 1.9]) : null; }
   var PREC = { exact: 'exact point', street: 'on the street', townland: 'townland, within about 1 km', listed: 'map point given by the listing', postcode: 'postcode centre (within about 100 m)', area: 'postcode area, approximate', town: 'town centre, approximate' };
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
-  var extra = '', animal = '', selRing = null, regions = null, regionLayer = null, origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
+  var vectorBase = false, extra = '', animal = '', selRing = null, regions = null, regionLayer = null, origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -219,7 +219,7 @@
       });
     } catch (e) { /* no layout available */ }
     var min = z < 6.5 ? 400000 : z < 7 ? 150000 : z < 7.5 ? 80000 : z < 8 ? 45000 : z < 9 ? 22000 : z < 10 ? 11000 : z < 11 ? 6000 : z < 12 ? 2500 : 0;
-    if (z >= 13) min = Infinity; // close up, the basemap's own street and place names take over
+    if (z >= 13 || vectorBase) min = Infinity; // the basemap's own street and place names take over (vector map: at every zoom)
     var cand = [];
     for (var i = 0; i < places.length && cand.length < 400; i++) {
       var p0 = places[i];
@@ -392,20 +392,31 @@
   function init() {
     if (!window.L) { $('mcount').textContent = 'The map library did not load. Check your connection and reload.'; return; }
     map = L.map('bigmap', { scrollWheelZoom: true, zoomControl: false, zoomSnap: 0.5, zoomDelta: 1, wheelPxPerZoomLevel: 28, wheelDebounceTime: 20, zoomAnimation: true, maxBoundsViscosity: 1 }).setView([53.6, -4.5], 5);
-    var BASE = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', FALLBACK = 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png';
-    var tiles = L.tileLayer(BASE, {
-      maxZoom: 19, subdomains: 'abcd',
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-    }).addTo(map);
-    var tOk = 0, tBad = 0; // if the road style cannot be loaded, fall back to the plain one
-    tiles.on('tileload', function () { tOk++; });
-    tiles.on('tileerror', function () { if (++tBad > 6 && !tOk && tiles.setUrl) { tiles.setUrl(FALLBACK); tBad = -999; } });
-    // Close up, street, road and place names from the basemap appear on top, so a pin can be read against the actual lanes.
-    var STREETS = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png';
-    var sp = map.createPane('streets'); sp.style.zIndex = 390; sp.style.pointerEvents = 'none'; // under the pins, above the shading
-    var streetNames = L.tileLayer(STREETS, { maxZoom: 19, minZoom: 13, subdomains: 'abcd', pane: 'streets' });
-    function streetToggle() { var z = map.getZoom(); if (z >= 13 && !map.hasLayer(streetNames)) streetNames.addTo(map); else if (z < 13 && map.hasLayer(streetNames)) map.removeLayer(streetNames); }
-    map.on('zoomend', streetToggle);
+    // Basemap. First choice: a vector map (OpenFreeMap "Liberty", OpenStreetMap data) with every road and lane, buildings,
+    // road numbers and place and street names at all zooms. If WebGL or the vector map is unavailable, the raster road map is used.
+    var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+    function rasterBase() {
+      var BASE = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', FALLBACK = 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png';
+      var tiles = L.tileLayer(BASE, { maxZoom: 19, subdomains: 'abcd', attribution: OSM_ATTR + ' &copy; <a href="https://carto.com/attributions">CARTO</a>' }).addTo(map);
+      var tOk = 0, tBad = 0; // if the road style cannot be loaded, fall back to the plain one
+      tiles.on('tileload', function () { tOk++; });
+      tiles.on('tileerror', function () { if (++tBad > 6 && !tOk && tiles.setUrl) { tiles.setUrl(FALLBACK); tBad = -999; } });
+      // Close up, street and place names on top, so a pin can be read against the actual lanes.
+      var sp = map.createPane('streets'); sp.style.zIndex = 390; sp.style.pointerEvents = 'none';
+      var streetNames = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png', { maxZoom: 19, minZoom: 13, subdomains: 'abcd', pane: 'streets' });
+      function streetToggle() { var z = map.getZoom(); if (z >= 13 && !map.hasLayer(streetNames)) streetNames.addTo(map); else if (z < 13 && map.hasLayer(streetNames)) map.removeLayer(streetNames); }
+      map.on('zoomend', streetToggle);
+    }
+    var webgl = false;
+    try { var cv = document.createElement('canvas'); webgl = !!(window.WebGLRenderingContext && (cv.getContext('webgl2') || cv.getContext('webgl'))); } catch (e) { /* no WebGL */ }
+    if (L.maplibreGL && window.maplibregl && webgl) {
+      try {
+        var gl = L.maplibreGL({ style: 'https://tiles.openfreemap.org/styles/liberty', attribution: '<a href="https://openfreemap.org">OpenFreeMap</a> &copy; <a href="https://www.openmaptiles.org/">OpenMapTiles</a> ' + OSM_ATTR }).addTo(map);
+        vectorBase = true;
+        var glm = gl.getMaplibreMap && gl.getMaplibreMap();
+        if (glm) glm.on('error', function (ev) { if (vectorBase && !glm.isStyleLoaded()) { map.removeLayer(gl); vectorBase = false; rasterBase(); updateLabels(); } });
+      } catch (e) { vectorBase = false; rasterBase(); }
+    } else rasterBase();
     if (L.control.scale) L.control.scale({ position: 'bottomright', maxWidth: 110, imperial: true, metric: true }).addTo(map);
     cluster = L.markerClusterGroup ? L.markerClusterGroup({
       showCoverageOnHover: false, maxClusterRadius: 40, disableClusteringAtZoom: 14, spiderfyOnMaxZoom: true, chunkedLoading: true,
