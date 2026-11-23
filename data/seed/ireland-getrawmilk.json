@@ -13,9 +13,9 @@
    "fluid": "yes",
    "products": "Goat milk, goat cheese, yoghurt, A2",
    "source": "https://getrawmilk.com/map/orchard-cottage-dairy-farm-cork",
-   "lat": 51.81219,
-   "lon": -8.5286,
-   "precision": "town"
+   "lat": 51.79453,
+   "lon": -8.59275,
+   "precision": "listed"
   },
   {
    "id": "ie-organico-bantry",
@@ -43,9 +43,9 @@
    "fluid": "yes",
    "products": "Raw goat milk, raw A2 milk",
    "source": "https://getrawmilk.com/browse/Ireland/County%20Cork/Carrigskullihy",
-   "lat": 51.73289,
-   "lon": -9.17753,
-   "precision": "town"
+   "lat": 51.73776,
+   "lon": -9.16943,
+   "precision": "listed"
   },
   {
    "id": "ie-moldova-stores-cork-cork",
@@ -73,9 +73,9 @@
    "fluid": "yes",
    "products": "Raw cow milk",
    "source": "https://getrawmilk.com/map/newfoundland-farm-nohoval",
-   "lat": 51.70371,
-   "lon": -8.40341,
-   "precision": "townland"
+   "lat": 51.70897,
+   "lon": -8.40126,
+   "precision": "listed"
   },
   {
    "id": "ie-the-little-farm-fermoy",
@@ -88,9 +88,9 @@
    "fluid": "yes",
    "products": "Raw cow milk, raw A2 milk",
    "source": "https://getrawmilk.com/map/the-little-farm-fermoy",
-   "lat": 52.13817,
-   "lon": -8.27522,
-   "precision": "town"
+   "lat": 52.11895,
+   "lon": -8.35166,
+   "precision": "listed"
   },
   {
    "id": "ie-fermoy-natural-cheese-company-fermoy",
@@ -103,9 +103,9 @@
    "fluid": "likely",
    "products": "Cow milk, cheese, kefir",
    "source": "https://getrawmilk.com/map/fermoy-natural-cheese-company-fermoy",
-   "lat": 52.13817,
-   "lon": -8.27522,
-   "precision": "town"
+   "lat": 52.12787,
+   "lon": -8.26308,
+   "precision": "listed"
   },
   {
    "id": "ie-sheridans-cheesemongers-cork",
@@ -148,9 +148,9 @@
    "fluid": "yes",
    "products": "Cow milk, butter, cream",
    "source": "https://getrawmilk.com/map/ballymaloe-cookery-school-garden-shop-shanagarry-ireland",
-   "lat": 51.85185,
-   "lon": -8.03624,
-   "precision": "town"
+   "lat": 51.85926,
+   "lon": -8.03172,
+   "precision": "listed"
   },
   {
    "id": "ie-hegarty-cheese-whitechurch",
@@ -163,9 +163,9 @@
    "fluid": "no",
    "products": "Raw milk cheese (no fluid milk)",
    "source": "https://getrawmilk.com/map/hegarty-cheese-whitechurch-ireland",
-   "lat": 51.98139,
-   "lon": -8.51389,
-   "precision": "town"
+   "lat": 51.98367,
+   "lon": -8.5065,
+   "precision": "listed"
   },
   {
    "id": "ie-carlow-farmhouse-cheese-fenagh",
@@ -178,9 +178,9 @@
    "fluid": "no",
    "products": "Goat and sheep cheese (no fluid milk)",
    "source": "https://getrawmilk.com/map/carlow-farmhouse-cheese-fenagh-ireland",
-   "lat": 52.72651,
-   "lon": -6.80395,
-   "precision": "town"
+   "lat": 52.74171,
+   "lon": -6.85134,
+   "precision": "listed"
   },
   {
    "id": "ie-corleggy-cheeses-belturbet",
@@ -193,9 +193,9 @@
    "fluid": "no",
    "products": "Cheese (no fluid milk)",
    "source": "https://getrawmilk.com/map/corleggy-cheeses-belturbet-ireland",
-   "lat": 54.10074,
-   "lon": -7.44404,
-   "precision": "town"
+   "lat": 54.12449,
+   "lon": -7.43175,
+   "precision": "listed"
   },
   {
    "id": "ie-fresh-today-virginia",
@@ -253,9 +253,9 @@
    "fluid": "yes",
    "products": "Organic raw milk in refillable bottles, eggs",
    "source": "https://getrawmilk.com/map/unnamed-honesty-box-rossnowlagh-ie",
-   "lat": 54.55435,
-   "lon": -8.20978,
-   "precision": "town"
+   "lat": 54.54699,
+   "lon": -8.21434,
+   "precision": "listed"
   },
   {
    "id": "ie-sheridans-cheesemongers-dublin",
@@ -538,9 +538,9 @@
    "fluid": "yes",
    "products": "Raw milk from the farm shop, butter, cream, cheese",
    "source": "https://getrawmilk.com/map/mad-yolk-farm-craughwell-ie",
-   "lat": 53.22513,
-   "lon": -8.73583,
-   "precision": "town"
+   "lat": 53.2117,
+   "lon": -8.67191,
+   "precision": "listed"
   },
   {
    "id": "ie-killeen-farmhouse-cheese-portumna",
@@ -553,9 +553,9 @@
    "fluid": "no",
    "products": "Raw milk goat cheddar (no fluid milk)",
    "source": "https://getrawmilk.com/map/killeen-farmhouse-cheese-portumna-ireland",
-   "lat": 53.09233,
-   "lon": -8.21929,
-   "precision": "town"
+   "lat": 53.10123,
+   "lon": -8.31574,
+   "precision": "listed"
   },
   {
    "id": "ie-coyne-family-butcher-maynooth",
@@ -613,9 +613,9 @@
    "fluid": "yes",
    "products": "Raw A2 goat milk",
    "source": "https://getrawmilk.com/map/goldsmith-goats-keelbaun",
-   "lat": 53.54168,
-   "lon": -7.74784,
-   "precision": "town"
+   "lat": 53.54528,
+   "lon": -7.75361,
+   "precision": "listed"
   },
   {
    "id": "ie-gleann-bu-farm-aghamore",
@@ -628,9 +628,9 @@
    "fluid": "yes",
    "products": "Organic raw milk, butter, cream, yoghurt, kefir (Bainne Barn)",
    "source": "https://getrawmilk.com/map/gleann-bui-farm-ie",
-   "lat": 53.8278,
-   "lon": -8.82464,
-   "precision": "town"
+   "lat": 53.82776,
+   "lon": -8.84679,
+   "precision": "listed"
   },
   {
    "id": "ie-caf-rua-castlebar",
@@ -748,9 +748,9 @@
    "fluid": "no",
    "products": "Raw milk cheddar (no fluid milk)",
    "source": "https://getrawmilk.com/map/knockanore-farmhouse-cheese-knockanore-ireland",
-   "lat": 52.05188,
-   "lon": -7.89015,
-   "precision": "town"
+   "lat": 52.0686,
+   "lon": -7.90873,
+   "precision": "listed"
   },
   {
    "id": "ie-loughpark-farms-castlepollard",
@@ -763,9 +763,9 @@
    "fluid": "yes",
    "products": "Raw cow milk",
    "source": "https://getrawmilk.com/map/loughpark-farms-castlepollard",
-   "lat": 53.67969,
-   "lon": -7.29819,
-   "precision": "town"
+   "lat": 53.66492,
+   "lon": -7.26132,
+   "precision": "listed"
   },
   {
    "id": "ie-centra-glasson-glasson",
@@ -838,9 +838,9 @@
    "fluid": "yes",
    "products": "Raw milk dispenser at the farm shop, kefir",
    "source": "https://getrawmilk.com/map/tory-hill-house-ie",
-   "lat": 52.51549,
-   "lon": -8.71983,
-   "precision": "town"
+   "lat": 52.53276,
+   "lon": -8.69565,
+   "precision": "listed"
   },
   {
    "id": "ie-dysert-farm-croom",
@@ -913,9 +913,9 @@
    "fluid": "yes",
    "products": "Organic raw milk, cream, butter, kefir",
    "source": "https://getrawmilk.com/map/crawfords-farm-cloughjordan",
-   "lat": 52.93642,
-   "lon": -8.02449,
-   "precision": "town"
+   "lat": 52.94299,
+   "lon": -8.03834,
+   "precision": "listed"
   },
   {
    "id": "ie-centra-cloughjordan-cloughjordan",

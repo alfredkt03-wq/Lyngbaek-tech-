@@ -339,6 +339,37 @@ function isStale(days = 7) {
   return !d || !d.generatedAt || Date.now() - Date.parse(d.generatedAt) > days * 864e5;
 }
 
+// ---------- getrawmilk.com UK listings (seed file, facts only, one source link each) ----------
+// Each listing carries the map point its owner gave, which is usually more precise than a postcode centre.
+const UK_SEED = path.join(__dirname, '..', '..', 'data', 'seed', 'uk-getrawmilk.json');
+const normName = n => String(n || '').toLowerCase().replace(/&/g, 'and').replace(/\b(the|farm|farms|shop|ltd|limited|dairy|raw|milk)\b/g, '').replace(/[^a-z0-9]+/g, '');
+const kmBetween = (a, b, c, d) => { const r = x => x * Math.PI / 180, t = Math.sin(r(c - a) / 2) ** 2 + Math.cos(r(a)) * Math.cos(r(c)) * Math.sin(r(d - b) / 2) ** 2; return 12742 * Math.asin(Math.sqrt(t)); };
+function loadUkSeed() {
+  try {
+    return JSON.parse(fs.readFileSync(UK_SEED, 'utf8')).entries.filter(e => typeof e.lat === 'number' && typeof e.lon === 'number').map(e => ({
+      id: e.id, kind: e.kind || 'raw_milk', name: e.name, address: e.address || '', town: e.town || '', postcode: '',
+      country: e.country, region: '', area: '', lat: e.lat, lon: e.lon, approx: false, precision: 'listed',
+      species: e.species || '', fluid: e.fluid || '', description: e.products || '', sourceUrl: e.source,
+      phone: '', website: '', hours: '', organic: false, sources: ['getrawmilk'],
+    }));
+  } catch (e) { console.warn('[farmshops] UK seed', e.message); return []; }
+}
+// A getrawmilk listing that is the same business as an FSA-registered producer (similar name, within 3 km) is merged into it:
+// the register keeps its entry, and gains the listing's map point, products and source link.
+function mergeSeed(shops, seed) {
+  const out = [];
+  for (const g of seed) {
+    const n = normName(g.name);
+    const twin = n && shops.find(s => s.kind === 'raw_milk' && typeof s.lat === 'number' && kmBetween(s.lat, s.lon, g.lat, g.lon) <= 3 &&
+      (normName(s.name).includes(n) || n.includes(normName(s.name))));
+    if (twin) {
+      Object.assign(twin, { lat: g.lat, lon: g.lon, approx: false, precision: 'listed', fluid: g.fluid || twin.fluid, sourceUrl: g.sourceUrl,
+        description: twin.description || g.description, sources: [...new Set([...twin.sources, 'getrawmilk'])] });
+    } else out.push(g);
+  }
+  return shops.concat(out);
+}
+
 async function build() {
   const warnings = [];
   const prev = load();
@@ -367,7 +398,7 @@ async function build() {
   if (!osm.length && !rdm.length && !farms.length) throw new Error('No data fetched. ' + warnings.join(' | '));
 
   const prevById = new Map((prev ? prev.shops : []).map(s => [s.id, s]));
-  const shops = [...osm, ...rdm, ...farms].map(s => { const p = prevById.get(s.id); return p && p.region && p.country ? { ...s, region: p.region, area: p.area, country: p.country } : s; });
+  const shops = mergeSeed([...osm, ...rdm, ...farms], loadUkSeed()).map(s => { const p = prevById.get(s.id); return p && p.region && p.country ? { ...s, region: p.region, area: p.area, country: p.country } : s; });
   await enrichRegions(shops);
   // Keep only what the region lookup places in the UK (drops bad coordinates, e.g. in the sea or abroad).
   for (let i = shops.length - 1; i >= 0; i--) if (shops[i].kind === 'farm' && !shops[i].region) shops.splice(i, 1);

@@ -15,7 +15,7 @@
     raw_milk: { label: 'Raw milk producer', color: '#b5651d' },
     milk_vending: { label: 'Milk vending machine', color: '#3d5a80' },
     stockist: { label: 'Shop or delivery point', color: '#7a6a3a' },
-    cheese: { label: 'Raw milk cheese producer', color: '#8a6d9b' }
+    cheese: { label: 'Raw milk cheese', color: '#8a6d9b' }
   };
 
   function $(id) { return document.getElementById(id); }
@@ -67,7 +67,7 @@
   // instead, because a coordinate in a townland sends people to an empty field (the pin lands on the area, not the shop).
   function mapsDest(s) {
     var p = s.precision || (s.approx ? 'town' : 'exact');
-    if (p === 'exact' || p === 'postcode') return s.lat + ',' + s.lon;
+    if (p === 'exact' || p === 'postcode' || p === 'listed') return s.lat + ',' + s.lon;
     var region = /^I:/.test(s.id || '') || s._c === 'Ireland' || COUNTRY === 'Ireland' ? 'Ireland' : (s.country || 'United Kingdom');
     return encodeURIComponent([s.name, s.address, s.town || s.area, s.region ? 'County ' + s.region : '', region].filter(Boolean).join(', '));
   }

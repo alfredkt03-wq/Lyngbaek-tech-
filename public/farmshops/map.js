@@ -8,12 +8,12 @@
     raw_milk: { label: 'Raw milk producer', color: '#b5651d' },
     milk_vending: { label: 'Milk vending machine', color: '#3d5a80' },
     stockist: { label: 'Shop or delivery point (raw milk)', color: '#7a6a3a' },
-    cheese: { label: 'Raw milk cheese producer', color: '#8a6d9b' }
+    cheese: { label: 'Raw milk cheese', color: '#8a6d9b' }
   };
   // The UK and Ireland only: the map cannot be zoomed out or panned beyond this box.
   var BOUNDS = L_bounds();
   function L_bounds() { return window.L ? L.latLngBounds([49.8, -10.8], [60.95, 1.9]) : null; }
-  var PREC = { exact: 'exact point', street: 'on the street', townland: 'townland, within about 1 km', postcode: 'postcode centre (within about 100 m)', area: 'postcode area, approximate', town: 'town centre, approximate' };
+  var PREC = { exact: 'exact point', street: 'on the street', townland: 'townland, within about 1 km', listed: 'map point given by the listing', postcode: 'postcode centre (within about 100 m)', area: 'postcode area, approximate', town: 'town centre, approximate' };
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
   var regions = null, regionLayer = null, origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
 
@@ -40,7 +40,7 @@
   // instead, because a coordinate in a townland sends people to an empty field (the pin lands on the area, not the shop).
   function mapsDest(s) {
     var p = s.precision || (s.approx ? 'town' : 'exact');
-    if (p === 'exact' || p === 'postcode') return s.lat + ',' + s.lon;
+    if (p === 'exact' || p === 'postcode' || p === 'listed') return s.lat + ',' + s.lon;
     var region = /^I:/.test(s.id || '') || s._c === 'Ireland' ? 'Ireland' : (s.country || 'United Kingdom');
     return encodeURIComponent([s.name, s.address, s.town || s.area, s.region ? 'County ' + s.region : '', region].filter(Boolean).join(', '));
   }
@@ -150,8 +150,9 @@
       for (var i = 0; i < all.length; i++) { var t = all[i]; if (x < t[0] + t[2] && x + w > t[0] && y < t[1] + t[3] && y + h > t[1]) return false; }
       taken.push([x, y, w, h]); return true;
     }
-    function label(ll, text, cls, dx, dy) {
-      var at = dx == null ? '' : ' style="left:' + Math.round(dx) + 'px;top:' + Math.round(dy) + 'px"';
+    function label(ll, text, cls, dx, dy, rw) {
+      // rw: right-aligned in a box of that width, so a name left of its pin ends right next to it
+      var at = dx == null ? '' : ' style="left:' + Math.round(dx) + 'px;top:' + Math.round(dy) + 'px' + (rw ? ';width:' + Math.round(rw) + 'px;text-align:right' : '') + '"';
       L.marker(ll, { icon: L.divIcon({ className: 'lbl ' + cls, html: '<span' + at + '>' + esc(text) + '</span>', iconSize: [0, 0] }), interactive: false, keyboard: false, pane: 'names' }).addTo(labelLayer);
     }
     var b = map.getBounds().pad(0.1), shown = [];
@@ -167,7 +168,7 @@
       var cr = map.getContainer().getBoundingClientRect();
       Array.prototype.forEach.call(map.getContainer().querySelectorAll('.fcluster'), function (el) {
         var r = el.getBoundingClientRect();
-        soft.push([r.left - cr.left - 2, r.top - cr.top - 2, r.width + 4, r.height + 4]);
+        taken.push([r.left - cr.left - 2, r.top - cr.top - 2, r.width + 4, r.height + 4]);
       });
     } catch (e) { /* no layout available */ }
     try {
@@ -196,8 +197,11 @@
     }
     if (z >= 9) { // farm and shop names, from regional zoom; crowded areas show fewer until you zoom in
       shown.forEach(function (e) {
-        var s = e[0], pt = e[1], w = Math.min(s.name.length, 28) * 7.2 + 14;
-        if (free(pt.x + 9, pt.y - 9, w, 18)) label([s.lat, s.lon], s.name.length > 30 ? s.name.slice(0, 29) + '…' : s.name, 'shl');
+        var s = e[0], pt = e[1], w = Math.min(s.name.length, 28) * 7.2 + 14, sz = map.getSize(), txt = s.name.length > 30 ? s.name.slice(0, 29) + '…' : s.name;
+        // right of the pin if it fits on screen, otherwise left of it; never cut off at the edge
+        if (pt.x < 0 || pt.y < 0 || pt.x > sz.x || pt.y > sz.y) return; // pin is off screen
+        if (pt.x + 9 + w < sz.x - 4 && free(pt.x + 9, pt.y - 9, w, 18)) label([s.lat, s.lon], txt, 'shl');
+        else if (pt.x - 9 - w > 4 && free(pt.x - 9 - w, pt.y - 9, w, 18)) label([s.lat, s.lon], txt, 'shl', -9 - w, -9, w);
       });
     }
   }
