@@ -3,12 +3,12 @@
   'use strict';
   var SOURCES = [{ url: '/api/farmshops', country: 'UK' }, { url: '/api/farmshops-ie', country: 'Ireland' }];
   var KINDS = {
-    farm_shop: { label: 'Farm shop', color: '#3f7a52' },
-    farm: { label: 'Farm (food business register)', color: '#8a8f3a' },
-    raw_milk: { label: 'Raw milk producer', color: '#b5651d' },
-    milk_vending: { label: 'Milk vending machine', color: '#3d5a80' },
-    stockist: { label: 'Shop or delivery point (raw milk)', color: '#7a6a3a' },
-    cheese: { label: 'Raw milk cheese', color: '#8a6d9b' }
+    farm_shop: { label: 'Farm shop', color: '#173c29' },
+    farm: { label: 'Farm (food business register)', color: '#173c29' },
+    raw_milk: { label: 'Raw milk producer', color: '#173c29' },
+    milk_vending: { label: 'Milk vending machine', color: '#173c29' },
+    stockist: { label: 'Shop or delivery point (raw milk)', color: '#173c29' },
+    cheese: { label: 'Raw milk cheese', color: '#173c29' }
   };
   // The UK and Ireland only: the map cannot be zoomed out or panned beyond this box.
   var BOUNDS = L_bounds();
@@ -283,17 +283,59 @@
   function setupFinder() {
     var inp = $('pf'), list = $('pfl'), seq = 0;
     function hide() { list.hidden = true; list.innerHTML = ''; }
+    // One search box for farms and places. Farms are ranked by how well their name matches (whole name, start of name,
+    // start of a word, every word, then near misses such as a typo), then towns and villages.
+    function near1(a, b) { // true when a and b differ by at most one letter (typo, missing or extra letter)
+      if (Math.abs(a.length - b.length) > 1) return false;
+      var i = 0, j = 0, d = 0;
+      while (i < a.length && j < b.length) { if (a[i] === b[j]) { i++; j++; continue; } if (++d > 1) return false; if (a.length > b.length) i++; else if (b.length > a.length) j++; else { i++; j++; } }
+      return d + (a.length - i) + (b.length - j) <= 1;
+    }
+    function farmScore(sx, v, toks) {
+      var n = sx._n || (sx._n = norm(sx.name)), words = sx._w || (sx._w = n.split(' ')), where = sx._t || (sx._t = norm([sx.town, sx.area, sx.postcode, sx.region, sx.address, KINDS[sx.kind].label, sx.description, sx.species, (sx.also || []).join(' ')].join(' ')));
+      if (n === v) return 100;
+      if (n.indexOf(v) === 0) return 90;
+      if (words.some(function (w) { return w.indexOf(v) === 0; })) return 80;
+      var inName = toks.filter(function (t) { return n.indexOf(t) !== -1; }).length;
+      if (inName === toks.length) return 70;
+      var inAll = toks.filter(function (t) { return n.indexOf(t) !== -1 || where.indexOf(t) !== -1; }).length;
+      if (inName && inAll === toks.length) return 60; // name word plus the town, e.g. "home farm elwick"
+      if (inAll === toks.length) return 50; // products and place, e.g. "raw milk preston", "goat cheese kent"
+      // near misses: every word must match the name or place exactly, or the name with one typo
+      var typo = function (t) { return t.length >= 4 && words.some(function (w) { return near1(t, w) || near1(t, w.slice(0, t.length)); }); };
+      var ok = toks.every(function (t) { return n.indexOf(t) !== -1 || where.indexOf(t) !== -1 || typo(t); });
+      var nameHit = toks.some(function (t) { return n.indexOf(t) !== -1 || typo(t); });
+      return ok && nameHit && toks.some(typo) ? 40 : 0;
+    }
     function suggest() {
       var v = norm(inp.value).trim(); if (v.length < 2) return hide();
-      var hit = [], i;
-      for (i = 0; i < places.length && hit.length < 8; i++) if (norm(places[i][0]).indexOf(v) === 0) hit.push(places[i]);
-      for (i = 0; i < places.length && hit.length < 8; i++) if (hit.indexOf(places[i]) < 0 && norm(places[i][0]).indexOf(v) > 0) hit.push(places[i]);
+      var toks = v.split(' ').filter(function (t) { return t.length > 1; }), i;
+      var farms = all.map(function (sx) { return [farmScore(sx, v, toks), sx]; }).filter(function (x) { return x[0] > 0; })
+        .sort(function (a, b) { return b[0] - a[0] || a[1].name.localeCompare(b[1].name, 'en'); }).slice(0, 6).map(function (x) { return x[1]; });
+      if (!farms.length && toks.length > 1) { // nothing matched every word: show the closest names (all words but one)
+        farms = all.map(function (sx) { var n = sx._n || norm(sx.name); return [toks.filter(function (t) { return n.indexOf(t) !== -1; }).length, sx]; })
+          .filter(function (x) { return x[0] >= toks.length - 1; }).sort(function (a, b) { return b[0] - a[0] || a[1].name.localeCompare(b[1].name, 'en'); })
+          .slice(0, 6).map(function (x) { return x[1]; });
+      }
+      var hit = [];
+      for (i = 0; i < places.length && hit.length < 5; i++) if (norm(places[i][0]).indexOf(v) === 0) hit.push(places[i]);
+      for (i = 0; i < places.length && hit.length < 5; i++) if (hit.indexOf(places[i]) < 0 && norm(places[i][0]).indexOf(v) > 0) hit.push(places[i]);
       var rg = { E: 'England', I: 'Ireland', W: 'Wales', S: 'Scotland', N: 'Northern Ireland' };
-      list.innerHTML = hit.map(function (p, k) { return '<li><button type="button" data-k="' + k + '">' + esc(p[0]) + '<small>' + rg[p[4]] + '</small></button></li>'; }).join('');
-      list._hit = hit; list.hidden = !hit.length;
+      list.innerHTML = farms.map(function (sx, k) {
+        return '<li><button type="button" data-f="' + k + '"><span class="sf"></span>' + esc(sx.name) + '<small>' + esc([KINDS[sx.kind].label, sx.town || sx.area].filter(Boolean).join(' · ')) + '</small></button></li>';
+      }).join('') + hit.map(function (p, k) { return '<li><button type="button" data-k="' + k + '">' + esc(p[0]) + '<small>' + rg[p[4]] + '</small></button></li>'; }).join('');
+      list._hit = hit; list._farms = farms; list.hidden = !(hit.length + farms.length);
+    }
+    function openFarm(sx) {
+      hide(); inp.value = sx.name;
+      map.setView([sx.lat, sx.lon], Math.max(map.getZoom(), 14), { animate: false });
+      L.popup({ offset: [0, -6] }).setLatLng([sx.lat, sx.lon]).setContent(popup(sx)).openOn(map);
+      $('pfmsg').textContent = '';
     }
     inp.addEventListener('input', suggest);
     list.addEventListener('click', function (e) {
+      var f = e.target.closest && e.target.closest('button[data-f]');
+      if (f) return openFarm(list._farms[+f.getAttribute('data-f')]);
       var b = e.target.closest && e.target.closest('button[data-k]'); if (!b) return;
       var p = list._hit[+b.getAttribute('data-k')]; inp.value = p[0]; hide(); goTo(p[1], p[2], p[0]);
     });
@@ -308,8 +350,9 @@
           if (my !== seq) return;
           if (d && d.result) { hide(); goTo(d.result.latitude, d.result.longitude, v.toUpperCase()); } else $('pfmsg').textContent = 'No match for that postcode.';
         }).catch(function () { $('pfmsg').textContent = 'Postcode lookup is unavailable. Try a town name.'; });
-      } else if (first) { inp.value = first[0]; hide(); goTo(first[1], first[2], first[0]); }
-      else $('pfmsg').textContent = 'No place by that name. Try a nearby town.';
+      } else if (list._farms && list._farms.length) openFarm(list._farms[0]);
+      else if (first) { inp.value = first[0]; hide(); goTo(first[1], first[2], first[0]); }
+      else $('pfmsg').textContent = 'No farm or place by that name. Try fewer words or a nearby town.';
     });
     document.addEventListener('click', function (e) { if (!e.target.closest || !e.target.closest('.find')) hide(); });
     $('near').addEventListener('click', function () {

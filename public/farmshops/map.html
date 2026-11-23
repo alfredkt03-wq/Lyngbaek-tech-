@@ -52,6 +52,7 @@
 #pfl{position:absolute;z-index:700;left:18px;right:18px;top:76px;margin:0;padding:0;list-style:none;background:var(--bg);border:1px solid var(--ink);max-height:260px;overflow:auto}
 #pfl li button{display:block;width:100%;text-align:left;font:inherit;font-size:14px;padding:9px 10px;background:none;border:0;border-bottom:1px solid var(--soft);color:var(--ink);cursor:pointer}
 #pfl li button:hover,#pfl li button:focus{background:var(--soft)}
+#pfl .sf{display:inline-block;width:9px;height:9px;border-radius:50%;background:#173c29;margin-right:8px;vertical-align:1px}
 #pfl small{color:var(--ink2);margin-left:6px}
 #pfmsg{font-size:13px;color:var(--ink2);margin-top:6px;min-height:0}
 #pfmsg:empty{display:none}
@@ -131,8 +132,8 @@
     </div>
     <aside class="side" aria-label="Places in view">
       <div class="find">
-        <label for="pf">Find farms near</label>
-        <div class="findrow"><input id="pf" type="search" placeholder="Town, village or postcode" autocomplete="off" aria-controls="pfl"><button type="button" id="near">Near me</button></div>
+        <label for="pf">Search farms or places</label>
+        <div class="findrow"><input id="pf" type="search" placeholder="Farm name, town or postcode" autocomplete="off" aria-controls="pfl"><button type="button" id="near">Near me</button></div>
         <ul id="pfl" role="listbox" hidden></ul>
         <p id="pfmsg" role="status"></p>
       </div>

@@ -10,12 +10,12 @@
   var PAGE = 30;
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
   var KINDS = {
-    farm_shop: { label: 'Farm shop', color: '#3f7a52' },
-    farm: { label: 'Farm (food business register)', color: '#8a8f3a' },
-    raw_milk: { label: 'Raw milk producer', color: '#b5651d' },
-    milk_vending: { label: 'Milk vending machine', color: '#3d5a80' },
-    stockist: { label: 'Shop or delivery point', color: '#7a6a3a' },
-    cheese: { label: 'Raw milk cheese', color: '#8a6d9b' }
+    farm_shop: { label: 'Farm shop', color: '#173c29' },
+    farm: { label: 'Farm (food business register)', color: '#173c29' },
+    raw_milk: { label: 'Raw milk producer', color: '#173c29' },
+    milk_vending: { label: 'Milk vending machine', color: '#173c29' },
+    stockist: { label: 'Shop or delivery point', color: '#173c29' },
+    cheese: { label: 'Raw milk cheese', color: '#173c29' }
   };
 
   function $(id) { return document.getElementById(id); }
