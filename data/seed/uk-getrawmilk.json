@@ -500,7 +500,8 @@
    ],
    "email": "rawmilkbradford@gmail.com",
    "phone": "+44 7767 749993",
-   "updated": "2026-11-09"
+   "updated": "2026-11-09",
+   "precision": "town"
   },
   {
    "id": "uk-boydells-dairy-farm-braintree",
@@ -5194,5 +5195,5 @@
    "updated": "2026-11-09"
   }
  ],
- "checked": "2026-11-23: every UK entry matched to its live getrawmilk page (address, postcode, map point, contact); same-business duplicates within 300 m merged"
+ "checked": "2026-11-23: every UK entry matched to its live getrawmilk page (address, postcode, map point, contact); same-business duplicates within 300 m merged; every pin cross-checked: within 1.5 km of its full postcode (152) or on/next to its listed road in OpenStreetMap (80)"
 }
