@@ -15,7 +15,7 @@
   function L_bounds() { return window.L ? L.latLngBounds([49.8, -10.8], [60.95, 1.9]) : null; }
   var PREC = { exact: 'exact point', street: 'on the street', townland: 'townland, within about 1 km', listed: 'map point given by the listing', postcode: 'postcode centre (within about 100 m)', area: 'postcode area, approximate', town: 'town centre, approximate' };
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
-  var animal = '', selRing = null, regions = null, regionLayer = null, origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
+  var extra = '', animal = '', selRing = null, regions = null, regionLayer = null, origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -52,7 +52,7 @@
     if (/^https:\/\/getrawmilk\.com\//.test(s.sourceUrl || '')) links.push('<a href="' + esc(s.sourceUrl) + '" target="_blank" rel="noopener nofollow">Source listing ↗</a>');
     links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + mapsDest(s) + '" target="_blank" rel="noopener">Directions ↗</a>');
     return '<div class="popup"><h4>' + esc(s.name) + '</h4><p>' + esc(KINDS[s.kind].label) + ' · ' + esc(milkOf(s).raw) + '</p><p>' + esc(milkOf(s).note) + '</p>' +
-      (animalsOf(s).length ? '<div class="tags">' + animalsOf(s).map(function (a) { return '<span>' + esc(a) + '</span>'; }).join('') + '</div>' : '') +
+      (animalsOf(s).length || (s.also || []).length ? '<div class="tags">' + animalsOf(s).concat(s.also || []).map(function (a) { return '<span>' + esc(a) + '</span>'; }).join('') + '</div>' : '') +
       (where ? '<p>' + esc(where) + '</p>' : '') + (s.description && s.sources && s.sources.indexOf('getrawmilk') !== -1 ? '<p>' + esc(s.description) + '</p>' : '') +
       '<p><i>Location: ' + esc(PREC[s.precision || (s.approx ? 'town' : 'exact')] || 'approximate') + '</i></p>' + '<p>' + links.join(' · ') + '</p></div>';
   }
@@ -77,6 +77,12 @@
   function renderAnimals() {
     var el = $('animals'); if (!el) return;
     var c = {}; all.forEach(function (s) { if (!country || s._c === country) animalsOf(s).forEach(function (a) { c[a] = (c[a] || 0) + 1; }); });
+    var x = {}; all.forEach(function (s) { if (!country || s._c === country) (s.also || []).forEach(function (a) { x[a] = (x[a] || 0) + 1; }); });
+    var ex = $('extras');
+    if (ex) ex.innerHTML = ['eggs', 'beef', 'pork', 'chicken'].filter(function (a) { return x[a]; }).map(function (a) {
+      return '<button type="button" data-ex="' + a + '" aria-pressed="' + (extra === a) + '">' + a.charAt(0).toUpperCase() + a.slice(1) + '<span class="n">' + x[a] + '</span></button>';
+    }).join('');
+    if (ex) ex.parentNode.hidden = !ex.innerHTML;
     el.innerHTML = '<button type="button" data-an="" aria-pressed="' + (!animal) + '">Any</button>' + ANIMALS.filter(function (a) { return c[a[0]]; }).map(function (a) {
       return '<button type="button" data-an="' + a[0] + '" aria-pressed="' + (animal === a[0]) + '">' + a[1] + '<span class="n">' + c[a[0]] + '</span></button>';
     }).join('');
@@ -88,6 +94,7 @@
       if (on[s.kind] === false) return false;
       if (country && s._c !== country) return false;
       if (animal && animalsOf(s).indexOf(animal) === -1) return false;
+      if (extra && (s.also || []).indexOf(extra) === -1) return false;
       if (!tokens.length) return true;
       return tokens.every(function (t) { return s._h.indexOf(t) !== -1; }) || (pc.length >= 2 && s._pc.indexOf(pc) === 0);
     });
@@ -398,6 +405,10 @@
     if ($('animals')) $('animals').addEventListener('click', function (e) {
       var b = e.target.closest && e.target.closest('button[data-an]'); if (!b) return;
       animal = b.getAttribute('data-an'); renderAnimals(); render(false);
+    });
+    if ($('extras')) $('extras').addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('button[data-ex]'); if (!b) return;
+      var v = b.getAttribute('data-ex'); extra = extra === v ? '' : v; renderAnimals(); render(false);
     });
     // Ring the pin whose popup is open, so it stands out among its neighbours.
     map.on('popupopen', function (e) {

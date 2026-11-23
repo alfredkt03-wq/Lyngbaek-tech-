@@ -13,8 +13,11 @@
    "lon": -2.62069,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow cheese, cow kefir (A2)",
-   "source": "https://getrawmilk.com/map/hill-farm-alpraham"
+   "products": "Cow raw milk, cow cheese, cow kefir, eggs (A2 milk)",
+   "source": "https://getrawmilk.com/map/hill-farm-alpraham",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-glasshouse-college-vale-head-farm-amblecote",
@@ -28,7 +31,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/glasshouse-college-vale-head-farm-amblecote"
+   "source": "https://getrawmilk.com/map/glasshouse-college-vale-head-farm-amblecote",
+   "also": []
   },
   {
    "id": "uk-splash-farm-uk",
@@ -42,7 +46,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/splash-farm-uk"
+   "source": "https://getrawmilk.com/map/splash-farm-uk",
+   "also": []
   },
   {
    "id": "uk-dumelows-dairy-ashby-de-la-zouch",
@@ -56,7 +61,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/dumelows-dairy-ashby-de-la-zouch"
+   "source": "https://getrawmilk.com/map/dumelows-dairy-ashby-de-la-zouch",
+   "also": []
   },
   {
    "id": "uk-perry-court-farm-shop-ashford-uk",
@@ -70,7 +76,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/perry-court-farm-shop-ashford-uk"
+   "source": "https://getrawmilk.com/map/perry-court-farm-shop-ashford-uk",
+   "also": []
   },
   {
    "id": "uk-daisys-milk-shed-uk",
@@ -84,7 +91,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow butter",
-   "source": "https://getrawmilk.com/map/daisys-milk-shed-uk"
+   "source": "https://getrawmilk.com/map/daisys-milk-shed-uk",
+   "also": []
   },
   {
    "id": "uk-babbinswood-farm-babbinswood",
@@ -98,7 +106,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/babbinswood-farm-babbinswood"
+   "source": "https://getrawmilk.com/map/babbinswood-farm-babbinswood",
+   "also": []
   },
   {
    "id": "uk-simply-milk-home-farm-bakewell",
@@ -112,7 +121,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/simply-milk-home-farm-bakewell"
+   "source": "https://getrawmilk.com/map/simply-milk-home-farm-bakewell",
+   "also": []
   },
   {
    "id": "uk-tagg-lane-grange-bakewell",
@@ -126,7 +136,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/tagg-lane-grange-bakewell"
+   "source": "https://getrawmilk.com/map/tagg-lane-grange-bakewell",
+   "also": []
   },
   {
    "id": "uk-upper-bottomley-farm-barkisland-uk",
@@ -140,7 +151,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/upper-bottomley-farm-barkisland-uk"
+   "source": "https://getrawmilk.com/map/upper-bottomley-farm-barkisland-uk",
+   "also": []
   },
   {
    "id": "uk-stichelton-dairy-bassetlaw",
@@ -154,7 +166,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/stichelton-dairy-bassetlaw"
+   "source": "https://getrawmilk.com/map/stichelton-dairy-bassetlaw",
+   "also": []
   },
   {
    "id": "uk-biddenden-vineyards-uk",
@@ -168,7 +181,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/biddenden-vineyards-uk"
+   "source": "https://getrawmilk.com/map/biddenden-vineyards-uk",
+   "also": []
   },
   {
    "id": "uk-mels-dairy-biddulph-moor-uk",
@@ -182,7 +196,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/mels-dairy-biddulph-moor-uk"
+   "source": "https://getrawmilk.com/map/mels-dairy-biddulph-moor-uk",
+   "also": []
   },
   {
    "id": "uk-woodberry-farm-billericay-uk",
@@ -196,7 +211,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/woodberry-farm-billericay-uk"
+   "source": "https://getrawmilk.com/map/woodberry-farm-billericay-uk",
+   "also": []
   },
   {
    "id": "uk-quex-barn-farm-shop-birchington-on-sea-uk",
@@ -210,7 +226,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/quex-barn-farm-shop-birchington-on-sea-uk"
+   "source": "https://getrawmilk.com/map/quex-barn-farm-shop-birchington-on-sea-uk",
+   "also": []
   },
   {
    "id": "uk-milk-maids-farm-shop-bolton",
@@ -223,8 +240,11 @@
    "lon": -2.47448,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow ice cream",
-   "source": "https://getrawmilk.com/map/milk-maids-farm-shop-bolton"
+   "products": "Cow raw milk, cow ice cream, eggs",
+   "source": "https://getrawmilk.com/map/milk-maids-farm-shop-bolton",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-plane-trees-farm-bolton-uk",
@@ -238,7 +258,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/plane-trees-farm-bolton-uk"
+   "source": "https://getrawmilk.com/map/plane-trees-farm-bolton-uk",
+   "also": []
   },
   {
    "id": "uk-moss-hall-farm-bolton-uk",
@@ -252,7 +273,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/moss-hall-farm-bolton-uk"
+   "source": "https://getrawmilk.com/map/moss-hall-farm-bolton-uk",
+   "also": []
   },
   {
    "id": "uk-blackburne-and-haynes-bordon-uk",
@@ -266,7 +288,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/blackburne-and-haynes-bordon-uk"
+   "source": "https://getrawmilk.com/map/blackburne-and-haynes-bordon-uk",
+   "also": []
   },
   {
    "id": "uk-loddington-farm-shop-uk",
@@ -280,7 +303,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/loddington-farm-shop-uk"
+   "source": "https://getrawmilk.com/map/loddington-farm-shop-uk",
+   "also": []
   },
   {
    "id": "uk-barnowl-farm-shop-south-northamptonshire",
@@ -293,8 +317,9 @@
    "lon": -1.14291,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow cream, cow ice cream (A2)",
-   "source": "https://getrawmilk.com/map/barnowl-farm-shop-south-northamptonshire"
+   "products": "Cow raw milk, cow cream, cow ice cream (A2 milk)",
+   "source": "https://getrawmilk.com/map/barnowl-farm-shop-south-northamptonshire",
+   "also": []
   },
   {
    "id": "uk-farm-fresh-raw-milk-distribution-ltd-bradford-uk",
@@ -308,7 +333,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/farm-fresh-raw-milk-distribution-ltd-bradford-uk"
+   "source": "https://getrawmilk.com/map/farm-fresh-raw-milk-distribution-ltd-bradford-uk",
+   "also": []
   },
   {
    "id": "uk-boydells-dairy-farm-braintree",
@@ -322,7 +348,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/boydells-dairy-farm-braintree"
+   "source": "https://getrawmilk.com/map/boydells-dairy-farm-braintree",
+   "also": []
   },
   {
    "id": "uk-slack-house-organic-farm-brampton",
@@ -335,8 +362,11 @@
    "lon": -2.60613,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow cheese",
-   "source": "https://getrawmilk.com/map/slack-house-organic-farm-brampton"
+   "products": "Cow raw milk, cow cheese, eggs",
+   "source": "https://getrawmilk.com/map/slack-house-organic-farm-brampton",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-the-cheese-hut-brighton-and-hove-uk",
@@ -350,7 +380,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/the-cheese-hut-brighton-and-hove-uk"
+   "source": "https://getrawmilk.com/map/the-cheese-hut-brighton-and-hove-uk",
+   "also": []
   },
   {
    "id": "uk-milky-business-plainspot-farm-brinsley",
@@ -364,7 +395,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/milky-business-plainspot-farm-brinsley"
+   "source": "https://getrawmilk.com/map/milky-business-plainspot-farm-brinsley",
+   "also": []
   },
   {
    "id": "uk-chef-and-butcher-broadstairs-uk",
@@ -378,7 +410,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/chef-and-butcher-broadstairs-uk"
+   "source": "https://getrawmilk.com/map/chef-and-butcher-broadstairs-uk",
+   "also": []
   },
   {
    "id": "uk-hunnington-ayrshires-bromsgrove",
@@ -392,7 +425,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hunnington-ayrshires-bromsgrove"
+   "source": "https://getrawmilk.com/map/hunnington-ayrshires-bromsgrove",
+   "also": []
   },
   {
    "id": "uk-carpenters-hill-dairy-bromsgrove",
@@ -406,7 +440,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/carpenters-hill-dairy-bromsgrove"
+   "source": "https://getrawmilk.com/map/carpenters-hill-dairy-bromsgrove",
+   "also": []
   },
   {
    "id": "uk-wild-cow-dairy-uk",
@@ -420,7 +455,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/wild-cow-dairy-uk"
+   "source": "https://getrawmilk.com/map/wild-cow-dairy-uk",
+   "also": []
   },
   {
    "id": "uk-manor-farm-broughton-in-furness",
@@ -434,7 +470,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/manor-farm-broughton-in-furness"
+   "source": "https://getrawmilk.com/map/manor-farm-broughton-in-furness",
+   "also": []
   },
   {
    "id": "uk-mulberry-marsh-brunstead-uk",
@@ -447,8 +484,11 @@
    "lon": 1.50323,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/mulberry-marsh-brunstead-uk"
+   "products": "Cow raw milk, beef",
+   "source": "https://getrawmilk.com/map/mulberry-marsh-brunstead-uk",
+   "also": [
+    "beef"
+   ]
   },
   {
    "id": "uk-fulibroch-dairy-babergh",
@@ -462,7 +502,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/fulibroch-dairy-babergh"
+   "source": "https://getrawmilk.com/map/fulibroch-dairy-babergh",
+   "also": []
   },
   {
    "id": "uk-berryfields-dairy-goats-burleydam-uk",
@@ -476,7 +517,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/berryfields-dairy-goats-burleydam-uk"
+   "source": "https://getrawmilk.com/map/berryfields-dairy-goats-burleydam-uk",
+   "also": []
   },
   {
    "id": "uk-wood-road-dairy-farms-bury",
@@ -490,7 +532,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/wood-road-dairy-farms-bury"
+   "source": "https://getrawmilk.com/map/wood-road-dairy-farms-bury",
+   "also": []
   },
   {
    "id": "uk-lilys-farm-camelford-uk",
@@ -504,7 +547,8 @@
    "species": "cow, goat",
    "fluid": "yes",
    "products": "Cow raw milk, goat raw milk",
-   "source": "https://getrawmilk.com/map/lilys-farm-camelford-uk"
+   "source": "https://getrawmilk.com/map/lilys-farm-camelford-uk",
+   "also": []
   },
   {
    "id": "uk-the-goods-shed-canterbury-uk",
@@ -518,7 +562,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/the-goods-shed-canterbury-uk"
+   "source": "https://getrawmilk.com/map/the-goods-shed-canterbury-uk",
+   "also": []
   },
   {
    "id": "uk-paxton-and-whitfield-canterbury-uk",
@@ -532,7 +577,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/paxton-and-whitfield-canterbury-uk"
+   "source": "https://getrawmilk.com/map/paxton-and-whitfield-canterbury-uk",
+   "also": []
   },
   {
    "id": "uk-lowfields-farm-carnforth",
@@ -546,7 +592,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/lowfields-farm-carnforth"
+   "source": "https://getrawmilk.com/map/lowfields-farm-carnforth",
+   "also": []
   },
   {
    "id": "uk-kimbers-farm-shop-charlton-musgrove-uk",
@@ -560,7 +607,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/kimbers-farm-shop-charlton-musgrove-uk"
+   "source": "https://getrawmilk.com/map/kimbers-farm-shop-charlton-musgrove-uk",
+   "also": []
   },
   {
    "id": "uk-manor-farm-chesterfield",
@@ -574,7 +622,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/manor-farm-chesterfield"
+   "source": "https://getrawmilk.com/map/manor-farm-chesterfield",
+   "also": []
   },
   {
    "id": "uk-goodwood-farm-shop-home-farm-chichester",
@@ -588,7 +637,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/goodwood-farm-shop-home-farm-chichester"
+   "source": "https://getrawmilk.com/map/goodwood-farm-shop-home-farm-chichester",
+   "also": []
   },
   {
    "id": "uk-charlies-farm-shop-southview-farm-chichester",
@@ -602,7 +652,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/charlies-farm-shop-southview-farm-chichester"
+   "source": "https://getrawmilk.com/map/charlies-farm-shop-southview-farm-chichester",
+   "also": []
   },
   {
    "id": "uk-hoolgrave-manor-farm-church-minshull",
@@ -616,7 +667,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hoolgrave-manor-farm-church-minshull"
+   "source": "https://getrawmilk.com/map/hoolgrave-manor-farm-church-minshull",
+   "also": []
   },
   {
    "id": "uk-clifftonville-farmers-market-uk",
@@ -630,7 +682,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/clifftonville-farmers-market-uk"
+   "source": "https://getrawmilk.com/map/clifftonville-farmers-market-uk",
+   "also": []
   },
   {
    "id": "uk-monarch-farms-colchester",
@@ -644,7 +697,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/monarch-farms-colchester"
+   "source": "https://getrawmilk.com/map/monarch-farms-colchester",
+   "also": []
   },
   {
    "id": "uk-tim-sophies-farm-colchester-uk",
@@ -658,7 +712,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow butter, cow cream",
-   "source": "https://getrawmilk.com/map/tim-sophies-farm-colchester-uk"
+   "source": "https://getrawmilk.com/map/tim-sophies-farm-colchester-uk",
+   "also": []
   },
   {
    "id": "uk-cothelstone-micro-dairy-cothelstone-uk",
@@ -672,7 +727,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/cothelstone-micro-dairy-cothelstone-uk"
+   "source": "https://getrawmilk.com/map/cothelstone-micro-dairy-cothelstone-uk",
+   "also": []
   },
   {
    "id": "uk-hartley-farm-shop-uk",
@@ -686,7 +742,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/hartley-farm-shop-uk"
+   "source": "https://getrawmilk.com/map/hartley-farm-shop-uk",
+   "also": []
   },
   {
    "id": "uk-gazegill-organics-england-uk",
@@ -699,8 +756,9 @@
    "lon": -2.27395,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow cheese (A2)",
-   "source": "https://getrawmilk.com/map/gazegill-organics-england-uk"
+   "products": "Cow raw milk, cow cheese (A2 milk)",
+   "source": "https://getrawmilk.com/map/gazegill-organics-england-uk",
+   "also": []
   },
   {
    "id": "uk-stone-farm-crowborough-uk",
@@ -714,7 +772,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/stone-farm-crowborough-uk"
+   "source": "https://getrawmilk.com/map/stone-farm-crowborough-uk",
+   "also": []
   },
   {
    "id": "uk-e-s-raw-milk-collection-croydon-uk",
@@ -727,8 +786,9 @@
    "lon": -0.09569,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk (A2)",
-   "source": "https://getrawmilk.com/map/e-s-raw-milk-collection-croydon-uk"
+   "products": "Cow raw milk (A2 milk)",
+   "source": "https://getrawmilk.com/map/e-s-raw-milk-collection-croydon-uk",
+   "also": []
   },
   {
    "id": "uk-wayside-farm-dacorum",
@@ -742,7 +802,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/wayside-farm-dacorum"
+   "source": "https://getrawmilk.com/map/wayside-farm-dacorum",
+   "also": []
   },
   {
    "id": "uk-the-cheese-makers-of-canterbury-dargate-uk",
@@ -756,7 +817,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/the-cheese-makers-of-canterbury-dargate-uk"
+   "source": "https://getrawmilk.com/map/the-cheese-makers-of-canterbury-dargate-uk",
+   "also": []
   },
   {
    "id": "uk-coastal-goats-dawlish-england",
@@ -770,7 +832,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/coastal-goats-dawlish-england"
+   "source": "https://getrawmilk.com/map/coastal-goats-dawlish-england",
+   "also": []
   },
   {
    "id": "uk-algar-lodge-farm-shop-and-cafe-uk",
@@ -784,7 +847,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/algar-lodge-farm-shop-and-cafe-uk"
+   "source": "https://getrawmilk.com/map/algar-lodge-farm-shop-and-cafe-uk",
+   "also": []
   },
   {
    "id": "uk-brooke-farming-company-ltd-doncaster",
@@ -798,7 +862,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/brooke-farming-company-ltd-doncaster"
+   "source": "https://getrawmilk.com/map/brooke-farming-company-ltd-doncaster",
+   "also": []
   },
   {
    "id": "uk-t-e-ritchie-sons-doncaster-england",
@@ -811,8 +876,11 @@
    "lon": -1.13067,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/t-e-ritchie-sons-doncaster-england"
+   "products": "Cow raw milk, eggs",
+   "source": "https://getrawmilk.com/map/t-e-ritchie-sons-doncaster-england",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-newgate-farm-dronfield-uk",
@@ -826,7 +894,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/newgate-farm-dronfield-uk"
+   "source": "https://getrawmilk.com/map/newgate-farm-dronfield-uk",
+   "also": []
   },
   {
    "id": "uk-janvil-dairy-goats-moonstones-farm-east-devon",
@@ -840,7 +909,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/janvil-dairy-goats-moonstones-farm-east-devon"
+   "source": "https://getrawmilk.com/map/janvil-dairy-goats-moonstones-farm-east-devon",
+   "also": []
   },
   {
    "id": "uk-plaw-hatch-farm-east-grinstead",
@@ -854,7 +924,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/plaw-hatch-farm-east-grinstead"
+   "source": "https://getrawmilk.com/map/plaw-hatch-farm-east-grinstead",
+   "also": []
   },
   {
    "id": "uk-salts-farm-shop-east-guldeford-uk",
@@ -868,7 +939,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/salts-farm-shop-east-guldeford-uk"
+   "source": "https://getrawmilk.com/map/salts-farm-shop-east-guldeford-uk",
+   "also": []
   },
   {
    "id": "uk-dawlicious-ice-cream-east-hertfordshire",
@@ -881,8 +953,11 @@
    "lon": -0.04185,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/dawlicious-ice-cream-east-hertfordshire"
+   "products": "Cow raw milk, eggs",
+   "source": "https://getrawmilk.com/map/dawlicious-ice-cream-east-hertfordshire",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-lincolnshire-poacher-cheese-ulceby",
@@ -896,7 +971,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/lincolnshire-poacher-cheese-ulceby"
+   "source": "https://getrawmilk.com/map/lincolnshire-poacher-cheese-ulceby",
+   "also": []
   },
   {
    "id": "uk-bunkers-hill-dairy-eden",
@@ -910,7 +986,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/bunkers-hill-dairy-eden"
+   "source": "https://getrawmilk.com/map/bunkers-hill-dairy-eden",
+   "also": []
   },
   {
    "id": "uk-horseshoe-green-farm-edenbridge-uk",
@@ -924,7 +1001,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/horseshoe-green-farm-edenbridge-uk"
+   "source": "https://getrawmilk.com/map/horseshoe-green-farm-edenbridge-uk",
+   "also": []
   },
   {
    "id": "uk-home-farm-raw-milk-vending-machine-elwick",
@@ -938,7 +1016,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/home-farm-raw-milk-vending-machine-elwick"
+   "source": "https://getrawmilk.com/map/home-farm-raw-milk-vending-machine-elwick",
+   "also": []
   },
   {
    "id": "uk-abbey-farm-dairy-fakenham-england",
@@ -952,7 +1031,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/abbey-farm-dairy-fakenham-england"
+   "source": "https://getrawmilk.com/map/abbey-farm-dairy-fakenham-england",
+   "also": []
   },
   {
    "id": "uk-macknade-food-hall-uk",
@@ -966,7 +1046,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/macknade-food-hall-uk"
+   "source": "https://getrawmilk.com/map/macknade-food-hall-uk",
+   "also": []
   },
   {
    "id": "uk-county-fayre-uk",
@@ -980,7 +1061,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/county-fayre-uk"
+   "source": "https://getrawmilk.com/map/county-fayre-uk",
+   "also": []
   },
   {
    "id": "uk-d-price-butchers-fordingbridge-england",
@@ -994,7 +1076,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/d-price-butchers-fordingbridge-england"
+   "source": "https://getrawmilk.com/map/d-price-butchers-fordingbridge-england",
+   "also": []
   },
   {
    "id": "uk-chase-milk-chase-farm-forest-of-dean",
@@ -1008,7 +1091,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/chase-milk-chase-farm-forest-of-dean"
+   "source": "https://getrawmilk.com/map/chase-milk-chase-farm-forest-of-dean",
+   "also": []
   },
   {
    "id": "uk-naked-milk-gracemire-farm-fylde",
@@ -1021,8 +1105,11 @@
    "lon": -2.81636,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/naked-milk-gracemire-farm-fylde"
+   "products": "Cow raw milk, eggs",
+   "source": "https://getrawmilk.com/map/naked-milk-gracemire-farm-fylde",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-old-green-farm-dairy-gaunt's-earthcott",
@@ -1036,7 +1123,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/old-green-farm-dairy-gaunt's-earthcott"
+   "source": "https://getrawmilk.com/map/old-green-farm-dairy-gaunt's-earthcott",
+   "also": []
   },
   {
    "id": "uk-lower-ladysden-farm-shop-uk",
@@ -1050,7 +1138,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/lower-ladysden-farm-shop-uk"
+   "source": "https://getrawmilk.com/map/lower-ladysden-farm-shop-uk",
+   "also": []
   },
   {
    "id": "uk-taywell-farm-shop-goudhurst-uk",
@@ -1064,7 +1153,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/taywell-farm-shop-goudhurst-uk"
+   "source": "https://getrawmilk.com/map/taywell-farm-shop-goudhurst-uk",
+   "also": []
   },
   {
    "id": "uk-upper-wood-farm-shop-great-yarmouth",
@@ -1078,7 +1168,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/upper-wood-farm-shop-great-yarmouth"
+   "source": "https://getrawmilk.com/map/upper-wood-farm-shop-great-yarmouth",
+   "also": []
   },
   {
    "id": "uk-crimbledale-raw-milk-grewelthorpe-uk",
@@ -1092,7 +1183,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/crimbledale-raw-milk-grewelthorpe-uk"
+   "source": "https://getrawmilk.com/map/crimbledale-raw-milk-grewelthorpe-uk",
+   "also": []
   },
   {
    "id": "uk-wildcroft-dairy-guildford",
@@ -1106,7 +1198,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk, goat cheese, goat kefir",
-   "source": "https://getrawmilk.com/map/wildcroft-dairy-guildford"
+   "source": "https://getrawmilk.com/map/wildcroft-dairy-guildford",
+   "also": []
   },
   {
    "id": "uk-haywards-farmshop-hadlow-uk",
@@ -1120,7 +1213,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/haywards-farmshop-hadlow-uk"
+   "source": "https://getrawmilk.com/map/haywards-farmshop-hadlow-uk",
+   "also": []
   },
   {
    "id": "uk-pickerings-dairy-farm-hadlow-uk",
@@ -1134,7 +1228,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/pickerings-dairy-farm-hadlow-uk"
+   "source": "https://getrawmilk.com/map/pickerings-dairy-farm-hadlow-uk",
+   "also": []
   },
   {
    "id": "uk-marshcroft-goat-dairy-hailsham-uk",
@@ -1148,7 +1243,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/marshcroft-goat-dairy-hailsham-uk"
+   "source": "https://getrawmilk.com/map/marshcroft-goat-dairy-hailsham-uk",
+   "also": []
   },
   {
    "id": "uk-horsepool-farm-shop-halesowen-england",
@@ -1161,8 +1257,11 @@
    "lon": -2.05386,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow butter, cow cream, cow cheese, cow ice cream",
-   "source": "https://getrawmilk.com/map/horsepool-farm-shop-halesowen-england"
+   "products": "Cow raw milk, cow butter, cow cream, cow cheese, cow ice cream, eggs",
+   "source": "https://getrawmilk.com/map/horsepool-farm-shop-halesowen-england",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-hill-top-farm-harrogate",
@@ -1176,7 +1275,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hill-top-farm-harrogate"
+   "source": "https://getrawmilk.com/map/hill-top-farm-harrogate",
+   "also": []
   },
   {
    "id": "uk-park-farm-butchers-hawkhurst-uk",
@@ -1190,7 +1290,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/park-farm-butchers-hawkhurst-uk"
+   "source": "https://getrawmilk.com/map/park-farm-butchers-hawkhurst-uk",
+   "also": []
   },
   {
    "id": "uk-northney-farm-hayling-island-uk",
@@ -1204,7 +1305,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/northney-farm-hayling-island-uk"
+   "source": "https://getrawmilk.com/map/northney-farm-hayling-island-uk",
+   "also": []
   },
   {
    "id": "uk-bays-leap-dairy-farm-uk",
@@ -1217,8 +1319,9 @@
    "lon": -1.79265,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow butter (A2)",
-   "source": "https://getrawmilk.com/map/bays-leap-dairy-farm-uk"
+   "products": "Cow raw milk, cow butter (A2 milk)",
+   "source": "https://getrawmilk.com/map/bays-leap-dairy-farm-uk",
+   "also": []
   },
   {
    "id": "uk-boscadjack-dairy-goats-helston-uk",
@@ -1232,7 +1335,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/boscadjack-dairy-goats-helston-uk"
+   "source": "https://getrawmilk.com/map/boscadjack-dairy-goats-helston-uk",
+   "also": []
   },
   {
    "id": "uk-dawlicious-milk-hertford",
@@ -1245,8 +1349,11 @@
    "lon": -0.04079,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow ice cream",
-   "source": "https://getrawmilk.com/map/dawlicious-milk-hertford"
+   "products": "Cow raw milk, cow ice cream, eggs",
+   "source": "https://getrawmilk.com/map/dawlicious-milk-hertford",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-hexham-farmers-market-uk",
@@ -1260,7 +1367,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow cheese",
-   "source": "https://getrawmilk.com/map/hexham-farmers-market-uk"
+   "source": "https://getrawmilk.com/map/hexham-farmers-market-uk",
+   "also": []
   },
   {
    "id": "uk-sparkenhoe-farm-hinckley-and-bosworth",
@@ -1274,7 +1382,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/sparkenhoe-farm-hinckley-and-bosworth"
+   "source": "https://getrawmilk.com/map/sparkenhoe-farm-hinckley-and-bosworth",
+   "also": []
   },
   {
    "id": "uk-pulford-farm-dairies-hyndburn",
@@ -1288,7 +1397,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/pulford-farm-dairies-hyndburn"
+   "source": "https://getrawmilk.com/map/pulford-farm-dairies-hyndburn",
+   "also": []
   },
   {
    "id": "uk-benchwood-farm-icklesham-uk",
@@ -1302,7 +1412,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/benchwood-farm-icklesham-uk"
+   "source": "https://getrawmilk.com/map/benchwood-farm-icklesham-uk",
+   "also": []
   },
   {
    "id": "uk-hall-farm-dartmoor-uk",
@@ -1315,8 +1426,11 @@
    "lon": -3.92913,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hall-farm-dartmoor-uk"
+   "products": "Cow raw milk, beef",
+   "source": "https://getrawmilk.com/map/hall-farm-dartmoor-uk",
+   "also": [
+    "beef"
+   ]
   },
   {
    "id": "uk-higher-naylor-hill-farm-keighley",
@@ -1330,7 +1444,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/higher-naylor-hill-farm-keighley"
+   "source": "https://getrawmilk.com/map/higher-naylor-hill-farm-keighley",
+   "also": []
   },
   {
    "id": "uk-rock-end-farm-dairy-knypersley-uk",
@@ -1343,8 +1458,11 @@
    "lon": -2.1543,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow cheese",
-   "source": "https://getrawmilk.com/map/rock-end-farm-dairy-knypersley-uk"
+   "products": "Cow raw milk, cow cheese, eggs",
+   "source": "https://getrawmilk.com/map/rock-end-farm-dairy-knypersley-uk",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-holwood-farm-shop-leaves-green-uk",
@@ -1358,7 +1476,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/holwood-farm-shop-leaves-green-uk"
+   "source": "https://getrawmilk.com/map/holwood-farm-shop-leaves-green-uk",
+   "also": []
   },
   {
    "id": "uk-walton-lodge-farm-leicester-england",
@@ -1371,8 +1490,9 @@
    "lon": -1.23721,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk (A2)",
-   "source": "https://getrawmilk.com/map/walton-lodge-farm-leicester-england"
+   "products": "Cow raw milk (A2 milk)",
+   "source": "https://getrawmilk.com/map/walton-lodge-farm-leicester-england",
+   "also": []
   },
   {
    "id": "uk-tollgate-farm-leicestershire",
@@ -1386,7 +1506,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/tollgate-farm-leicestershire"
+   "source": "https://getrawmilk.com/map/tollgate-farm-leicestershire",
+   "also": []
   },
   {
    "id": "uk-the-flying-goats-dairy-uk",
@@ -1400,7 +1521,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/the-flying-goats-dairy-uk"
+   "source": "https://getrawmilk.com/map/the-flying-goats-dairy-uk",
+   "also": []
   },
   {
    "id": "uk-hook-and-son-london",
@@ -1414,7 +1536,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hook-and-son-london"
+   "source": "https://getrawmilk.com/map/hook-and-son-london",
+   "also": []
   },
   {
    "id": "uk-queens-park-farmers-market-london-england",
@@ -1428,7 +1551,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/queens-park-farmers-market-london-england"
+   "source": "https://getrawmilk.com/map/queens-park-farmers-market-london-england",
+   "also": []
   },
   {
    "id": "uk-pimlico-road-farmers-market-london-uk",
@@ -1442,7 +1566,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow butter, cow cream, cow cheese",
-   "source": "https://getrawmilk.com/map/pimlico-road-farmers-market-london-uk"
+   "source": "https://getrawmilk.com/map/pimlico-road-farmers-market-london-uk",
+   "also": []
   },
   {
    "id": "uk-mootop-milkshake-uk",
@@ -1456,7 +1581,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/mootop-milkshake-uk"
+   "source": "https://getrawmilk.com/map/mootop-milkshake-uk",
+   "also": []
   },
   {
    "id": "uk-hackhurst-farm-lower-dicker-uk",
@@ -1470,7 +1596,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hackhurst-farm-lower-dicker-uk"
+   "source": "https://getrawmilk.com/map/hackhurst-farm-lower-dicker-uk",
+   "also": []
   },
   {
    "id": "uk-lower-hardres-farm-shop-uk",
@@ -1484,7 +1611,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/lower-hardres-farm-shop-uk"
+   "source": "https://getrawmilk.com/map/lower-hardres-farm-shop-uk",
+   "also": []
   },
   {
    "id": "uk-stowford-manor-farm-lower-westwood",
@@ -1498,7 +1626,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/stowford-manor-farm-lower-westwood"
+   "source": "https://getrawmilk.com/map/stowford-manor-farm-lower-westwood",
+   "also": []
   },
   {
    "id": "uk-johnsons-farm-lowton-uk",
@@ -1512,7 +1641,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/johnsons-farm-lowton-uk"
+   "source": "https://getrawmilk.com/map/johnsons-farm-lowton-uk",
+   "also": []
   },
   {
    "id": "uk-buckwell-organic-lutterworth-england",
@@ -1526,7 +1656,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/buckwell-organic-lutterworth-england"
+   "source": "https://getrawmilk.com/map/buckwell-organic-lutterworth-england",
+   "also": []
   },
   {
    "id": "uk-the-milk-shack-uk",
@@ -1539,8 +1670,11 @@
    "lon": -1.19427,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow cream (A2)",
-   "source": "https://getrawmilk.com/map/the-milk-shack-uk"
+   "products": "Cow raw milk, cow cream, eggs (A2 milk)",
+   "source": "https://getrawmilk.com/map/the-milk-shack-uk",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-hopewall-farm-foods-and-dairy-macclesfield",
@@ -1554,7 +1688,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hopewall-farm-foods-and-dairy-macclesfield"
+   "source": "https://getrawmilk.com/map/hopewall-farm-foods-and-dairy-macclesfield",
+   "also": []
   },
   {
    "id": "uk-proper-cornish-milk-marhamchurch-uk",
@@ -1568,7 +1703,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/proper-cornish-milk-marhamchurch-uk"
+   "source": "https://getrawmilk.com/map/proper-cornish-milk-marhamchurch-uk",
+   "also": []
   },
   {
    "id": "uk-home-farm-market-rasen",
@@ -1582,7 +1718,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/home-farm-market-rasen"
+   "source": "https://getrawmilk.com/map/home-farm-market-rasen",
+   "also": []
   },
   {
    "id": "uk-manor-house-farm-marske-uk",
@@ -1596,7 +1733,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/manor-house-farm-marske-uk"
+   "source": "https://getrawmilk.com/map/manor-house-farm-marske-uk",
+   "also": []
   },
   {
    "id": "uk-the-moody-cow-allerdale",
@@ -1610,7 +1748,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow cheese",
-   "source": "https://getrawmilk.com/map/the-moody-cow-allerdale"
+   "source": "https://getrawmilk.com/map/the-moody-cow-allerdale",
+   "also": []
   },
   {
    "id": "uk-knowles-pit-farm-mere-uk",
@@ -1624,7 +1763,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/knowles-pit-farm-mere-uk"
+   "source": "https://getrawmilk.com/map/knowles-pit-farm-mere-uk",
+   "also": []
   },
   {
    "id": "uk-west-middlewick-farm-mid-devon",
@@ -1638,7 +1778,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/west-middlewick-farm-mid-devon"
+   "source": "https://getrawmilk.com/map/west-middlewick-farm-mid-devon",
+   "also": []
   },
   {
    "id": "uk-greenoaks-farm-mobberley",
@@ -1651,8 +1792,11 @@
    "lon": -2.30117,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/greenoaks-farm-mobberley"
+   "products": "Cow raw milk, beef",
+   "source": "https://getrawmilk.com/map/greenoaks-farm-mobberley",
+   "also": [
+    "beef"
+   ]
   },
   {
    "id": "uk-aldhurst-farm-mole-valley",
@@ -1666,7 +1810,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/aldhurst-farm-mole-valley"
+   "source": "https://getrawmilk.com/map/aldhurst-farm-mole-valley",
+   "also": []
   },
   {
    "id": "uk-ridleys-little-hut-new-ash-green-uk",
@@ -1680,7 +1825,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/ridleys-little-hut-new-ash-green-uk"
+   "source": "https://getrawmilk.com/map/ridleys-little-hut-new-ash-green-uk",
+   "also": []
   },
   {
    "id": "uk-midgham-farm-new-forest",
@@ -1694,7 +1840,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/midgham-farm-new-forest"
+   "source": "https://getrawmilk.com/map/midgham-farm-new-forest",
+   "also": []
   },
   {
    "id": "uk-lodge-farm-north-crawley",
@@ -1708,7 +1855,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/lodge-farm-north-crawley"
+   "source": "https://getrawmilk.com/map/lodge-farm-north-crawley",
+   "also": []
   },
   {
    "id": "uk-free-range-yorkshire-raw-milk-hambleton",
@@ -1722,7 +1870,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/free-range-yorkshire-raw-milk-hambleton"
+   "source": "https://getrawmilk.com/map/free-range-yorkshire-raw-milk-hambleton",
+   "also": []
   },
   {
    "id": "uk-pintail-nest-farm-northallerton-uk",
@@ -1736,7 +1885,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/pintail-nest-farm-northallerton-uk"
+   "source": "https://getrawmilk.com/map/pintail-nest-farm-northallerton-uk",
+   "also": []
   },
   {
    "id": "uk-ahimsa-farm-oakham-england",
@@ -1750,7 +1900,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/ahimsa-farm-oakham-england"
+   "source": "https://getrawmilk.com/map/ahimsa-farm-oakham-england",
+   "also": []
   },
   {
    "id": "uk-mclintock's-dairy-oldham",
@@ -1764,7 +1915,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/mclintock's-dairy-oldham"
+   "source": "https://getrawmilk.com/map/mclintock's-dairy-oldham",
+   "also": []
   },
   {
    "id": "uk-sandyways-farm-ormskirk-uk",
@@ -1778,7 +1930,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/sandyways-farm-ormskirk-uk"
+   "source": "https://getrawmilk.com/map/sandyways-farm-ormskirk-uk",
+   "also": []
   },
   {
    "id": "uk-ruxley-manor-garden-centre-orpington-uk",
@@ -1792,7 +1945,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/ruxley-manor-garden-centre-orpington-uk"
+   "source": "https://getrawmilk.com/map/ruxley-manor-garden-centre-orpington-uk",
+   "also": []
   },
   {
    "id": "uk-deardens-farm-over-hulton-uk",
@@ -1806,7 +1960,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/deardens-farm-over-hulton-uk"
+   "source": "https://getrawmilk.com/map/deardens-farm-over-hulton-uk",
+   "also": []
   },
   {
    "id": "uk-north-farm-pawlett-uk",
@@ -1820,7 +1975,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/north-farm-pawlett-uk"
+   "source": "https://getrawmilk.com/map/north-farm-pawlett-uk",
+   "also": []
   },
   {
    "id": "uk-deanery-dairy-montys-raw-milk-south-staffordshire",
@@ -1834,7 +1990,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/deanery-dairy-montys-raw-milk-south-staffordshire"
+   "source": "https://getrawmilk.com/map/deanery-dairy-montys-raw-milk-south-staffordshire",
+   "also": []
   },
   {
    "id": "uk-penshurst-farmers-market-uk",
@@ -1848,7 +2005,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/penshurst-farmers-market-uk"
+   "source": "https://getrawmilk.com/map/penshurst-farmers-market-uk",
+   "also": []
   },
   {
    "id": "uk-cow-corner-milk-pickhill-uk",
@@ -1862,7 +2020,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow butter",
-   "source": "https://getrawmilk.com/map/cow-corner-milk-pickhill-uk"
+   "source": "https://getrawmilk.com/map/cow-corner-milk-pickhill-uk",
+   "also": []
   },
   {
    "id": "uk-pidley-pints-micro-dairy-pidley-uk",
@@ -1876,7 +2035,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/pidley-pints-micro-dairy-pidley-uk"
+   "source": "https://getrawmilk.com/map/pidley-pints-micro-dairy-pidley-uk",
+   "also": []
   },
   {
    "id": "uk-pluckley-farm-shop-uk",
@@ -1890,7 +2050,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/pluckley-farm-shop-uk"
+   "source": "https://getrawmilk.com/map/pluckley-farm-shop-uk",
+   "also": []
   },
   {
    "id": "uk-appleby's-cheese-prees-lower-heath",
@@ -1904,7 +2065,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/appleby's-cheese-prees-lower-heath"
+   "source": "https://getrawmilk.com/map/appleby's-cheese-prees-lower-heath",
+   "also": []
   },
   {
    "id": "uk-cliftons-farm-preston",
@@ -1917,8 +2079,12 @@
    "lon": -2.68939,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow butter, cow cream, cow cheese, cow ice cream (A2)",
-   "source": "https://getrawmilk.com/map/cliftons-farm-preston"
+   "products": "Cow raw milk, cow butter, cow cream, cow cheese, cow ice cream, eggs, beef (A2 milk)",
+   "source": "https://getrawmilk.com/map/cliftons-farm-preston",
+   "also": [
+    "eggs",
+    "beef"
+   ]
   },
   {
    "id": "uk-barton-brook-dairy-preston",
@@ -1932,7 +2098,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/barton-brook-dairy-preston"
+   "source": "https://getrawmilk.com/map/barton-brook-dairy-preston",
+   "also": []
   },
   {
    "id": "uk-bell-fold-organic-farm-shop-preston",
@@ -1946,7 +2113,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/bell-fold-organic-farm-shop-preston"
+   "source": "https://getrawmilk.com/map/bell-fold-organic-farm-shop-preston",
+   "also": []
   },
   {
    "id": "uk-farm-on-the-fell-preston-england",
@@ -1960,7 +2128,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow ice cream",
-   "source": "https://getrawmilk.com/map/farm-on-the-fell-preston-england"
+   "source": "https://getrawmilk.com/map/farm-on-the-fell-preston-england",
+   "also": []
   },
   {
    "id": "uk-manor-farm-ratcliffe-culey-ratcliffe-culey-uk",
@@ -1974,7 +2143,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/manor-farm-ratcliffe-culey-ratcliffe-culey-uk"
+   "source": "https://getrawmilk.com/map/manor-farm-ratcliffe-culey-ratcliffe-culey-uk",
+   "also": []
   },
   {
    "id": "uk-the-milking-parlour-sabden",
@@ -1987,8 +2157,11 @@
    "lon": -2.33458,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow butter, cow cheese",
-   "source": "https://getrawmilk.com/map/the-milking-parlour-sabden"
+   "products": "Cow raw milk, cow butter, cow cheese, eggs",
+   "source": "https://getrawmilk.com/map/the-milking-parlour-sabden",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-scorton-road-farm-richmondshire",
@@ -2001,8 +2174,11 @@
    "lon": -1.57191,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/scorton-road-farm-richmondshire"
+   "products": "Cow raw milk, eggs",
+   "source": "https://getrawmilk.com/map/scorton-road-farm-richmondshire",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-the-cheese-room-deli-and-cafe-rochester-uk",
@@ -2016,7 +2192,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/the-cheese-room-deli-and-cafe-rochester-uk"
+   "source": "https://getrawmilk.com/map/the-cheese-room-deli-and-cafe-rochester-uk",
+   "also": []
   },
   {
    "id": "uk-b-g-farming-rosedale-abbey-uk",
@@ -2030,7 +2207,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/b-g-farming-rosedale-abbey-uk"
+   "source": "https://getrawmilk.com/map/b-g-farming-rosedale-abbey-uk",
+   "also": []
   },
   {
    "id": "uk-hargreaves-fold-farms-rossendale",
@@ -2044,7 +2222,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hargreaves-fold-farms-rossendale"
+   "source": "https://getrawmilk.com/map/hargreaves-fold-farms-rossendale",
+   "also": []
   },
   {
    "id": "uk-hollypark-organics-rother",
@@ -2058,7 +2237,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/hollypark-organics-rother"
+   "source": "https://getrawmilk.com/map/hollypark-organics-rother",
+   "also": []
   },
   {
    "id": "uk-waitrose-and-partners-rushden-uk",
@@ -2072,7 +2252,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/waitrose-and-partners-rushden-uk"
+   "source": "https://getrawmilk.com/map/waitrose-and-partners-rushden-uk",
+   "also": []
   },
   {
    "id": "uk-penbuckles-delicatessen-saint-leonards-uk",
@@ -2086,7 +2267,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/penbuckles-delicatessen-saint-leonards-uk"
+   "source": "https://getrawmilk.com/map/penbuckles-delicatessen-saint-leonards-uk",
+   "also": []
   },
   {
    "id": "uk-cools-farm-organics-salisbury-uk",
@@ -2100,7 +2282,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/cools-farm-organics-salisbury-uk"
+   "source": "https://getrawmilk.com/map/cools-farm-organics-salisbury-uk",
+   "also": []
   },
   {
    "id": "uk-camphill-village-trust-scarborough",
@@ -2114,7 +2297,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/camphill-village-trust-scarborough"
+   "source": "https://getrawmilk.com/map/camphill-village-trust-scarborough",
+   "also": []
   },
   {
    "id": "uk-the-milkshack-at-halton-farm-scholar-green",
@@ -2128,7 +2312,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/the-milkshack-at-halton-farm-scholar-green"
+   "source": "https://getrawmilk.com/map/the-milkshack-at-halton-farm-scholar-green",
+   "also": []
   },
   {
    "id": "uk-garden-end-farm-sedgemoor-district",
@@ -2142,7 +2327,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/garden-end-farm-sedgemoor-district"
+   "source": "https://getrawmilk.com/map/garden-end-farm-sedgemoor-district",
+   "also": []
   },
   {
    "id": "uk-park-farm-brasted-road-sevenoaks",
@@ -2156,7 +2342,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/park-farm-brasted-road-sevenoaks"
+   "source": "https://getrawmilk.com/map/park-farm-brasted-road-sevenoaks",
+   "also": []
   },
   {
    "id": "uk-ridley-court-farm-sevenoaks",
@@ -2170,7 +2357,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/ridley-court-farm-sevenoaks"
+   "source": "https://getrawmilk.com/map/ridley-court-farm-sevenoaks",
+   "also": []
   },
   {
    "id": "uk-turvins-farm-shop-sevenoaks-uk",
@@ -2184,7 +2372,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/turvins-farm-shop-sevenoaks-uk"
+   "source": "https://getrawmilk.com/map/turvins-farm-shop-sevenoaks-uk",
+   "also": []
   },
   {
    "id": "uk-yorkshire-raw-milk-company-uk",
@@ -2198,7 +2387,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow ice cream",
-   "source": "https://getrawmilk.com/map/yorkshire-raw-milk-company-uk"
+   "source": "https://getrawmilk.com/map/yorkshire-raw-milk-company-uk",
+   "also": []
   },
   {
    "id": "uk-the-real-milk-co-uk",
@@ -2212,7 +2402,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/the-real-milk-co-uk"
+   "source": "https://getrawmilk.com/map/the-real-milk-co-uk",
+   "also": []
   },
   {
    "id": "uk-b-free-milk-uk",
@@ -2225,8 +2416,9 @@
    "lon": -2.70302,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk (A2)",
-   "source": "https://getrawmilk.com/map/b-free-milk-uk"
+   "products": "Cow raw milk (A2 milk)",
+   "source": "https://getrawmilk.com/map/b-free-milk-uk",
+   "also": []
   },
   {
    "id": "uk-stapleton-dairies-skipton-uk",
@@ -2240,7 +2432,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/stapleton-dairies-skipton-uk"
+   "source": "https://getrawmilk.com/map/stapleton-dairies-skipton-uk",
+   "also": []
   },
   {
    "id": "uk-pry-cheese-slaley-uk",
@@ -2254,7 +2447,8 @@
    "species": "sheep",
    "fluid": "yes",
    "products": "Sheep raw milk",
-   "source": "https://getrawmilk.com/map/pry-cheese-slaley-uk"
+   "source": "https://getrawmilk.com/map/pry-cheese-slaley-uk",
+   "also": []
   },
   {
    "id": "uk-hawthorn-farm-south-cambridgeshire",
@@ -2268,7 +2462,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hawthorn-farm-south-cambridgeshire"
+   "source": "https://getrawmilk.com/map/hawthorn-farm-south-cambridgeshire",
+   "also": []
   },
   {
    "id": "uk-woodside-farm-south-derbyshire",
@@ -2282,7 +2477,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/woodside-farm-south-derbyshire"
+   "source": "https://getrawmilk.com/map/woodside-farm-south-derbyshire",
+   "also": []
   },
   {
    "id": "uk-ewe-moo-dairy-south-gorley-uk",
@@ -2296,7 +2492,8 @@
    "species": "sheep",
    "fluid": "yes",
    "products": "Sheep raw milk",
-   "source": "https://getrawmilk.com/map/ewe-moo-dairy-south-gorley-uk"
+   "source": "https://getrawmilk.com/map/ewe-moo-dairy-south-gorley-uk",
+   "also": []
   },
   {
    "id": "uk-low-sizergh-farm-south-lakeland",
@@ -2310,7 +2507,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/low-sizergh-farm-south-lakeland"
+   "source": "https://getrawmilk.com/map/low-sizergh-farm-south-lakeland",
+   "also": []
   },
   {
    "id": "uk-whin-yeats-dairy-carnforth",
@@ -2324,7 +2522,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/whin-yeats-dairy-carnforth"
+   "source": "https://getrawmilk.com/map/whin-yeats-dairy-carnforth",
+   "also": []
   },
   {
    "id": "uk-coston-hall-dairy-south-norfolk-district",
@@ -2338,7 +2537,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/coston-hall-dairy-south-norfolk-district"
+   "source": "https://getrawmilk.com/map/coston-hall-dairy-south-norfolk-district",
+   "also": []
   },
   {
    "id": "uk-gilcombe-farm-south-somerset",
@@ -2352,7 +2552,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/gilcombe-farm-south-somerset"
+   "source": "https://getrawmilk.com/map/gilcombe-farm-south-somerset",
+   "also": []
   },
   {
    "id": "uk-elliscombe-farm-south-somerset",
@@ -2366,7 +2567,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/elliscombe-farm-south-somerset"
+   "source": "https://getrawmilk.com/map/elliscombe-farm-south-somerset",
+   "also": []
   },
   {
    "id": "uk-hurdlebrook-farm-overton-farm-south-somerset",
@@ -2379,8 +2581,9 @@
    "lon": -2.61081,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk (A2)",
-   "source": "https://getrawmilk.com/map/hurdlebrook-farm-overton-farm-south-somerset"
+   "products": "Cow raw milk (A2 milk)",
+   "source": "https://getrawmilk.com/map/hurdlebrook-farm-overton-farm-south-somerset",
+   "also": []
   },
   {
    "id": "uk-buffalicious-lower-oakley-farm-south-somerset",
@@ -2394,7 +2597,8 @@
    "species": "buffalo",
    "fluid": "yes",
    "products": "Buffalo raw milk, buffalo cheese",
-   "source": "https://getrawmilk.com/map/buffalicious-lower-oakley-farm-south-somerset"
+   "source": "https://getrawmilk.com/map/buffalicious-lower-oakley-farm-south-somerset",
+   "also": []
   },
   {
    "id": "uk-s-g-lee-and-sons-oakley-farm-south-staffordshire",
@@ -2408,7 +2612,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/s-g-lee-and-sons-oakley-farm-south-staffordshire"
+   "source": "https://getrawmilk.com/map/s-g-lee-and-sons-oakley-farm-south-staffordshire",
+   "also": []
   },
   {
    "id": "uk-daisy-meadow-dairy-southampton-england",
@@ -2422,7 +2627,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow cream",
-   "source": "https://getrawmilk.com/map/daisy-meadow-dairy-southampton-england"
+   "source": "https://getrawmilk.com/map/daisy-meadow-dairy-southampton-england",
+   "also": []
   },
   {
    "id": "uk-broadditch-farm-shop-southfleet-uk",
@@ -2436,7 +2642,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/broadditch-farm-shop-southfleet-uk"
+   "source": "https://getrawmilk.com/map/broadditch-farm-shop-southfleet-uk",
+   "also": []
   },
   {
    "id": "uk-millbrook-garden-centre-southfleet-uk",
@@ -2450,7 +2657,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/millbrook-garden-centre-southfleet-uk"
+   "source": "https://getrawmilk.com/map/millbrook-garden-centre-southfleet-uk",
+   "also": []
   },
   {
    "id": "uk-r-i-wood-and-son-sowerby-bridge",
@@ -2464,7 +2672,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/r-i-wood-and-son-sowerby-bridge"
+   "source": "https://getrawmilk.com/map/r-i-wood-and-son-sowerby-bridge",
+   "also": []
   },
   {
    "id": "uk-dragonfly-farm-shop-cafe-speldhurst-uk",
@@ -2478,7 +2687,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/dragonfly-farm-shop-cafe-speldhurst-uk"
+   "source": "https://getrawmilk.com/map/dragonfly-farm-shop-cafe-speldhurst-uk",
+   "also": []
   },
   {
    "id": "uk-billington-dary-farm-stafford",
@@ -2492,7 +2702,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/billington-dary-farm-stafford"
+   "source": "https://getrawmilk.com/map/billington-dary-farm-stafford",
+   "also": []
   },
   {
    "id": "uk-foxs-farm-stainton",
@@ -2506,7 +2717,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/foxs-farm-stainton"
+   "source": "https://getrawmilk.com/map/foxs-farm-stainton",
+   "also": []
   },
   {
    "id": "uk-oak-farm-stalybridge-uk",
@@ -2520,7 +2732,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/oak-farm-stalybridge-uk"
+   "source": "https://getrawmilk.com/map/oak-farm-stalybridge-uk",
+   "also": []
   },
   {
    "id": "uk-kingcott-dairy-staplehurst-uk",
@@ -2534,7 +2747,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow cheese",
-   "source": "https://getrawmilk.com/map/kingcott-dairy-staplehurst-uk"
+   "source": "https://getrawmilk.com/map/kingcott-dairy-staplehurst-uk",
+   "also": []
   },
   {
    "id": "uk-kingcott-dairy-milk-box-staplehurst-uk",
@@ -2548,7 +2762,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow cheese",
-   "source": "https://getrawmilk.com/map/kingcott-dairy-milk-box-staplehurst-uk"
+   "source": "https://getrawmilk.com/map/kingcott-dairy-milk-box-staplehurst-uk",
+   "also": []
   },
   {
    "id": "uk-henhurst-farm-shop-staplehurst-uk",
@@ -2562,7 +2777,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/henhurst-farm-shop-staplehurst-uk"
+   "source": "https://getrawmilk.com/map/henhurst-farm-shop-staplehurst-uk",
+   "also": []
   },
   {
    "id": "uk-wheelbirks-parlour-stocksfield-england",
@@ -2576,7 +2792,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/wheelbirks-parlour-stocksfield-england"
+   "source": "https://getrawmilk.com/map/wheelbirks-parlour-stocksfield-england",
+   "also": []
   },
   {
    "id": "uk-cotwalton-dairy-uk",
@@ -2590,7 +2807,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/cotwalton-dairy-uk"
+   "source": "https://getrawmilk.com/map/cotwalton-dairy-uk",
+   "also": []
   },
   {
    "id": "uk-the-gorgeous-goat-company-stonegate-uk",
@@ -2604,7 +2822,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/the-gorgeous-goat-company-stonegate-uk"
+   "source": "https://getrawmilk.com/map/the-gorgeous-goat-company-stonegate-uk",
+   "also": []
   },
   {
    "id": "uk-hayloft-farm-uk",
@@ -2617,8 +2836,13 @@
    "lon": -2.23557,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow cream, cow other dairy (A2)",
-   "source": "https://getrawmilk.com/map/hayloft-farm-uk"
+   "products": "Cow raw milk, cow cream, cow colostrum, eggs, beef, pork (A2 milk)",
+   "source": "https://getrawmilk.com/map/hayloft-farm-uk",
+   "also": [
+    "eggs",
+    "beef",
+    "pork"
+   ]
   },
   {
    "id": "uk-the-butcher-of-brogdale-canterbury-uk",
@@ -2632,7 +2856,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/the-butcher-of-brogdale-canterbury-uk"
+   "source": "https://getrawmilk.com/map/the-butcher-of-brogdale-canterbury-uk",
+   "also": []
   },
   {
    "id": "uk-peckforton-farm-dairy-tarporley-uk",
@@ -2646,7 +2871,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/peckforton-farm-dairy-tarporley-uk"
+   "source": "https://getrawmilk.com/map/peckforton-farm-dairy-tarporley-uk",
+   "also": []
   },
   {
    "id": "uk-hagley-bridge-farm-taunton-deane",
@@ -2660,7 +2886,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hagley-bridge-farm-taunton-deane"
+   "source": "https://getrawmilk.com/map/hagley-bridge-farm-taunton-deane",
+   "also": []
   },
   {
    "id": "uk-dykes-farm-taunton-deane",
@@ -2674,7 +2901,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/dykes-farm-taunton-deane"
+   "source": "https://getrawmilk.com/map/dykes-farm-taunton-deane",
+   "also": []
   },
   {
    "id": "uk-fox's-fridge-hart",
@@ -2688,7 +2916,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/fox's-fridge-hart"
+   "source": "https://getrawmilk.com/map/fox's-fridge-hart",
+   "also": []
   },
   {
    "id": "uk-cranbrook-bakery-tenterden-uk",
@@ -2702,7 +2931,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/cranbrook-bakery-tenterden-uk"
+   "source": "https://getrawmilk.com/map/cranbrook-bakery-tenterden-uk",
+   "also": []
   },
   {
    "id": "uk-farmers-farm-shop-teston-uk",
@@ -2716,7 +2946,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/farmers-farm-shop-teston-uk"
+   "source": "https://getrawmilk.com/map/farmers-farm-shop-teston-uk",
+   "also": []
   },
   {
    "id": "uk-hs-bourne-threapwood",
@@ -2730,7 +2961,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hs-bourne-threapwood"
+   "source": "https://getrawmilk.com/map/hs-bourne-threapwood",
+   "also": []
   },
   {
    "id": "uk-wheston-house-farm-tideswell-uk",
@@ -2744,7 +2976,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/wheston-house-farm-tideswell-uk"
+   "source": "https://getrawmilk.com/map/wheston-house-farm-tideswell-uk",
+   "also": []
   },
   {
    "id": "uk-winterdale-cheesemakers-platt-farm-house-tonbridge-and-malling",
@@ -2758,7 +2991,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/winterdale-cheesemakers-platt-farm-house-tonbridge-and-malling"
+   "source": "https://getrawmilk.com/map/winterdale-cheesemakers-platt-farm-house-tonbridge-and-malling",
+   "also": []
   },
   {
    "id": "uk-little-acres-goat-products-tonbridge-and-malling",
@@ -2772,7 +3006,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/little-acres-goat-products-tonbridge-and-malling"
+   "source": "https://getrawmilk.com/map/little-acres-goat-products-tonbridge-and-malling",
+   "also": []
   },
   {
    "id": "uk-wallington-farmers-market-uk",
@@ -2786,7 +3021,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/wallington-farmers-market-uk"
+   "source": "https://getrawmilk.com/map/wallington-farmers-market-uk",
+   "also": []
   },
   {
    "id": "uk-fen-farm-dairy-waveney",
@@ -2800,7 +3036,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow butter, cow cheese, cow kefir",
-   "source": "https://getrawmilk.com/map/fen-farm-dairy-waveney"
+   "source": "https://getrawmilk.com/map/fen-farm-dairy-waveney",
+   "also": []
   },
   {
    "id": "uk-tablehurst-farm-wealden",
@@ -2814,7 +3051,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/tablehurst-farm-wealden"
+   "source": "https://getrawmilk.com/map/tablehurst-farm-wealden",
+   "also": []
   },
   {
    "id": "uk-hook-and-son-wealden",
@@ -2828,7 +3066,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow butter, cow cream",
-   "source": "https://getrawmilk.com/map/hook-and-son-wealden"
+   "source": "https://getrawmilk.com/map/hook-and-son-wealden",
+   "also": []
   },
   {
    "id": "uk-red-lodge-farm-wakefield",
@@ -2841,8 +3080,11 @@
    "lon": -1.55734,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/red-lodge-farm-wakefield"
+   "products": "Cow raw milk, eggs",
+   "source": "https://getrawmilk.com/map/red-lodge-farm-wakefield",
+   "also": [
+    "eggs"
+   ]
   },
   {
    "id": "uk-snydale-gate-farm-westhoughton-uk",
@@ -2856,7 +3098,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/snydale-gate-farm-westhoughton-uk"
+   "source": "https://getrawmilk.com/map/snydale-gate-farm-westhoughton-uk",
+   "also": []
   },
   {
    "id": "uk-the-calf-at-foot-dairy-waveney",
@@ -2869,8 +3112,11 @@
    "lon": -0.16043,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/the-calf-at-foot-dairy-waveney"
+   "products": "Cow raw milk, beef",
+   "source": "https://getrawmilk.com/map/the-calf-at-foot-dairy-waveney",
+   "also": [
+    "beef"
+   ]
   },
   {
    "id": "uk-wheatacre-hall-farm-pantry-wheatacre-uk",
@@ -2884,7 +3130,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/wheatacre-hall-farm-pantry-wheatacre-uk"
+   "source": "https://getrawmilk.com/map/wheatacre-hall-farm-pantry-wheatacre-uk",
+   "also": []
   },
   {
    "id": "uk-the-rare-dairy-whitchurch-england",
@@ -2898,7 +3145,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/the-rare-dairy-whitchurch-england"
+   "source": "https://getrawmilk.com/map/the-rare-dairy-whitchurch-england",
+   "also": []
   },
   {
    "id": "uk-waltham-place-farm-white-waltham-uk",
@@ -2912,7 +3160,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/waltham-place-farm-white-waltham-uk"
+   "source": "https://getrawmilk.com/map/waltham-place-farm-white-waltham-uk",
+   "also": []
   },
   {
    "id": "uk-the-cheese-box-whitstable-uk",
@@ -2926,7 +3175,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/the-cheese-box-whitstable-uk"
+   "source": "https://getrawmilk.com/map/the-cheese-box-whitstable-uk",
+   "also": []
   },
   {
    "id": "uk-higglers-farm-wickham",
@@ -2940,7 +3190,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/higglers-farm-wickham"
+   "source": "https://getrawmilk.com/map/higglers-farm-wickham",
+   "also": []
   },
   {
    "id": "uk-doras-dairy-uk",
@@ -2953,8 +3204,13 @@
    "lon": -1.85703,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, cow ice cream (A2)",
-   "source": "https://getrawmilk.com/map/doras-dairy-uk"
+   "products": "Cow raw milk, cow ice cream, eggs, beef, pork (A2 milk)",
+   "source": "https://getrawmilk.com/map/doras-dairy-uk",
+   "also": [
+    "eggs",
+    "beef",
+    "pork"
+   ]
   },
   {
    "id": "uk-hiltonbury-jerseys-winchester",
@@ -2968,7 +3224,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hiltonbury-jerseys-winchester"
+   "source": "https://getrawmilk.com/map/hiltonbury-jerseys-winchester",
+   "also": []
   },
   {
    "id": "uk-gibsons-farm-shop-wingham-uk",
@@ -2982,7 +3239,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/gibsons-farm-shop-wingham-uk"
+   "source": "https://getrawmilk.com/map/gibsons-farm-shop-wingham-uk",
+   "also": []
   },
   {
    "id": "uk-udderly-fresh-raw-milk-winslow",
@@ -2996,7 +3254,8 @@
    "species": "cow, goat, sheep",
    "fluid": "yes",
    "products": "Cow raw milk, cow cheese, goat raw milk, goat cheese, sheep cheese",
-   "source": "https://getrawmilk.com/map/udderly-fresh-raw-milk-winslow"
+   "source": "https://getrawmilk.com/map/udderly-fresh-raw-milk-winslow",
+   "also": []
   },
   {
    "id": "uk-lovejoy-farm-butchery-wittersham-uk",
@@ -3010,7 +3269,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/lovejoy-farm-butchery-wittersham-uk"
+   "source": "https://getrawmilk.com/map/lovejoy-farm-butchery-wittersham-uk",
+   "also": []
   },
   {
    "id": "uk-beeches-farm-wolverhampton-uk",
@@ -3024,7 +3284,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/beeches-farm-wolverhampton-uk"
+   "source": "https://getrawmilk.com/map/beeches-farm-wolverhampton-uk",
+   "also": []
   },
   {
    "id": "uk-old-hall-farm-south-norfolk-district",
@@ -3038,7 +3299,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/old-hall-farm-south-norfolk-district"
+   "source": "https://getrawmilk.com/map/old-hall-farm-south-norfolk-district",
+   "also": []
   },
   {
    "id": "uk-wye-farmers-market-wye-uk",
@@ -3052,7 +3314,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/wye-farmers-market-wye-uk"
+   "source": "https://getrawmilk.com/map/wye-farmers-market-wye-uk",
+   "also": []
   },
   {
    "id": "uk-errington-cheese-carnwath-uk",
@@ -3066,7 +3329,8 @@
    "species": "sheep",
    "fluid": "no",
    "products": "Sheep cheese",
-   "source": "https://getrawmilk.com/map/errington-cheese-carnwath-uk"
+   "source": "https://getrawmilk.com/map/errington-cheese-carnwath-uk",
+   "also": []
   },
   {
    "id": "uk-st-andrews-farmhouse-cheese-company-pittenweem-uk",
@@ -3080,7 +3344,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/st-andrews-farmhouse-cheese-company-pittenweem-uk"
+   "source": "https://getrawmilk.com/map/st-andrews-farmhouse-cheese-company-pittenweem-uk",
+   "also": []
   },
   {
    "id": "uk-isle-of-mull-cheese-tobermory-uk",
@@ -3094,7 +3359,8 @@
    "species": "cow",
    "fluid": "no",
    "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/isle-of-mull-cheese-tobermory-uk"
+   "source": "https://getrawmilk.com/map/isle-of-mull-cheese-tobermory-uk",
+   "also": []
   },
   {
    "id": "uk-goatylicious-cothi-valley-goats-abergorlech",
@@ -3108,7 +3374,8 @@
    "species": "goat",
    "fluid": "yes",
    "products": "Goat raw milk",
-   "source": "https://getrawmilk.com/map/goatylicious-cothi-valley-goats-abergorlech"
+   "source": "https://getrawmilk.com/map/goatylicious-cothi-valley-goats-abergorlech",
+   "also": []
   },
   {
    "id": "uk-gelli-farm-raw-milk-llangewydd",
@@ -3122,7 +3389,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/gelli-farm-raw-milk-llangewydd"
+   "source": "https://getrawmilk.com/map/gelli-farm-raw-milk-llangewydd",
+   "also": []
   },
   {
    "id": "uk-hope-cottage-farm-shop-chester-uk",
@@ -3136,7 +3404,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hope-cottage-farm-shop-chester-uk"
+   "source": "https://getrawmilk.com/map/hope-cottage-farm-shop-chester-uk",
+   "also": []
   },
   {
    "id": "uk-mountain-hall-farm-crymych",
@@ -3150,7 +3419,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/mountain-hall-farm-crymych"
+   "source": "https://getrawmilk.com/map/mountain-hall-farm-crymych",
+   "also": []
   },
   {
    "id": "uk-newbridge-farm-ewloe-uk",
@@ -3164,7 +3434,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/newbridge-farm-ewloe-uk"
+   "source": "https://getrawmilk.com/map/newbridge-farm-ewloe-uk",
+   "also": []
   },
   {
    "id": "uk-llaeth-meillionen-milk-llandysul",
@@ -3178,7 +3449,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/llaeth-meillionen-milk-llandysul"
+   "source": "https://getrawmilk.com/map/llaeth-meillionen-milk-llandysul",
+   "also": []
   },
   {
    "id": "uk-dyfi-dairy-machynlleth-wales",
@@ -3191,8 +3463,9 @@
    "lon": -3.85358,
    "species": "cow, goat",
    "fluid": "yes",
-   "products": "Cow raw milk, goat raw milk (A2)",
-   "source": "https://getrawmilk.com/map/dyfi-dairy-machynlleth-wales"
+   "products": "Cow raw milk, goat raw milk (A2 milk)",
+   "source": "https://getrawmilk.com/map/dyfi-dairy-machynlleth-wales",
+   "also": []
   },
   {
    "id": "uk-grossmont-wood-farm-porth-gwyn",
@@ -3206,7 +3479,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/grossmont-wood-farm-porth-gwyn"
+   "source": "https://getrawmilk.com/map/grossmont-wood-farm-porth-gwyn",
+   "also": []
   },
   {
    "id": "uk-hafren-rare-breeds-portskewett-uk",
@@ -3220,7 +3494,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/hafren-rare-breeds-portskewett-uk"
+   "source": "https://getrawmilk.com/map/hafren-rare-breeds-portskewett-uk",
+   "also": []
   },
   {
    "id": "uk-caer-fai-farm-st-davids",
@@ -3234,7 +3509,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/caer-fai-farm-st-davids"
+   "source": "https://getrawmilk.com/map/caer-fai-farm-st-davids",
+   "also": []
   },
   {
    "id": "uk-hilltop-dairy-farm-belfast",
@@ -3248,7 +3524,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk, cow butter, cow cream, cow kefir",
-   "source": "https://getrawmilk.com/map/hilltop-dairy-farm-belfast"
+   "source": "https://getrawmilk.com/map/hilltop-dairy-farm-belfast",
+   "also": []
   },
   {
    "id": "uk-culmore-organic-farm-coleraine",
@@ -3262,7 +3539,8 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/culmore-organic-farm-coleraine"
+   "source": "https://getrawmilk.com/map/culmore-organic-farm-coleraine",
+   "also": []
   },
   {
    "id": "uk-eastwood-farm-cookstown",
@@ -3275,8 +3553,9 @@
    "lon": -6.79345,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk (A2)",
-   "source": "https://getrawmilk.com/map/eastwood-farm-cookstown"
+   "products": "Cow raw milk (A2 milk)",
+   "source": "https://getrawmilk.com/map/eastwood-farm-cookstown",
+   "also": []
   },
   {
    "id": "uk-weirs-organic-farm-prospect-house",
@@ -3290,7 +3569,9 @@
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/weirs-organic-farm-prospect-house"
+   "source": "https://getrawmilk.com/map/weirs-organic-farm-prospect-house",
+   "also": []
   }
- ]
+ ],
+ "checked": "2026-11-23: every UK entry matched to the live getrawmilk listing (same id, coordinates within 5 m, products from its structured data)"
 }
