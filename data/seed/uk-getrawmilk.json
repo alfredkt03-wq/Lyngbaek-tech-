@@ -17,7 +17,16 @@
    "source": "https://getrawmilk.com/map/hill-farm-alpraham",
    "also": [
     "eggs"
-   ]
+   ],
+   "postcode": "CW6 9LL",
+   "website": "https://hillfarmrealfood.co.uk",
+   "social": [
+    "https://facebook.com/hillfarmrealfood",
+    "https://instagram.com/hillfarmrealfood"
+   ],
+   "email": "hillfarmrealfood@gmail.com",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-glasshouse-college-vale-head-farm-amblecote",
@@ -32,13 +41,22 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/glasshouse-college-vale-head-farm-amblecote",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://rmlt.org.uk/vale-head-farm",
+   "social": [
+    "https://facebook.com/RuskinMillLandTrust",
+    "https://x.com/RuskinMill"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-splash-farm-uk",
    "kind": "raw_milk",
    "name": "Splash Farm",
-   "address": "",
+   "address": "Splash Farm",
    "town": "Arundel",
    "country": "England",
    "lat": 50.8677,
@@ -47,7 +65,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/splash-farm-uk",
-   "also": []
+   "also": [],
+   "postcode": "BN18 9RE",
+   "website": "https://www.splashfarm.co.uk",
+   "social": [
+    "https://instagram.com/splash.farm.huts.milkshakes"
+   ],
+   "email": "",
+   "phone": "+447702563385",
+   "updated": "2026-08-19"
   },
   {
    "id": "uk-dumelows-dairy-ashby-de-la-zouch",
@@ -62,7 +88,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/dumelows-dairy-ashby-de-la-zouch",
-   "also": []
+   "also": [],
+   "postcode": "LE65 1RR",
+   "website": "",
+   "social": [
+    "https://facebook.com/Dumelowdairy"
+   ],
+   "email": "",
+   "phone": "+441332862666",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-perry-court-farm-shop-ashford-uk",
@@ -77,7 +111,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/perry-court-farm-shop-ashford-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN25 4ES",
+   "website": "https://www.perrycourtfarm.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-daisys-milk-shed-uk",
@@ -92,7 +132,15 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow butter",
    "source": "https://getrawmilk.com/map/daisys-milk-shed-uk",
-   "also": []
+   "also": [],
+   "postcode": "NR17 2AJ",
+   "website": "https://attleboroughhallfarm.co.uk",
+   "social": [
+    "https://instagram.com/daisysmilkshed"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-babbinswood-farm-babbinswood",
@@ -107,7 +155,17 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/babbinswood-farm-babbinswood",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://babbinswoodfarm.co.uk",
+   "social": [
+    "https://facebook.com/babbinswoodfarm",
+    "https://instagram.com/babbinswoodfarm",
+    "https://x.com/Babbinswoodfarm"
+   ],
+   "email": "babbinswoodfarm@gmail.com",
+   "phone": "07769607404",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-simply-milk-home-farm-bakewell",
@@ -122,7 +180,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/simply-milk-home-farm-bakewell",
-   "also": []
+   "also": [],
+   "postcode": "DE45",
+   "website": "https://hassopsimplymilk.com",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-tagg-lane-grange-bakewell",
@@ -137,13 +201,23 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/tagg-lane-grange-bakewell",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://tagglanedairy.com",
+   "social": [
+    "https://facebook.com/tagglanedairy",
+    "https://instagram.com/tagglanedairy",
+    "https://x.com/Tagglanedairy"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-upper-bottomley-farm-barkisland-uk",
    "kind": "raw_milk",
    "name": "Upper Bottomley Farm",
-   "address": "",
+   "address": "Upper Bottomley Farm",
    "town": "Barkisland",
    "country": "England",
    "lat": 53.66618,
@@ -152,7 +226,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/upper-bottomley-farm-barkisland-uk",
-   "also": []
+   "also": [],
+   "postcode": "HX4 0ET",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-stichelton-dairy-bassetlaw",
@@ -167,7 +247,17 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/stichelton-dairy-bassetlaw",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://stichelton.co.uk",
+   "social": [
+    "https://facebook.com/Stichelton",
+    "https://instagram.com/sticheltondairy",
+    "https://x.com/sticheltondairy"
+   ],
+   "email": "info@stichelton.co.uk",
+   "phone": "+441623844883",
+   "updated": ""
   },
   {
    "id": "uk-biddenden-vineyards-uk",
@@ -182,7 +272,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/biddenden-vineyards-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN27 8DF",
+   "website": "https://www.biddendenvineyards.com",
+   "social": [],
+   "email": "",
+   "phone": "+441580291726",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-mels-dairy-biddulph-moor-uk",
@@ -197,7 +293,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/mels-dairy-biddulph-moor-uk",
-   "also": []
+   "also": [],
+   "postcode": "ST8 7NU",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-woodberry-farm-billericay-uk",
@@ -212,7 +314,15 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/woodberry-farm-billericay-uk",
-   "also": []
+   "also": [],
+   "postcode": "CM11 1HL",
+   "website": "",
+   "social": [
+    "https://facebook.com/FarmWoodberry"
+   ],
+   "email": "",
+   "phone": "07553927523",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-quex-barn-farm-shop-birchington-on-sea-uk",
@@ -227,7 +337,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/quex-barn-farm-shop-birchington-on-sea-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT7 0BB",
+   "website": "https://www.quexbarn.com",
+   "social": [],
+   "email": "",
+   "phone": "+441843846103",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-milk-maids-farm-shop-bolton",
@@ -244,7 +360,16 @@
    "source": "https://getrawmilk.com/map/milk-maids-farm-shop-bolton",
    "also": [
     "eggs"
-   ]
+   ],
+   "postcode": "",
+   "website": "https://www.milk-maids.co.uk",
+   "social": [
+    "https://facebook.com/milkmaidsbolton",
+    "https://instagram.com/milkmaidsbolton"
+   ],
+   "email": "milkmaidsicecream@gmail.com",
+   "phone": "+447772842599",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-plane-trees-farm-bolton-uk",
@@ -259,7 +384,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/plane-trees-farm-bolton-uk",
-   "also": []
+   "also": [],
+   "postcode": "BL2 5QR",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-moss-hall-farm-bolton-uk",
@@ -274,7 +405,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/moss-hall-farm-bolton-uk",
-   "also": []
+   "also": [],
+   "postcode": "BL6 4EY",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-blackburne-and-haynes-bordon-uk",
@@ -289,7 +426,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/blackburne-and-haynes-bordon-uk",
-   "also": []
+   "also": [],
+   "postcode": "GU35 8SS",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-loddington-farm-shop-uk",
@@ -304,7 +447,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/loddington-farm-shop-uk",
-   "also": []
+   "also": [],
+   "postcode": "ME17 4HS",
+   "website": "https://www.loddingtonfarm.co.uk/shop",
+   "social": [],
+   "email": "",
+   "phone": "+441622231911",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-barnowl-farm-shop-south-northamptonshire",
@@ -319,7 +468,15 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow cream, cow ice cream (A2 milk)",
    "source": "https://getrawmilk.com/map/barnowl-farm-shop-south-northamptonshire",
-   "also": []
+   "also": [],
+   "postcode": "NN13 5SD",
+   "website": "https://barnowlfarmshop.co.uk",
+   "social": [
+    "https://facebook.com/BarnowlFarmShop"
+   ],
+   "email": "farmshop@barnowljerseys.co.uk",
+   "phone": "01280731666",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-farm-fresh-raw-milk-distribution-ltd-bradford-uk",
@@ -334,7 +491,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/farm-fresh-raw-milk-distribution-ltd-bradford-uk",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://farmfreshrawmilk.co.uk",
+   "social": [
+    "https://instagram.com/rawmilkbradford",
+    "https://tiktok.com/@rawmilkbradford"
+   ],
+   "email": "rawmilkbradford@gmail.com",
+   "phone": "+44 7767 749993",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-boydells-dairy-farm-braintree",
@@ -349,7 +515,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/boydells-dairy-farm-braintree",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://boydellsdairy.co.uk",
+   "social": [
+    "https://facebook.com/BoydellsDairyFarm"
+   ],
+   "email": "",
+   "phone": "+447514396431",
+   "updated": ""
   },
   {
    "id": "uk-slack-house-organic-farm-brampton",
@@ -366,7 +540,13 @@
    "source": "https://getrawmilk.com/map/slack-house-organic-farm-brampton",
    "also": [
     "eggs"
-   ]
+   ],
+   "postcode": "CA8 7DB",
+   "website": "https://slackhousefarm.co.uk",
+   "social": [],
+   "email": "slackhouseorganicfarm@gmail.com",
+   "phone": "01697747351",
+   "updated": "2026-02-16"
   },
   {
    "id": "uk-the-cheese-hut-brighton-and-hove-uk",
@@ -381,7 +561,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/the-cheese-hut-brighton-and-hove-uk",
-   "also": []
+   "also": [],
+   "postcode": "BN41 1WF",
+   "website": "https://www.thecheesehutshop.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441273789107",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-milky-business-plainspot-farm-brinsley",
@@ -396,7 +582,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/milky-business-plainspot-farm-brinsley",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://milky-business.co.uk",
+   "social": [],
+   "email": "milkybusiness@outlook.com",
+   "phone": "07970839991",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-chef-and-butcher-broadstairs-uk",
@@ -411,7 +603,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/chef-and-butcher-broadstairs-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT10 1NQ",
+   "website": "https://www.chefandbutcher.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441843309435",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hunnington-ayrshires-bromsgrove",
@@ -426,7 +624,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hunnington-ayrshires-bromsgrove",
-   "also": []
+   "also": [],
+   "postcode": "B63",
+   "website": "",
+   "social": [],
+   "email": "lisa.hunningtonayrshires@gmail.com",
+   "phone": "07735351626",
+   "updated": ""
   },
   {
    "id": "uk-carpenters-hill-dairy-bromsgrove",
@@ -441,7 +645,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/carpenters-hill-dairy-bromsgrove",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://straightfromthecow.co.uk",
+   "social": [],
+   "email": "info@straightfromthecow.co.uk",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-wild-cow-dairy-uk",
@@ -456,13 +666,19 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/wild-cow-dairy-uk",
-   "also": []
+   "also": [],
+   "postcode": "HR7 4LR",
+   "website": "https://www.wictonfarm.co.uk",
+   "social": [],
+   "email": "admin@wictonfarm.co.uk",
+   "phone": "01885 498484",
+   "updated": "2026-01-14"
   },
   {
    "id": "uk-manor-farm-broughton-in-furness",
    "kind": "raw_milk",
    "name": "Manor Farm",
-   "address": "",
+   "address": "Manor Farm",
    "town": "Broughton-in-Furness",
    "country": "England",
    "lat": 54.28623,
@@ -471,7 +687,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/manor-farm-broughton-in-furness",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-mulberry-marsh-brunstead-uk",
@@ -488,7 +710,16 @@
    "source": "https://getrawmilk.com/map/mulberry-marsh-brunstead-uk",
    "also": [
     "beef"
-   ]
+   ],
+   "postcode": "NR12 9ES",
+   "website": "https://www.mulberrymarsh.co.uk",
+   "social": [
+    "https://facebook.com/mulberrymarshbeef",
+    "https://instagram.com/mulberrymarsh"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-20"
   },
   {
    "id": "uk-fulibroch-dairy-babergh",
@@ -503,7 +734,16 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/fulibroch-dairy-babergh",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/fulibroch",
+    "https://instagram.com/fulibrochdairy"
+   ],
+   "email": "tim@fulibrochdairy.com",
+   "phone": "01787229914",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-berryfields-dairy-goats-burleydam-uk",
@@ -518,7 +758,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/berryfields-dairy-goats-burleydam-uk",
-   "also": []
+   "also": [],
+   "postcode": "SY13 4AP",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-wood-road-dairy-farms-bury",
@@ -533,7 +779,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/wood-road-dairy-farms-bury",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+441204883351",
+   "updated": "2026-02-11"
   },
   {
    "id": "uk-lilys-farm-camelford-uk",
@@ -548,7 +800,13 @@
    "fluid": "yes",
    "products": "Cow raw milk, goat raw milk",
    "source": "https://getrawmilk.com/map/lilys-farm-camelford-uk",
-   "also": []
+   "also": [],
+   "postcode": "PL32 9QH",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-the-goods-shed-canterbury-uk",
@@ -563,7 +821,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/the-goods-shed-canterbury-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT2 8AN",
+   "website": "https://thegoodsshed.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441227459153",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-paxton-and-whitfield-canterbury-uk",
@@ -578,7 +842,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/paxton-and-whitfield-canterbury-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT1 2DY",
+   "website": "https://www.paxtonandwhitfield.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441227785535",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-lowfields-farm-carnforth",
@@ -593,7 +863,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/lowfields-farm-carnforth",
-   "also": []
+   "also": [],
+   "postcode": "LA6 3PF",
+   "website": "",
+   "social": [
+    "https://facebook.com/lowfieldsfarm",
+    "https://instagram.com/lowfieldsfarm_"
+   ],
+   "email": "lowfieldsfarm@outlook.com",
+   "phone": "07599 674365",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-kimbers-farm-shop-charlton-musgrove-uk",
@@ -608,7 +887,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/kimbers-farm-shop-charlton-musgrove-uk",
-   "also": []
+   "also": [],
+   "postcode": "BA9 8HD",
+   "website": "https://www.kimbersfarmshop.co.uk",
+   "social": [],
+   "email": "info@kimbersfarmshop.co.uk",
+   "phone": "01963 33177",
+   "updated": "2026-02-14"
   },
   {
    "id": "uk-manor-farm-chesterfield",
@@ -623,7 +908,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/manor-farm-chesterfield",
-   "also": []
+   "also": [],
+   "postcode": "S43",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "07738121947",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-goodwood-farm-shop-home-farm-chichester",
@@ -638,7 +929,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/goodwood-farm-shop-home-farm-chichester",
-   "also": []
+   "also": [],
+   "postcode": "PO18 0QF",
+   "website": "https://www.goodwood.com/visit-eat-stay/farm-shop/",
+   "social": [
+    "https://facebook.com/GoodwoodEstate",
+    "https://instagram.com/goodwood"
+   ],
+   "email": "farmfood@goodwood.com",
+   "phone": "01243 755153",
+   "updated": "2026-04-09"
   },
   {
    "id": "uk-charlies-farm-shop-southview-farm-chichester",
@@ -653,7 +953,17 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/charlies-farm-shop-southview-farm-chichester",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://charliesfarmshop.co.uk",
+   "social": [
+    "https://facebook.com/CharliesFarmShop",
+    "https://instagram.com/charliesfarmshop",
+    "https://x.com/charlies_farm"
+   ],
+   "email": "info@charliesfarmshop.co.uk",
+   "phone": "01798303989",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hoolgrave-manor-farm-church-minshull",
@@ -668,7 +978,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hoolgrave-manor-farm-church-minshull",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "l.hollinshead@live.co.uk",
+   "phone": "01270522217",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-clifftonville-farmers-market-uk",
@@ -683,7 +999,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/clifftonville-farmers-market-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT9 2JW",
+   "website": "https://www.visitthanet.co.uk/attractions/cliftonville-farmers-market-1961/",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-monarch-farms-colchester",
@@ -698,7 +1020,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/monarch-farms-colchester",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://monachfarm.co.uk",
+   "social": [],
+   "email": "monachfarm@tiscali.co.uk",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-tim-sophies-farm-colchester-uk",
@@ -713,7 +1041,16 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow butter, cow cream",
    "source": "https://getrawmilk.com/map/tim-sophies-farm-colchester-uk",
-   "also": []
+   "also": [],
+   "postcode": "CO6 4SR",
+   "website": "https://www.timandsophiesfarm.co.uk",
+   "social": [
+    "https://facebook.com/collettsfarm",
+    "https://instagram.com/collettsfarm"
+   ],
+   "email": "info@collettsfarm.co.uk",
+   "phone": "07887791604",
+   "updated": "2026-11-20"
   },
   {
    "id": "uk-cothelstone-micro-dairy-cothelstone-uk",
@@ -728,7 +1065,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/cothelstone-micro-dairy-cothelstone-uk",
-   "also": []
+   "also": [],
+   "postcode": "TA4 3EB",
+   "website": "",
+   "social": [],
+   "email": "phewarmington@gmail.com",
+   "phone": "",
+   "updated": "2026-02-11"
   },
   {
    "id": "uk-hartley-farm-shop-uk",
@@ -743,7 +1086,15 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/hartley-farm-shop-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN17 3QG",
+   "website": "",
+   "social": [
+    "https://facebook.com/HartleyCoffeeHouseandFarmShop"
+   ],
+   "email": "",
+   "phone": "+441580715233",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-gazegill-organics-england-uk",
@@ -758,7 +1109,16 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow cheese (A2 milk)",
    "source": "https://getrawmilk.com/map/gazegill-organics-england-uk",
-   "also": []
+   "also": [],
+   "postcode": "BB7 4EE",
+   "website": "https://gazegillorganics.co.uk",
+   "social": [
+    "https://facebook.com/GazegillOrganicsFarm",
+    "https://instagram.com/gazegillorganicsfarm"
+   ],
+   "email": "",
+   "phone": "+441200445519",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-stone-farm-crowborough-uk",
@@ -773,7 +1133,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/stone-farm-crowborough-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN6 3QN",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-e-s-raw-milk-collection-croydon-uk",
@@ -788,7 +1154,15 @@
    "fluid": "yes",
    "products": "Cow raw milk (A2 milk)",
    "source": "https://getrawmilk.com/map/e-s-raw-milk-collection-croydon-uk",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://instagram.com/rawmilk_esscollection"
+   ],
+   "email": "",
+   "phone": "07362447131",
+   "updated": "2025-05-14"
   },
   {
    "id": "uk-wayside-farm-dacorum",
@@ -803,7 +1177,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/wayside-farm-dacorum",
-   "also": []
+   "also": [],
+   "postcode": "WD4 9HT",
+   "website": "https://wayside-farm.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+447831246243",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-the-cheese-makers-of-canterbury-dargate-uk",
@@ -818,7 +1198,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/the-cheese-makers-of-canterbury-dargate-uk",
-   "also": []
+   "also": [],
+   "postcode": "ME13 9ES",
+   "website": "https://www.cheesemakersofcanterbury.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441227751741",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-coastal-goats-dawlish-england",
@@ -833,7 +1219,17 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/coastal-goats-dawlish-england",
-   "also": []
+   "also": [],
+   "postcode": "EX7 0PS",
+   "website": "https://smallacombeorganics.com",
+   "social": [
+    "https://facebook.com/coastalgoats",
+    "https://instagram.com/smallacombe_organic_farm",
+    "https://tiktok.com/@smallacombe_organics"
+   ],
+   "email": "info@smallacombefarm.co.uk",
+   "phone": "07745519863",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-algar-lodge-farm-shop-and-cafe-uk",
@@ -848,7 +1244,15 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/algar-lodge-farm-shop-and-cafe-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT14 0AS",
+   "website": "",
+   "social": [
+    "https://facebook.com/AlgarLodgeFarmShop"
+   ],
+   "email": "",
+   "phone": "+441304619290",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-brooke-farming-company-ltd-doncaster",
@@ -863,7 +1267,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/brooke-farming-company-ltd-doncaster",
-   "also": []
+   "also": [],
+   "postcode": "DN8 5SH",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-t-e-ritchie-sons-doncaster-england",
@@ -880,7 +1290,16 @@
    "source": "https://getrawmilk.com/map/t-e-ritchie-sons-doncaster-england",
    "also": [
     "eggs"
-   ]
+   ],
+   "postcode": "DN5 0LS",
+   "website": "",
+   "social": [
+    "https://facebook.com/owstongrange",
+    "https://instagram.com/owstongrangefarm"
+   ],
+   "email": "teritchieandsons@gmail.com",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-newgate-farm-dronfield-uk",
@@ -895,7 +1314,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/newgate-farm-dronfield-uk",
-   "also": []
+   "also": [],
+   "postcode": "S18 7TF",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-janvil-dairy-goats-moonstones-farm-east-devon",
@@ -910,7 +1335,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/janvil-dairy-goats-moonstones-farm-east-devon",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+441404861607",
+   "updated": ""
   },
   {
    "id": "uk-plaw-hatch-farm-east-grinstead",
@@ -925,13 +1356,22 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/plaw-hatch-farm-east-grinstead",
-   "also": []
+   "also": [],
+   "postcode": "RH19 4JL",
+   "website": "https://plawhatchfarm.co.uk",
+   "social": [
+    "https://facebook.com/plawhatchfarm",
+    "https://instagram.com/plawhatchfarm"
+   ],
+   "email": "",
+   "phone": "+441342810201",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-salts-farm-shop-east-guldeford-uk",
    "kind": "cheese",
    "name": "Salts Farm Shop",
-   "address": "",
+   "address": "Salts Farm Shop",
    "town": "East Guldeford",
    "country": "England",
    "lat": 50.9591,
@@ -940,7 +1380,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/salts-farm-shop-east-guldeford-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN31 7PA",
+   "website": "https://www.saltsfarmshop.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441797226540",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-dawlicious-ice-cream-east-hertfordshire",
@@ -953,10 +1399,22 @@
    "lon": -0.04185,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk, eggs",
+   "products": "Cow raw milk, eggs, cow ice cream",
    "source": "https://getrawmilk.com/map/dawlicious-ice-cream-east-hertfordshire",
    "also": [
     "eggs"
+   ],
+   "postcode": "SG13 7RZ",
+   "website": "https://www.dawlicious.co.uk",
+   "social": [],
+   "email": "info@dawlicious.co.uk",
+   "phone": "07934161524",
+   "updated": "2026-11-09",
+   "alsoListedAs": [
+    {
+     "name": "Dawlicious Milk",
+     "source": "https://getrawmilk.com/map/dawlicious-milk-hertford"
+    }
    ]
   },
   {
@@ -972,7 +1430,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/lincolnshire-poacher-cheese-ulceby",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://lincolnshirepoachercheese.com",
+   "social": [],
+   "email": "info@lincolnshirepoachercheese.com",
+   "phone": "01507466987",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-bunkers-hill-dairy-eden",
@@ -987,7 +1451,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/bunkers-hill-dairy-eden",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://mootou.co.uk",
+   "social": [
+    "https://facebook.com/BunkersHillDairy",
+    "https://instagram.com/bunkershilldairy"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-horseshoe-green-farm-edenbridge-uk",
@@ -1002,7 +1475,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/horseshoe-green-farm-edenbridge-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN8 5PA",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-home-farm-raw-milk-vending-machine-elwick",
@@ -1017,7 +1496,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/home-farm-raw-milk-vending-machine-elwick",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/homefarmmilk"
+   ],
+   "email": "homefarmmilk@gmail.com",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-abbey-farm-dairy-fakenham-england",
@@ -1032,7 +1519,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/abbey-farm-dairy-fakenham-england",
-   "also": []
+   "also": [],
+   "postcode": "NR21 0DG",
+   "website": "https://www.thelittledairyshop.com",
+   "social": [],
+   "email": "w.wales@farming.co.uk",
+   "phone": "07776 232 440",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-macknade-food-hall-uk",
@@ -1047,7 +1540,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/macknade-food-hall-uk",
-   "also": []
+   "also": [],
+   "postcode": "ME13 8XF",
+   "website": "https://www.macknade.com",
+   "social": [],
+   "email": "",
+   "phone": "+441795534497",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-county-fayre-uk",
@@ -1062,7 +1561,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/county-fayre-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT20 1RJ",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+447356228422",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-d-price-butchers-fordingbridge-england",
@@ -1077,7 +1582,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/d-price-butchers-fordingbridge-england",
-   "also": []
+   "also": [],
+   "postcode": "SP6 1AS",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+441425652228",
+   "updated": ""
   },
   {
    "id": "uk-chase-milk-chase-farm-forest-of-dean",
@@ -1092,7 +1603,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/chase-milk-chase-farm-forest-of-dean",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://chasemilk.co.uk",
+   "social": [
+    "https://facebook.com/chasefarmmilk"
+   ],
+   "email": "info@chasemilk.co.uk",
+   "phone": "01291680398",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-naked-milk-gracemire-farm-fylde",
@@ -1109,7 +1628,15 @@
    "source": "https://getrawmilk.com/map/naked-milk-gracemire-farm-fylde",
    "also": [
     "eggs"
-   ]
+   ],
+   "postcode": "",
+   "website": "https://nakedmilk.co.uk",
+   "social": [
+    "https://facebook.com/gracemirefarm"
+   ],
+   "email": "fran.hightea@yahoo.co.uk",
+   "phone": "+447810652543",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-old-green-farm-dairy-gaunt's-earthcott",
@@ -1124,7 +1651,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/old-green-farm-dairy-gaunt's-earthcott",
-   "also": []
+   "also": [],
+   "postcode": "BS36",
+   "website": "",
+   "social": [
+    "https://facebook.com/ogfdairy"
+   ],
+   "email": "",
+   "phone": "+447701387867",
+   "updated": ""
   },
   {
    "id": "uk-lower-ladysden-farm-shop-uk",
@@ -1139,7 +1674,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/lower-ladysden-farm-shop-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN17 1JX",
+   "website": "https://www.lowerladysden.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441580213529",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-taywell-farm-shop-goudhurst-uk",
@@ -1154,7 +1695,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/taywell-farm-shop-goudhurst-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN17 1DY",
+   "website": "https://taywellfarm.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441580211853",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-upper-wood-farm-shop-great-yarmouth",
@@ -1169,7 +1716,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/upper-wood-farm-shop-great-yarmouth",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/upperwoodfarm"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-crimbledale-raw-milk-grewelthorpe-uk",
@@ -1184,13 +1739,19 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/crimbledale-raw-milk-grewelthorpe-uk",
-   "also": []
+   "also": [],
+   "postcode": "HG4 3BY",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+447483175419",
+   "updated": "2025-11-30"
   },
   {
    "id": "uk-wildcroft-dairy-guildford",
    "kind": "raw_milk",
    "name": "Wildcroft Dairy",
-   "address": "",
+   "address": "Wildcroft Dairy",
    "town": "Guildford",
    "country": "England",
    "lat": 51.22162,
@@ -1199,7 +1760,16 @@
    "fluid": "yes",
    "products": "Goat raw milk, goat cheese, goat kefir",
    "source": "https://getrawmilk.com/map/wildcroft-dairy-guildford",
-   "also": []
+   "also": [],
+   "postcode": "GU3 1AL",
+   "website": "https://wildcroftdairy.co.uk",
+   "social": [
+    "https://facebook.com/WildcroftDairy",
+    "https://instagram.com/Wildcroftdairy"
+   ],
+   "email": "info@wildcroftdairy.co.uk",
+   "phone": "07967 249981",
+   "updated": "2026-02-13"
   },
   {
    "id": "uk-haywards-farmshop-hadlow-uk",
@@ -1214,7 +1784,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/haywards-farmshop-hadlow-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN11 0AH",
+   "website": "https://www.haywardsfarmshop.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441732850354",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-pickerings-dairy-farm-hadlow-uk",
@@ -1229,7 +1805,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/pickerings-dairy-farm-hadlow-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN11 0JG",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-marshcroft-goat-dairy-hailsham-uk",
@@ -1244,7 +1826,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/marshcroft-goat-dairy-hailsham-uk",
-   "also": []
+   "also": [],
+   "postcode": "BN27 1ER",
+   "website": "https://www.marshcroftgoatdairy.co.uk",
+   "social": [],
+   "email": "marshcroftgoatdairy@gmail.com",
+   "phone": "01323842429",
+   "updated": "2026-11-20"
   },
   {
    "id": "uk-horsepool-farm-shop-halesowen-england",
@@ -1261,7 +1849,15 @@
    "source": "https://getrawmilk.com/map/horsepool-farm-shop-halesowen-england",
    "also": [
     "eggs"
-   ]
+   ],
+   "postcode": "B62 0JX",
+   "website": "https://horsepoolfarmshop.uk",
+   "social": [
+    "https://instagram.com/horsepool_farmshop"
+   ],
+   "email": "",
+   "phone": "+447944554454",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hill-top-farm-harrogate",
@@ -1276,7 +1872,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hill-top-farm-harrogate",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+447483175419",
+   "updated": ""
   },
   {
    "id": "uk-park-farm-butchers-hawkhurst-uk",
@@ -1291,7 +1893,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/park-farm-butchers-hawkhurst-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN18 4PQ",
+   "website": "https://www.parkfarmbutchers.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441580753558",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-northney-farm-hayling-island-uk",
@@ -1306,7 +1914,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/northney-farm-hayling-island-uk",
-   "also": []
+   "also": [],
+   "postcode": "PO11 0RX",
+   "website": "https://northneyfarmtearooms.com",
+   "social": [],
+   "email": "",
+   "phone": "+44 23 9246 7607",
+   "updated": "2026-11-21"
   },
   {
    "id": "uk-bays-leap-dairy-farm-uk",
@@ -1321,7 +1935,16 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow butter (A2 milk)",
    "source": "https://getrawmilk.com/map/bays-leap-dairy-farm-uk",
-   "also": []
+   "also": [],
+   "postcode": "NE15 0JW",
+   "website": "https://www.baysleaporganic.co.uk",
+   "social": [
+    "https://facebook.com/baysleapfarm",
+    "https://instagram.com/baysleapfarm"
+   ],
+   "email": "info@baysleaporganic.co.uk",
+   "phone": "",
+   "updated": "2026-02-26"
   },
   {
    "id": "uk-boscadjack-dairy-goats-helston-uk",
@@ -1336,24 +1959,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/boscadjack-dairy-goats-helston-uk",
-   "also": []
-  },
-  {
-   "id": "uk-dawlicious-milk-hertford",
-   "kind": "raw_milk",
-   "name": "Dawlicious Milk",
-   "address": "37 Downfield Road",
-   "town": "Hertford",
-   "country": "England",
-   "lat": 51.78955,
-   "lon": -0.04079,
-   "species": "cow",
-   "fluid": "yes",
-   "products": "Cow raw milk, cow ice cream, eggs",
-   "source": "https://getrawmilk.com/map/dawlicious-milk-hertford",
-   "also": [
-    "eggs"
-   ]
+   "also": [],
+   "postcode": "TR13 0HH",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hexham-farmers-market-uk",
@@ -1368,7 +1980,13 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow cheese",
    "source": "https://getrawmilk.com/map/hexham-farmers-market-uk",
-   "also": []
+   "also": [],
+   "postcode": "NE46 1XQ",
+   "website": "https://hexhamfarmersmarket.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441434230605",
+   "updated": "2026-02-16"
   },
   {
    "id": "uk-sparkenhoe-farm-hinckley-and-bosworth",
@@ -1383,7 +2001,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/sparkenhoe-farm-hinckley-and-bosworth",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://leicestershirecheese.co.uk/farm-shop/",
+   "social": [
+    "https://instagram.com/leicestershire_handmade_cheese",
+    "https://x.com/SparkenhoeFarm"
+   ],
+   "email": "",
+   "phone": "01455213863",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-pulford-farm-dairies-hyndburn",
@@ -1398,7 +2025,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/pulford-farm-dairies-hyndburn",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://pulfordfarmdairies.co.uk",
+   "social": [],
+   "email": "info@pulfordfarmdairies.co.uk",
+   "phone": "01254953781",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-benchwood-farm-icklesham-uk",
@@ -1413,7 +2046,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/benchwood-farm-icklesham-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN36 4AR",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hall-farm-dartmoor-uk",
@@ -1430,7 +2069,16 @@
    "source": "https://getrawmilk.com/map/hall-farm-dartmoor-uk",
    "also": [
     "beef"
-   ]
+   ],
+   "postcode": "PL21 0JH",
+   "website": "",
+   "social": [
+    "https://facebook.com/hallfarmdartmoor",
+    "https://instagram.com/hallfarmdartmoor"
+   ],
+   "email": "hallfarmdartmoorproduce@gmail.com",
+   "phone": "+44 1752 963878",
+   "updated": "2026-11-01"
   },
   {
    "id": "uk-higher-naylor-hill-farm-keighley",
@@ -1445,7 +2093,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/higher-naylor-hill-farm-keighley",
-   "also": []
+   "also": [],
+   "postcode": "BD22",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+441535643770",
+   "updated": ""
   },
   {
    "id": "uk-rock-end-farm-dairy-knypersley-uk",
@@ -1462,7 +2116,16 @@
    "source": "https://getrawmilk.com/map/rock-end-farm-dairy-knypersley-uk",
    "also": [
     "eggs"
-   ]
+   ],
+   "postcode": "ST8 7NR",
+   "website": "https://www.rockendfarmdairy.co.uk",
+   "social": [
+    "https://instagram.com/rockendfarmdairy",
+    "https://tiktok.com/@dairy.maid"
+   ],
+   "email": "rockendfarmuk@gmail.com",
+   "phone": "07770 191252",
+   "updated": "2026-11-01"
   },
   {
    "id": "uk-holwood-farm-shop-leaves-green-uk",
@@ -1477,7 +2140,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/holwood-farm-shop-leaves-green-uk",
-   "also": []
+   "also": [],
+   "postcode": "BR2 6AB",
+   "website": "https://holwoodfarm.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441689638381",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-walton-lodge-farm-leicester-england",
@@ -1492,7 +2161,15 @@
    "fluid": "yes",
    "products": "Cow raw milk (A2 milk)",
    "source": "https://getrawmilk.com/map/walton-lodge-farm-leicester-england",
-   "also": []
+   "also": [],
+   "postcode": "LE9 6QF",
+   "website": "",
+   "social": [
+    "https://facebook.com/waltonlodgefarm"
+   ],
+   "email": "nevagree@yahoo.co.uk",
+   "phone": "+44 7850 278491",
+   "updated": ""
   },
   {
    "id": "uk-tollgate-farm-leicestershire",
@@ -1505,9 +2182,25 @@
    "lon": -1.19496,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
+   "products": "Cow raw milk, cow cream, eggs (A2 milk)",
    "source": "https://getrawmilk.com/map/tollgate-farm-leicestershire",
-   "also": []
+   "also": [
+    "eggs"
+   ],
+   "postcode": "LE17 4LY",
+   "website": "",
+   "social": [
+    "https://facebook.com/TheMilkShackLutterworth"
+   ],
+   "email": "bhgriffin@tiscali.co.uk",
+   "phone": "+447790225364",
+   "updated": "",
+   "alsoListedAs": [
+    {
+     "name": "The Milk Shack",
+     "source": "https://getrawmilk.com/map/the-milk-shack-uk"
+    }
+   ]
   },
   {
    "id": "uk-the-flying-goats-dairy-uk",
@@ -1522,7 +2215,15 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/the-flying-goats-dairy-uk",
-   "also": []
+   "also": [],
+   "postcode": "HR6 0RE",
+   "website": "https://www.the-flying-goats-dairy.com",
+   "social": [
+    "https://facebook.com/theflyinggoatsdairy"
+   ],
+   "email": "sroot2016@gmail.com",
+   "phone": "+447917723747",
+   "updated": "2026-08-24"
   },
   {
    "id": "uk-hook-and-son-london",
@@ -1537,7 +2238,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hook-and-son-london",
-   "also": []
+   "also": [],
+   "postcode": "SE1 9AA",
+   "website": "https://hookandson.co.uk",
+   "social": [],
+   "email": "sales@hookandson.co.uk",
+   "phone": "+44 1323 449494",
+   "updated": "2026-03-07"
   },
   {
    "id": "uk-queens-park-farmers-market-london-england",
@@ -1552,7 +2259,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/queens-park-farmers-market-london-england",
-   "also": []
+   "also": [],
+   "postcode": "NW6 6RG",
+   "website": "https://lfm.org.uk/markets/queens-park/",
+   "social": [],
+   "email": "",
+   "phone": "+442078330338",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-pimlico-road-farmers-market-london-uk",
@@ -1567,7 +2280,15 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow butter, cow cream, cow cheese",
    "source": "https://getrawmilk.com/map/pimlico-road-farmers-market-london-uk",
-   "also": []
+   "also": [],
+   "postcode": "SW1W 8UT",
+   "website": "https://lincolnshirepoachercheese.com/event/pimlico-4",
+   "social": [
+    "https://instagram.com/poachercheese"
+   ],
+   "email": "info@lincolnshirepoachercheese.com",
+   "phone": "01507466987",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-mootop-milkshake-uk",
@@ -1582,7 +2303,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/mootop-milkshake-uk",
-   "also": []
+   "also": [],
+   "postcode": "BL5 3LR",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+447870645916",
+   "updated": "2026-07-28"
   },
   {
    "id": "uk-hackhurst-farm-lower-dicker-uk",
@@ -1597,13 +2324,19 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hackhurst-farm-lower-dicker-uk",
-   "also": []
+   "also": [],
+   "postcode": "BN27 4BP",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-lower-hardres-farm-shop-uk",
    "kind": "cheese",
    "name": "Lower Hardres Farm Shop",
-   "address": "",
+   "address": "Lower Hardres Farm Shop",
    "town": "Lower Hardres",
    "country": "England",
    "lat": 51.23538,
@@ -1612,7 +2345,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/lower-hardres-farm-shop-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT4 5NU",
+   "website": "https://www.lowerhardresfarmshop.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441227700947",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-stowford-manor-farm-lower-westwood",
@@ -1627,13 +2366,19 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/stowford-manor-farm-lower-westwood",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://stowfordmanorfarm.co.uk",
+   "social": [],
+   "email": "farming@stowfordmanorfarm.co.uk",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-johnsons-farm-lowton-uk",
    "kind": "raw_milk",
    "name": "Johnsons Farm",
-   "address": "",
+   "address": "Johnsons Farm",
    "town": "Lowton",
    "country": "England",
    "lat": 53.464,
@@ -1642,7 +2387,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/johnsons-farm-lowton-uk",
-   "also": []
+   "also": [],
+   "postcode": "WA3 1LQ",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-buckwell-organic-lutterworth-england",
@@ -1657,24 +2408,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/buckwell-organic-lutterworth-england",
-   "also": []
-  },
-  {
-   "id": "uk-the-milk-shack-uk",
-   "kind": "stockist",
-   "name": "The Milk Shack",
-   "address": "Tollgate farm",
-   "town": "Lutterworth",
-   "country": "England",
-   "lat": 52.49172,
-   "lon": -1.19427,
-   "species": "cow",
-   "fluid": "yes",
-   "products": "Cow raw milk, cow cream, eggs (A2 milk)",
-   "source": "https://getrawmilk.com/map/the-milk-shack-uk",
-   "also": [
-    "eggs"
-   ]
+   "also": [],
+   "postcode": "LE17 6JF",
+   "website": "https://buckwellorganic.co.uk",
+   "social": [
+    "https://facebook.com/buckwellorganic",
+    "https://instagram.com/buckwellorganic"
+   ],
+   "email": "ajhuntandsons@hotmail.com",
+   "phone": "07598488202",
+   "updated": "2026-03-07"
   },
   {
    "id": "uk-hopewall-farm-foods-and-dairy-macclesfield",
@@ -1689,7 +2432,17 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hopewall-farm-foods-and-dairy-macclesfield",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/hopewallfarm",
+    "https://instagram.com/hopewall_farm_foods",
+    "https://x.com/hopewall_farm"
+   ],
+   "email": "info@hopewallfarm.co.uk",
+   "phone": "+441625872304",
+   "updated": ""
   },
   {
    "id": "uk-proper-cornish-milk-marhamchurch-uk",
@@ -1704,7 +2457,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/proper-cornish-milk-marhamchurch-uk",
-   "also": []
+   "also": [],
+   "postcode": "EX23 0HT",
+   "website": "https://www.propercornishmilk.co.uk",
+   "social": [],
+   "email": "info@propercornishmilk.co.uk",
+   "phone": "07398274929",
+   "updated": "2026-11-20"
   },
   {
    "id": "uk-home-farm-market-rasen",
@@ -1719,7 +2478,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/home-farm-market-rasen",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/homefarmdairyrawmilk"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-manor-house-farm-marske-uk",
@@ -1734,7 +2501,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/manor-house-farm-marske-uk",
-   "also": []
+   "also": [],
+   "postcode": "DL11 7EG",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-the-moody-cow-allerdale",
@@ -1749,7 +2522,15 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow cheese",
    "source": "https://getrawmilk.com/map/the-moody-cow-allerdale",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/themoodycowallonby"
+   ],
+   "email": "",
+   "phone": "+44 7718 152486",
+   "updated": "2026-02-16"
   },
   {
    "id": "uk-knowles-pit-farm-mere-uk",
@@ -1764,7 +2545,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/knowles-pit-farm-mere-uk",
-   "also": []
+   "also": [],
+   "postcode": "WA16 0PS",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-west-middlewick-farm-mid-devon",
@@ -1779,7 +2566,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/west-middlewick-farm-mid-devon",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://westmiddlewick.co.uk",
+   "social": [],
+   "email": "stay@westmiddlewick.co.uk",
+   "phone": "+441884861235",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-greenoaks-farm-mobberley",
@@ -1796,7 +2589,16 @@
    "source": "https://getrawmilk.com/map/greenoaks-farm-mobberley",
    "also": [
     "beef"
-   ]
+   ],
+   "postcode": "WA16",
+   "website": "https://greenoaksfarm.com",
+   "social": [
+    "https://facebook.com/greenoaksfarm.mobberley",
+    "https://instagram.com/greenoaksfarm.mobberley"
+   ],
+   "email": "greenoaksfarm@icloud.com",
+   "phone": "",
+   "updated": "2026-07-13"
   },
   {
    "id": "uk-aldhurst-farm-mole-valley",
@@ -1811,22 +2613,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/aldhurst-farm-mole-valley",
-   "also": []
-  },
-  {
-   "id": "uk-ridleys-little-hut-new-ash-green-uk",
-   "kind": "cheese",
-   "name": "Ridleys Little Hut",
-   "address": "Ridley Hill",
-   "town": "New Ash Green",
-   "country": "England",
-   "lat": 51.35147,
-   "lon": 0.3199,
-   "species": "cow",
-   "fluid": "no",
-   "products": "Cow cheese",
-   "source": "https://getrawmilk.com/map/ridleys-little-hut-new-ash-green-uk",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "paula@aldhurstfarm.co.uk",
+   "phone": "07901557087",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-midgham-farm-new-forest",
@@ -1841,7 +2634,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/midgham-farm-new-forest",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "hgwittandson@gmail.com",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-lodge-farm-north-crawley",
@@ -1856,7 +2655,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/lodge-farm-north-crawley",
-   "also": []
+   "also": [],
+   "postcode": "MK16 9HP",
+   "website": "",
+   "social": [
+    "https://facebook.com/RawMilkDairy"
+   ],
+   "email": "a.adderson@hotmail.co.uk",
+   "phone": "01234391250",
+   "updated": "2026-07-01"
   },
   {
    "id": "uk-free-range-yorkshire-raw-milk-hambleton",
@@ -1871,7 +2678,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/free-range-yorkshire-raw-milk-hambleton",
-   "also": []
+   "also": [],
+   "postcode": "DL6 3TE",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-pintail-nest-farm-northallerton-uk",
@@ -1886,7 +2699,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/pintail-nest-farm-northallerton-uk",
-   "also": []
+   "also": [],
+   "postcode": "DL6 2TD",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-ahimsa-farm-oakham-england",
@@ -1901,7 +2720,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/ahimsa-farm-oakham-england",
-   "also": []
+   "also": [],
+   "postcode": "LE15 9PA",
+   "website": "https://ahimsamilk.org",
+   "social": [
+    "https://facebook.com/ahimsadairyfoundation",
+    "https://instagram.com/ahimsadairyfoundation"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-mclintock's-dairy-oldham",
@@ -1916,7 +2744,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/mclintock's-dairy-oldham",
-   "also": []
+   "also": [],
+   "postcode": "OL3 5SL",
+   "website": "https://doorstepmilk.com",
+   "social": [
+    "https://facebook.com/McLintockDairy"
+   ],
+   "email": "",
+   "phone": "+447827600976",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-sandyways-farm-ormskirk-uk",
@@ -1931,7 +2767,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/sandyways-farm-ormskirk-uk",
-   "also": []
+   "also": [],
+   "postcode": "L40 4BG",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-ruxley-manor-garden-centre-orpington-uk",
@@ -1946,7 +2788,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/ruxley-manor-garden-centre-orpington-uk",
-   "also": []
+   "also": [],
+   "postcode": "DA14 5BQ",
+   "website": "https://www.ruxley-manor.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+442083000084",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-deardens-farm-over-hulton-uk",
@@ -1961,7 +2809,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/deardens-farm-over-hulton-uk",
-   "also": []
+   "also": [],
+   "postcode": "BL5 1AT",
+   "website": "",
+   "social": [
+    "https://facebook.com/deardens.farmshop"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": "2026-08-26"
   },
   {
    "id": "uk-north-farm-pawlett-uk",
@@ -1976,7 +2832,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/north-farm-pawlett-uk",
-   "also": []
+   "also": [],
+   "postcode": "TA6 4RT",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-deanery-dairy-montys-raw-milk-south-staffordshire",
@@ -1991,7 +2853,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/deanery-dairy-montys-raw-milk-south-staffordshire",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/deanerydairymontys"
+   ],
+   "email": "deanerydairymontys@gmail.com",
+   "phone": "+44 7957 679702",
+   "updated": "2025-11-06"
   },
   {
    "id": "uk-penshurst-farmers-market-uk",
@@ -2006,7 +2876,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/penshurst-farmers-market-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN11 8DG",
+   "website": "https://www.kentfarmersmarkets.org.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441892870666",
+   "updated": "2026-03-23"
   },
   {
    "id": "uk-cow-corner-milk-pickhill-uk",
@@ -2021,7 +2897,15 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow butter",
    "source": "https://getrawmilk.com/map/cow-corner-milk-pickhill-uk",
-   "also": []
+   "also": [],
+   "postcode": "YO7 4JG",
+   "website": "https://cowcornermilk.uk",
+   "social": [
+    "https://facebook.com/cowcornermilk"
+   ],
+   "email": "",
+   "phone": "+44 7592 582353",
+   "updated": "2025-11-29"
   },
   {
    "id": "uk-pidley-pints-micro-dairy-pidley-uk",
@@ -2036,7 +2920,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/pidley-pints-micro-dairy-pidley-uk",
-   "also": []
+   "also": [],
+   "postcode": "PE28 3DA",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-pluckley-farm-shop-uk",
@@ -2051,7 +2941,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/pluckley-farm-shop-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN27 0RF",
+   "website": "https://www.pluckleyfarmshop.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441233840400",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-appleby's-cheese-prees-lower-heath",
@@ -2066,7 +2962,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/appleby's-cheese-prees-lower-heath",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://applebysdairy.com",
+   "social": [],
+   "email": "hello@applebysdairy.com",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-cliftons-farm-preston",
@@ -2084,7 +2986,16 @@
    "also": [
     "eggs",
     "beef"
-   ]
+   ],
+   "postcode": "",
+   "website": "https://cliftons-farm.myshopify.com",
+   "social": [
+    "https://facebook.com/organicrawjerseymilk",
+    "https://instagram.com/cliftonsfarm"
+   ],
+   "email": "rawmilk@outlook.com",
+   "phone": "+441995640564",
+   "updated": "2026-06-01"
   },
   {
    "id": "uk-barton-brook-dairy-preston",
@@ -2099,7 +3010,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/barton-brook-dairy-preston",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/bartonbrookdairy"
+   ],
+   "email": "",
+   "phone": "+44 7732 170576",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-bell-fold-organic-farm-shop-preston",
@@ -2114,7 +3033,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/bell-fold-organic-farm-shop-preston",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+441772690387",
+   "updated": ""
   },
   {
    "id": "uk-farm-on-the-fell-preston-england",
@@ -2129,7 +3054,16 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow ice cream",
    "source": "https://getrawmilk.com/map/farm-on-the-fell-preston-england",
-   "also": []
+   "also": [],
+   "postcode": "PR3 1UT",
+   "website": "",
+   "social": [
+    "https://facebook.com/cowwithcalfdairy",
+    "https://instagram.com/farmonthefell"
+   ],
+   "email": "",
+   "phone": "+447720290045",
+   "updated": ""
   },
   {
    "id": "uk-manor-farm-ratcliffe-culey-ratcliffe-culey-uk",
@@ -2144,7 +3078,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/manor-farm-ratcliffe-culey-ratcliffe-culey-uk",
-   "also": []
+   "also": [],
+   "postcode": "CV9 3NY",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-the-milking-parlour-sabden",
@@ -2161,7 +3101,17 @@
    "source": "https://getrawmilk.com/map/the-milking-parlour-sabden",
    "also": [
     "eggs"
-   ]
+   ],
+   "postcode": "BB7 9EH",
+   "website": "",
+   "social": [
+    "https://facebook.com/themilkingparloursabden",
+    "https://instagram.com/themilkingparloursabden",
+    "https://tiktok.com/@themilkingparloursabden"
+   ],
+   "email": "ewgill@hotmail.com",
+   "phone": "",
+   "updated": "2026-02-13"
   },
   {
    "id": "uk-scorton-road-farm-richmondshire",
@@ -2178,7 +3128,15 @@
    "source": "https://getrawmilk.com/map/scorton-road-farm-richmondshire",
    "also": [
     "eggs"
-   ]
+   ],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/AtleyHillRawMilk"
+   ],
+   "email": "",
+   "phone": "+447784754131",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-the-cheese-room-deli-and-cafe-rochester-uk",
@@ -2193,7 +3151,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/the-cheese-room-deli-and-cafe-rochester-uk",
-   "also": []
+   "also": [],
+   "postcode": "ME1 1JY",
+   "website": "https://www.thecheeseroomrochester.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441634831616",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-b-g-farming-rosedale-abbey-uk",
@@ -2208,7 +3172,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/b-g-farming-rosedale-abbey-uk",
-   "also": []
+   "also": [],
+   "postcode": "YO18 8SD",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hargreaves-fold-farms-rossendale",
@@ -2223,7 +3193,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hargreaves-fold-farms-rossendale",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-hollypark-organics-rother",
@@ -2238,7 +3214,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/hollypark-organics-rother",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+441424812229",
+   "updated": ""
   },
   {
    "id": "uk-waitrose-and-partners-rushden-uk",
@@ -2253,7 +3235,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/waitrose-and-partners-rushden-uk",
-   "also": []
+   "also": [],
+   "postcode": "NN10 6AR",
+   "website": "https://www.waitrose.com",
+   "social": [],
+   "email": "",
+   "phone": "+44 1933 355099",
+   "updated": "2026-08-10"
   },
   {
    "id": "uk-penbuckles-delicatessen-saint-leonards-uk",
@@ -2268,7 +3256,16 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/penbuckles-delicatessen-saint-leonards-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN37 6NB",
+   "website": "",
+   "social": [
+    "https://facebook.com/Penbuckles",
+    "https://instagram.com/penbuckles"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-cools-farm-organics-salisbury-uk",
@@ -2283,7 +3280,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/cools-farm-organics-salisbury-uk",
-   "also": []
+   "also": [],
+   "postcode": "SP3 6DB",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-camphill-village-trust-scarborough",
@@ -2298,7 +3301,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/camphill-village-trust-scarborough",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://cvt.org.uk/locations/botton-village",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-the-milkshack-at-halton-farm-scholar-green",
@@ -2313,7 +3322,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/the-milkshack-at-halton-farm-scholar-green",
-   "also": []
+   "also": [],
+   "postcode": "CW11",
+   "website": "https://haltonfarms.com",
+   "social": [
+    "https://facebook.com/Haltonfarmsmilkshack",
+    "https://instagram.com/haltonfarms"
+   ],
+   "email": "halton@haltonfarms.com",
+   "phone": "07773329313",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-garden-end-farm-sedgemoor-district",
@@ -2328,7 +3346,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/garden-end-farm-sedgemoor-district",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://instagram.com/gardenendfarm"
+   ],
+   "email": "info@gardenendfarm.co.uk",
+   "phone": "01934712414",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-park-farm-brasted-road-sevenoaks",
@@ -2343,7 +3369,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/park-farm-brasted-road-sevenoaks",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://parkfarmbrasted.co.uk",
+   "social": [],
+   "email": "admin@edgarandson.co.uk",
+   "phone": "07909510340",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-ridley-court-farm-sevenoaks",
@@ -2356,9 +3388,23 @@
    "lon": 0.31745,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
+   "products": "Cow raw milk, cow cheese",
    "source": "https://getrawmilk.com/map/ridley-court-farm-sevenoaks",
-   "also": []
+   "also": [],
+   "postcode": "TN15 7EX",
+   "website": "",
+   "social": [
+    "https://facebook.com/RidleysLittleHut"
+   ],
+   "email": "",
+   "phone": "+447376778394",
+   "updated": "2026-10-06",
+   "alsoListedAs": [
+    {
+     "name": "Ridleys Little Hut",
+     "source": "https://getrawmilk.com/map/ridleys-little-hut-new-ash-green-uk"
+    }
+   ]
   },
   {
    "id": "uk-turvins-farm-shop-sevenoaks-uk",
@@ -2373,7 +3419,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/turvins-farm-shop-sevenoaks-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN14 6HB",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-yorkshire-raw-milk-company-uk",
@@ -2388,7 +3440,15 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow ice cream",
    "source": "https://getrawmilk.com/map/yorkshire-raw-milk-company-uk",
-   "also": []
+   "also": [],
+   "postcode": "S6 6GW",
+   "website": "",
+   "social": [
+    "https://instagram.com/yorkshirerawmilk"
+   ],
+   "email": "yorkshirerawmilk@gmail.com",
+   "phone": "+447974314722",
+   "updated": "2026-02-14"
   },
   {
    "id": "uk-the-real-milk-co-uk",
@@ -2403,7 +3463,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/the-real-milk-co-uk",
-   "also": []
+   "also": [],
+   "postcode": "SY5 7QQ",
+   "website": "https://therealmilkco.co.uk",
+   "social": [
+    "https://instagram.com/therealmilkco"
+   ],
+   "email": "",
+   "phone": "01743627788",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-b-free-milk-uk",
@@ -2418,7 +3486,17 @@
    "fluid": "yes",
    "products": "Cow raw milk (A2 milk)",
    "source": "https://getrawmilk.com/map/b-free-milk-uk",
-   "also": []
+   "also": [],
+   "postcode": "SY4 5RQ",
+   "website": "https://bfreemilk.co.uk",
+   "social": [
+    "https://facebook.com/bfreemilk",
+    "https://instagram.com/bfreemilk",
+    "https://tiktok.com/@bfreemilk"
+   ],
+   "email": "admin@bfreemilk.co.uk",
+   "phone": "+447483106418",
+   "updated": "2026-08-02"
   },
   {
    "id": "uk-stapleton-dairies-skipton-uk",
@@ -2433,7 +3511,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/stapleton-dairies-skipton-uk",
-   "also": []
+   "also": [],
+   "postcode": "BD23 4JL",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-pry-cheese-slaley-uk",
@@ -2448,7 +3532,13 @@
    "fluid": "yes",
    "products": "Sheep raw milk",
    "source": "https://getrawmilk.com/map/pry-cheese-slaley-uk",
-   "also": []
+   "also": [],
+   "postcode": "NE47 0BL",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hawthorn-farm-south-cambridgeshire",
@@ -2463,7 +3553,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hawthorn-farm-south-cambridgeshire",
-   "also": []
+   "also": [],
+   "postcode": "CB3 9NQ",
+   "website": "https://hawthornfarm.net",
+   "social": [
+    "https://facebook.com/hawthornfarm"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-woodside-farm-south-derbyshire",
@@ -2478,7 +3576,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/woodside-farm-south-derbyshire",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-ewe-moo-dairy-south-gorley-uk",
@@ -2493,7 +3597,13 @@
    "fluid": "yes",
    "products": "Sheep raw milk",
    "source": "https://getrawmilk.com/map/ewe-moo-dairy-south-gorley-uk",
-   "also": []
+   "also": [],
+   "postcode": "SP6 2PW",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-low-sizergh-farm-south-lakeland",
@@ -2508,7 +3618,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/low-sizergh-farm-south-lakeland",
-   "also": []
+   "also": [],
+   "postcode": "LA8 8AE",
+   "website": "https://lowsizerghbarn.co.uk",
+   "social": [],
+   "email": "info@lowsizerghbarn.co.uk",
+   "phone": "+441539560426",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-whin-yeats-dairy-carnforth",
@@ -2523,7 +3639,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/whin-yeats-dairy-carnforth",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://whinyeatsdairy.com",
+   "social": [],
+   "email": "info@whinyeatsdairy.com",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-coston-hall-dairy-south-norfolk-district",
@@ -2538,7 +3660,17 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/coston-hall-dairy-south-norfolk-district",
-   "also": []
+   "also": [],
+   "postcode": "NR20",
+   "website": "https://costonhalldairy.co.uk",
+   "social": [
+    "https://facebook.com/costonhalldairy",
+    "https://instagram.com/costonhall_dairy",
+    "https://x.com/costonhalldairy"
+   ],
+   "email": "dairy@costonhall.co.uk",
+   "phone": "07788581244",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-gilcombe-farm-south-somerset",
@@ -2553,7 +3685,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/gilcombe-farm-south-somerset",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://gilcombefarm.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441749813825",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-elliscombe-farm-south-somerset",
@@ -2568,7 +3706,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/elliscombe-farm-south-somerset",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/elliscombefarm"
+   ],
+   "email": "",
+   "phone": "+447930758418",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hurdlebrook-farm-overton-farm-south-somerset",
@@ -2583,7 +3729,17 @@
    "fluid": "yes",
    "products": "Cow raw milk (A2 milk)",
    "source": "https://getrawmilk.com/map/hurdlebrook-farm-overton-farm-south-somerset",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://hurdlebrook.co.uk",
+   "social": [
+    "https://facebook.com/hurdlebrook",
+    "https://instagram.com/hurdlebrook",
+    "https://x.com/Hurdlebrook"
+   ],
+   "email": "moo@hurdlebrook.co.uk",
+   "phone": "01458223229",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-buffalicious-lower-oakley-farm-south-somerset",
@@ -2598,7 +3754,13 @@
    "fluid": "yes",
    "products": "Buffalo raw milk, buffalo cheese",
    "source": "https://getrawmilk.com/map/buffalicious-lower-oakley-farm-south-somerset",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://buffaliciousuk.com",
+   "social": [],
+   "email": "hello@buffalicious.co.uk",
+   "phone": "01935840567",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-s-g-lee-and-sons-oakley-farm-south-staffordshire",
@@ -2613,7 +3775,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/s-g-lee-and-sons-oakley-farm-south-staffordshire",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/oakleyfarm12"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-daisy-meadow-dairy-southampton-england",
@@ -2628,7 +3798,13 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow cream",
    "source": "https://getrawmilk.com/map/daisy-meadow-dairy-southampton-england",
-   "also": []
+   "also": [],
+   "postcode": "SO30 2AA",
+   "website": "https://daisymeadowdairy.co.uk",
+   "social": [],
+   "email": "hello@popellfarmshop.co.uk",
+   "phone": "07759014125",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-broadditch-farm-shop-southfleet-uk",
@@ -2643,7 +3819,17 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/broadditch-farm-shop-southfleet-uk",
-   "also": []
+   "also": [],
+   "postcode": "DA13 9PU",
+   "website": "https://www.broadditch.co.uk",
+   "social": [
+    "https://facebook.com/BroadditchFarmShop",
+    "https://instagram.com/broadditchfarmshop",
+    "https://x.com/broadditchfarm"
+   ],
+   "email": "",
+   "phone": "+441474834161",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-millbrook-garden-centre-southfleet-uk",
@@ -2658,7 +3844,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/millbrook-garden-centre-southfleet-uk",
-   "also": []
+   "also": [],
+   "postcode": "DA13 9PA",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-r-i-wood-and-son-sowerby-bridge",
@@ -2673,7 +3865,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/r-i-wood-and-son-sowerby-bridge",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "01422831614",
+   "updated": ""
   },
   {
    "id": "uk-dragonfly-farm-shop-cafe-speldhurst-uk",
@@ -2688,7 +3886,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/dragonfly-farm-shop-cafe-speldhurst-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN3 0NR",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-billington-dary-farm-stafford",
@@ -2703,7 +3907,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/billington-dary-farm-stafford",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-foxs-farm-stainton",
@@ -2718,7 +3928,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/foxs-farm-stainton",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/foxsfarm18",
+    "https://instagram.com/foxesholsteins"
+   ],
+   "email": "foxesheather@outlook.com",
+   "phone": "+44 7964 556959",
+   "updated": ""
   },
   {
    "id": "uk-oak-farm-stalybridge-uk",
@@ -2733,7 +3952,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/oak-farm-stalybridge-uk",
-   "also": []
+   "also": [],
+   "postcode": "SK15 3QR",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-kingcott-dairy-staplehurst-uk",
@@ -2748,22 +3973,22 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow cheese",
    "source": "https://getrawmilk.com/map/kingcott-dairy-staplehurst-uk",
-   "also": []
-  },
-  {
-   "id": "uk-kingcott-dairy-milk-box-staplehurst-uk",
-   "kind": "stockist",
-   "name": "Kingcott Dairy Milk Box",
-   "address": "Kingcott Dairy Milk Box, Iden Manor Farm",
-   "town": "Staplehurst",
-   "country": "England",
-   "lat": 51.14923,
-   "lon": 0.55824,
-   "species": "cow",
-   "fluid": "yes",
-   "products": "Cow raw milk, cow cheese",
-   "source": "https://getrawmilk.com/map/kingcott-dairy-milk-box-staplehurst-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN12 0ES",
+   "website": "https://kingcottdairy.co.uk",
+   "social": [
+    "https://facebook.com/kingcottdairy",
+    "https://instagram.com/kingcottdairy"
+   ],
+   "email": "hello@kingcottdairy.co.uk",
+   "phone": "07496515437",
+   "updated": "2026-11-09",
+   "alsoListedAs": [
+    {
+     "name": "Kingcott Dairy Milk Box",
+     "source": "https://getrawmilk.com/map/kingcott-dairy-milk-box-staplehurst-uk"
+    }
+   ]
   },
   {
    "id": "uk-henhurst-farm-shop-staplehurst-uk",
@@ -2778,7 +4003,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/henhurst-farm-shop-staplehurst-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN12 0HD",
+   "website": "https://www.henhurstfarmshop.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441580891567",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-wheelbirks-parlour-stocksfield-england",
@@ -2793,7 +4024,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/wheelbirks-parlour-stocksfield-england",
-   "also": []
+   "also": [],
+   "postcode": "NE43",
+   "website": "https://wheelbirks.co.uk",
+   "social": [
+    "https://facebook.com/wheelbirks",
+    "https://instagram.com/wheelbirks"
+   ],
+   "email": "theparlour@wheelbirks.co.uk",
+   "phone": "07950029347",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-cotwalton-dairy-uk",
@@ -2808,7 +4048,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/cotwalton-dairy-uk",
-   "also": []
+   "also": [],
+   "postcode": "ST15 8TA",
+   "website": "",
+   "social": [
+    "https://facebook.com/cotwaltondairy"
+   ],
+   "email": "susan.malkin@yahoo.co.uk",
+   "phone": "07986436682",
+   "updated": "2026-05-08"
   },
   {
    "id": "uk-the-gorgeous-goat-company-stonegate-uk",
@@ -2823,7 +4071,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/the-gorgeous-goat-company-stonegate-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN5 7DT",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hayloft-farm-uk",
@@ -2842,7 +4096,17 @@
     "eggs",
     "beef",
     "pork"
-   ]
+   ],
+   "postcode": "GL6 0SU",
+   "website": "https://hayloftfarm.my.canva.site/horsley",
+   "social": [
+    "https://facebook.com/Hayloft.Farm.Horsley",
+    "https://instagram.com/hayloft_farm",
+    "https://youtube.com/@hayloftfarm"
+   ],
+   "email": "nell@hayloftfarm.uk",
+   "phone": "",
+   "updated": "2026-08-30"
   },
   {
    "id": "uk-the-butcher-of-brogdale-canterbury-uk",
@@ -2857,7 +4121,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/the-butcher-of-brogdale-canterbury-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT2 0NJ",
+   "website": "https://www.thebutcherofbrogdale.co.uk/pages/canterbury",
+   "social": [],
+   "email": "",
+   "phone": "+441227712571",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-peckforton-farm-dairy-tarporley-uk",
@@ -2872,7 +4142,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/peckforton-farm-dairy-tarporley-uk",
-   "also": []
+   "also": [],
+   "postcode": "CW6 9TH",
+   "website": "",
+   "social": [
+    "https://facebook.com/peckfortonfarmdairy"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hagley-bridge-farm-taunton-deane",
@@ -2887,7 +4165,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hagley-bridge-farm-taunton-deane",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://reddevoncheesecompany.co.uk",
+   "social": [],
+   "email": "alison@reddevoncheesecompany.co.uk",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-dykes-farm-taunton-deane",
@@ -2902,13 +4186,19 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/dykes-farm-taunton-deane",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://stokestgregory.org/services/local-businesses/dykes-farm/",
+   "social": [],
+   "email": "dykesfarm@btconnect.com",
+   "phone": "01823490349",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-fox's-fridge-hart",
    "kind": "raw_milk",
    "name": "Fox's Fridge",
-   "address": "South Astridge Farm SA70 8RE",
+   "address": "South Astridge Farm",
    "town": "Tenby",
    "country": "Wales",
    "lat": 51.68951,
@@ -2917,7 +4207,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/fox's-fridge-hart",
-   "also": []
+   "also": [],
+   "postcode": "SA70 8RE",
+   "website": "",
+   "social": [
+    "https://facebook.com/foxsfridge",
+    "https://instagram.com/foxsfridge"
+   ],
+   "email": "info@foxsfridge.co.uk",
+   "phone": "+447789754807",
+   "updated": ""
   },
   {
    "id": "uk-cranbrook-bakery-tenterden-uk",
@@ -2932,7 +4231,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/cranbrook-bakery-tenterden-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN30 6AR",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "+441580765956",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-farmers-farm-shop-teston-uk",
@@ -2947,7 +4252,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/farmers-farm-shop-teston-uk",
-   "also": []
+   "also": [],
+   "postcode": "ME18 5BY",
+   "website": "https://www.farmersfarmshop.com",
+   "social": [],
+   "email": "",
+   "phone": "+441622813080",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hs-bourne-threapwood",
@@ -2962,7 +4273,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hs-bourne-threapwood",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://hsbourne.co.uk",
+   "social": [],
+   "email": "john@hsbourne.co.uk",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-wheston-house-farm-tideswell-uk",
@@ -2977,7 +4294,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/wheston-house-farm-tideswell-uk",
-   "also": []
+   "also": [],
+   "postcode": "SK17 8JD",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-winterdale-cheesemakers-platt-farm-house-tonbridge-and-malling",
@@ -2992,7 +4315,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/winterdale-cheesemakers-platt-farm-house-tonbridge-and-malling",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://winterdale.co.uk",
+   "social": [],
+   "email": "robin@winterdale.co.uk",
+   "phone": "01732820021",
+   "updated": ""
   },
   {
    "id": "uk-little-acres-goat-products-tonbridge-and-malling",
@@ -3007,7 +4336,13 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/little-acres-goat-products-tonbridge-and-malling",
-   "also": []
+   "also": [],
+   "postcode": "ME19",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-wallington-farmers-market-uk",
@@ -3022,7 +4357,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/wallington-farmers-market-uk",
-   "also": []
+   "also": [],
+   "postcode": "SM6 0NB",
+   "website": "https://www.ecolocal.org.uk",
+   "social": [],
+   "email": "",
+   "phone": "+442084041522",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-fen-farm-dairy-waveney",
@@ -3037,7 +4378,17 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow butter, cow cheese, cow kefir",
    "source": "https://getrawmilk.com/map/fen-farm-dairy-waveney",
-   "also": []
+   "also": [],
+   "postcode": "NR35",
+   "website": "https://fenfarmdairy.co.uk",
+   "social": [
+    "https://facebook.com/FenFarmDairy",
+    "https://instagram.com/fenfarmdairy",
+    "https://x.com/FenFarmDairy"
+   ],
+   "email": "hello@fenfarmdairy.co.uk",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-tablehurst-farm-wealden",
@@ -3052,7 +4403,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/tablehurst-farm-wealden",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://tablehurstfarm.org.uk",
+   "social": [
+    "https://facebook.com/tablehurstfarm",
+    "https://instagram.com/tablehurst.farm"
+   ],
+   "email": "tablehurst.farm@gmail.com",
+   "phone": "01342823173",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hook-and-son-wealden",
@@ -3067,7 +4427,15 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow butter, cow cream",
    "source": "https://getrawmilk.com/map/hook-and-son-wealden",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://hookandson.co.uk",
+   "social": [
+    "https://x.com/hookandsonfarm"
+   ],
+   "email": "teresa@hookandson.co.uk",
+   "phone": "+441323449494",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-red-lodge-farm-wakefield",
@@ -3084,7 +4452,16 @@
    "source": "https://getrawmilk.com/map/red-lodge-farm-wakefield",
    "also": [
     "eggs"
-   ]
+   ],
+   "postcode": "WF2 0SB",
+   "website": "https://redlodgefarm.co.uk",
+   "social": [
+    "https://facebook.com/rawmilkyorkshire",
+    "https://instagram.com/redlodgefarmraw"
+   ],
+   "email": "red.lodge@hotmail.com",
+   "phone": "07753465149",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-snydale-gate-farm-westhoughton-uk",
@@ -3099,7 +4476,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/snydale-gate-farm-westhoughton-uk",
-   "also": []
+   "also": [],
+   "postcode": "BL5 3EJ",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-the-calf-at-foot-dairy-waveney",
@@ -3116,7 +4499,16 @@
    "source": "https://getrawmilk.com/map/the-calf-at-foot-dairy-waveney",
    "also": [
     "beef"
-   ]
+   ],
+   "postcode": "SG4 7EA",
+   "website": "https://thecalfatfootdairy.co.uk",
+   "social": [
+    "https://facebook.com/CalfAtFootDairy",
+    "https://instagram.com/thecalfatfootdairy"
+   ],
+   "email": "fiona@thecalfatfootdairy.co.uk",
+   "phone": "07787103508",
+   "updated": "2026-06-25"
   },
   {
    "id": "uk-wheatacre-hall-farm-pantry-wheatacre-uk",
@@ -3131,7 +4523,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/wheatacre-hall-farm-pantry-wheatacre-uk",
-   "also": []
+   "also": [],
+   "postcode": "NR34 0AS",
+   "website": "https://wheatacrehallbarns.co.uk",
+   "social": [
+    "https://facebook.com/ESBurroughs",
+    "https://instagram.com/esburroughs"
+   ],
+   "email": "",
+   "phone": "01502 677208",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-the-rare-dairy-whitchurch-england",
@@ -3146,7 +4547,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/the-rare-dairy-whitchurch-england",
-   "also": []
+   "also": [],
+   "postcode": "SY13 4DP",
+   "website": "https://the-rare.co.uk",
+   "social": [
+    "https://instagram.com/theraredairy"
+   ],
+   "email": "hello@the-rare.co.uk",
+   "phone": "07794440075",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-waltham-place-farm-white-waltham-uk",
@@ -3161,7 +4570,16 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/waltham-place-farm-white-waltham-uk",
-   "also": []
+   "also": [],
+   "postcode": "SL6 3JH",
+   "website": "https://www.walthamplace.com",
+   "social": [
+    "https://facebook.com/walthamplace.farm",
+    "https://instagram.com/walthamplace"
+   ],
+   "email": "education@walthamplace.com",
+   "phone": "+441628825517",
+   "updated": "2025-10-26"
   },
   {
    "id": "uk-the-cheese-box-whitstable-uk",
@@ -3176,7 +4594,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/the-cheese-box-whitstable-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT5 1DG",
+   "website": "https://thecheesebox.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441227277809",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-higglers-farm-wickham",
@@ -3191,7 +4615,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/higglers-farm-wickham",
-   "also": []
+   "also": [],
+   "postcode": "PO17 5PQ",
+   "website": "",
+   "social": [],
+   "email": "higglersfarm@gmail.com",
+   "phone": "07954371485",
+   "updated": ""
   },
   {
    "id": "uk-doras-dairy-uk",
@@ -3210,7 +4640,16 @@
     "eggs",
     "beef",
     "pork"
-   ]
+   ],
+   "postcode": "",
+   "website": "https://dorasdairy.co.uk",
+   "social": [
+    "https://facebook.com/dorasdairy",
+    "https://instagram.com/dorasdairy"
+   ],
+   "email": "dairymaid@dorasdairy.co.uk",
+   "phone": "07702719908",
+   "updated": "2026-10-05"
   },
   {
    "id": "uk-hiltonbury-jerseys-winchester",
@@ -3225,7 +4664,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hiltonbury-jerseys-winchester",
-   "also": []
+   "also": [],
+   "postcode": "SO21 2AY",
+   "website": "https://hiltonburyjerseys.co.uk",
+   "social": [
+    "https://instagram.com/hiltonbury"
+   ],
+   "email": "hiltonbury_jerseys@btinternet.com",
+   "phone": "+447977933470",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-gibsons-farm-shop-wingham-uk",
@@ -3240,7 +4687,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/gibsons-farm-shop-wingham-uk",
-   "also": []
+   "also": [],
+   "postcode": "CT3 1NY",
+   "website": "https://www.gibsonsfarmshop.com",
+   "social": [],
+   "email": "",
+   "phone": "+441227720262",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-udderly-fresh-raw-milk-winslow",
@@ -3255,7 +4708,16 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow cheese, goat raw milk, goat cheese, sheep cheese",
    "source": "https://getrawmilk.com/map/udderly-fresh-raw-milk-winslow",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://www.udderlyfreshrawmilk.net",
+   "social": [
+    "https://facebook.com/udderlyfreshrawmilkuk",
+    "https://x.com/udderlyfresh"
+   ],
+   "email": "info@udderlyfreshrawmilk.co.uk",
+   "phone": "+447923542226",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-lovejoy-farm-butchery-wittersham-uk",
@@ -3270,7 +4732,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/lovejoy-farm-butchery-wittersham-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN30 7NP",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-beeches-farm-wolverhampton-uk",
@@ -3285,7 +4753,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/beeches-farm-wolverhampton-uk",
-   "also": []
+   "also": [],
+   "postcode": "WV10 8JT",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-old-hall-farm-south-norfolk-district",
@@ -3300,7 +4774,17 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/old-hall-farm-south-norfolk-district",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "https://oldhallfarmshop.co.uk",
+   "social": [
+    "https://facebook.com/OldHallFm",
+    "https://instagram.com/oldhallfarm",
+    "https://x.com/OldHallFm"
+   ],
+   "email": "oldhallfm@gmail.com",
+   "phone": "01508333110",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-wye-farmers-market-wye-uk",
@@ -3315,7 +4799,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/wye-farmers-market-wye-uk",
-   "also": []
+   "also": [],
+   "postcode": "TN25 5AH",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-errington-cheese-carnwath-uk",
@@ -3330,7 +4820,16 @@
    "fluid": "no",
    "products": "Sheep cheese",
    "source": "https://getrawmilk.com/map/errington-cheese-carnwath-uk",
-   "also": []
+   "also": [],
+   "postcode": "ML11 8NF",
+   "website": "https://www.erringtoncheese.co.uk",
+   "social": [
+    "https://facebook.com/erringtonsbarnltd",
+    "https://instagram.com/erringtons_barn"
+   ],
+   "email": "hello@erringtonsbarn.co.uk",
+   "phone": "01899810257",
+   "updated": "2026-11-20"
   },
   {
    "id": "uk-st-andrews-farmhouse-cheese-company-pittenweem-uk",
@@ -3345,7 +4844,13 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/st-andrews-farmhouse-cheese-company-pittenweem-uk",
-   "also": []
+   "also": [],
+   "postcode": "KY10 2RT",
+   "website": "https://www.standrewscheese.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "01333312580",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-isle-of-mull-cheese-tobermory-uk",
@@ -3360,7 +4865,16 @@
    "fluid": "no",
    "products": "Cow cheese",
    "source": "https://getrawmilk.com/map/isle-of-mull-cheese-tobermory-uk",
-   "also": []
+   "also": [],
+   "postcode": "PA75 6QD",
+   "website": "https://isleofmullcheese.co.uk",
+   "social": [
+    "https://facebook.com/isleofmullcheese",
+    "https://instagram.com/isle_of_mull_cheese"
+   ],
+   "email": "office@iomc.co.uk",
+   "phone": "01688302235",
+   "updated": "2026-11-20"
   },
   {
    "id": "uk-goatylicious-cothi-valley-goats-abergorlech",
@@ -3375,7 +4889,15 @@
    "fluid": "yes",
    "products": "Goat raw milk",
    "source": "https://getrawmilk.com/map/goatylicious-cothi-valley-goats-abergorlech",
-   "also": []
+   "also": [],
+   "postcode": "SA19 7BQ",
+   "website": "https://goatylicious.co.uk",
+   "social": [
+    "https://facebook.com/thegoatbarn1"
+   ],
+   "email": "",
+   "phone": "+447872543513",
+   "updated": ""
   },
   {
    "id": "uk-gelli-farm-raw-milk-llangewydd",
@@ -3390,7 +4912,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/gelli-farm-raw-milk-llangewydd",
-   "also": []
+   "also": [],
+   "postcode": "CF32",
+   "website": "",
+   "social": [
+    "https://facebook.com/GelliFarmRawMilk"
+   ],
+   "email": "gellifarm@btinternet.com",
+   "phone": "+441656744579",
+   "updated": "2025-11-24"
   },
   {
    "id": "uk-hope-cottage-farm-shop-chester-uk",
@@ -3405,7 +4935,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hope-cottage-farm-shop-chester-uk",
-   "also": []
+   "also": [],
+   "postcode": "CH4 0NN",
+   "website": "https://www.hopecottagefarm-shop.co.uk",
+   "social": [
+    "https://instagram.com/hopecottagefarmshop"
+   ],
+   "email": "hopecottagefarmshop@yahoo.com",
+   "phone": "07979 068413",
+   "updated": "2026-02-08"
   },
   {
    "id": "uk-mountain-hall-farm-crymych",
@@ -3420,7 +4958,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/mountain-hall-farm-crymych",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/MountainHallFarm"
+   ],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-newbridge-farm-ewloe-uk",
@@ -3435,7 +4981,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/newbridge-farm-ewloe-uk",
-   "also": []
+   "also": [],
+   "postcode": "CH5 3BS",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-llaeth-meillionen-milk-llandysul",
@@ -3450,7 +5002,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/llaeth-meillionen-milk-llandysul",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/llaethmeillionenmilk"
+   ],
+   "email": "",
+   "phone": "+441559363297",
+   "updated": ""
   },
   {
    "id": "uk-dyfi-dairy-machynlleth-wales",
@@ -3465,7 +5025,18 @@
    "fluid": "yes",
    "products": "Cow raw milk, goat raw milk (A2 milk)",
    "source": "https://getrawmilk.com/map/dyfi-dairy-machynlleth-wales",
-   "also": []
+   "also": [],
+   "postcode": "SY20 8AG",
+   "website": "https://dyfidairy.com",
+   "social": [
+    "https://facebook.com/dyfidairy",
+    "https://instagram.com/dyfidairy",
+    "https://youtube.com/@dyfidairy",
+    "https://tiktok.com/@dyfidairy"
+   ],
+   "email": "dyfidairy@gmail.com",
+   "phone": "",
+   "updated": ""
   },
   {
    "id": "uk-grossmont-wood-farm-porth-gwyn",
@@ -3480,7 +5051,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/grossmont-wood-farm-porth-gwyn",
-   "also": []
+   "also": [],
+   "postcode": "",
+   "website": "",
+   "social": [
+    "https://facebook.com/grosmontwood"
+   ],
+   "email": "grosmontwoodfarm@btconnect.com",
+   "phone": "01873821281",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hafren-rare-breeds-portskewett-uk",
@@ -3495,7 +5074,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/hafren-rare-breeds-portskewett-uk",
-   "also": []
+   "also": [],
+   "postcode": "NP26 5TU",
+   "website": "",
+   "social": [],
+   "email": "",
+   "phone": "",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-caer-fai-farm-st-davids",
@@ -3510,7 +5095,15 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/caer-fai-farm-st-davids",
-   "also": []
+   "also": [],
+   "postcode": "SA62 6QT",
+   "website": "https://caerfaifarm.co.uk",
+   "social": [
+    "https://x.com/CaerfaiFarm"
+   ],
+   "email": "",
+   "phone": "01437720548",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-hilltop-dairy-farm-belfast",
@@ -3525,7 +5118,15 @@
    "fluid": "yes",
    "products": "Cow raw milk, cow butter, cow cream, cow kefir",
    "source": "https://getrawmilk.com/map/hilltop-dairy-farm-belfast",
-   "also": []
+   "also": [],
+   "postcode": "BT6 9SL",
+   "website": "https://hilltopdairyfarm.company.site",
+   "social": [
+    "https://facebook.com/hilltopdairyfarm"
+   ],
+   "email": "hilltopdairyfarmbelfast@gmail.com",
+   "phone": "+442891275424",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-culmore-organic-farm-coleraine",
@@ -3540,7 +5141,13 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/culmore-organic-farm-coleraine",
-   "also": []
+   "also": [],
+   "postcode": "BT51",
+   "website": "https://culmoreorganicfarm.com",
+   "social": [],
+   "email": "david@culmoreorganicfarm.com",
+   "phone": "07711441818",
+   "updated": "2026-11-09"
   },
   {
    "id": "uk-eastwood-farm-cookstown",
@@ -3555,7 +5162,15 @@
    "fluid": "yes",
    "products": "Cow raw milk (A2 milk)",
    "source": "https://getrawmilk.com/map/eastwood-farm-cookstown",
-   "also": []
+   "also": [],
+   "postcode": "BT80 9HF",
+   "website": "",
+   "social": [
+    "https://instagram.com/eastwood_farm39"
+   ],
+   "email": "cce50@hotmail.co.uk",
+   "phone": "",
+   "updated": "2026-07-19"
   },
   {
    "id": "uk-weirs-organic-farm-prospect-house",
@@ -3570,8 +5185,14 @@
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/weirs-organic-farm-prospect-house",
-   "also": []
+   "also": [],
+   "postcode": "BT62 2JZ",
+   "website": "",
+   "social": [],
+   "email": "weirsorganicfarm@hotmail.com",
+   "phone": "07526997501",
+   "updated": "2026-11-09"
   }
  ],
- "checked": "2026-11-23: every UK entry matched to the live getrawmilk listing (same id, coordinates within 5 m, products from its structured data)"
+ "checked": "2026-11-23: every UK entry matched to its live getrawmilk page (address, postcode, map point, contact); same-business duplicates within 300 m merged"
 }

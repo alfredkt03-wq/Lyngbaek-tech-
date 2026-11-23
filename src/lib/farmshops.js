@@ -347,10 +347,10 @@ const kmBetween = (a, b, c, d) => { const r = x => x * Math.PI / 180, t = Math.s
 function loadUkSeed() {
   try {
     return JSON.parse(fs.readFileSync(UK_SEED, 'utf8')).entries.filter(e => typeof e.lat === 'number' && typeof e.lon === 'number').map(e => ({
-      id: e.id, kind: e.kind || 'raw_milk', name: e.name, address: e.address || '', town: e.town || '', postcode: '',
+      id: e.id, kind: e.kind || 'raw_milk', name: e.name, address: e.address || '', town: e.town || '', postcode: e.postcode || '',
       country: e.country, region: '', area: '', lat: e.lat, lon: e.lon, approx: false, precision: 'listed',
       species: e.species || '', fluid: e.fluid || '', also: e.also || [], description: e.products || '', sourceUrl: e.source,
-      phone: '', website: '', hours: '', organic: false, sources: ['getrawmilk'],
+      phone: e.phone || '', email: e.email || '', social: e.social || [], website: e.website || '', hours: e.hours || '', updated: e.updated || '', organic: false, sources: ['getrawmilk'],
     }));
   } catch (e) { console.warn('[farmshops] UK seed', e.message); return []; }
 }
