@@ -26,6 +26,9 @@
 .animals button{font:inherit;font-size:14px;font-weight:500;color:var(--ink);background:transparent;border:1px solid var(--ink);padding:5px 12px;cursor:pointer}
 .animals button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
 .animals button .n{opacity:.7;font-size:12px;margin-left:5px}
+.popup .share,.side .reset{font:inherit;font-size:13px;color:var(--ink);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.side .reset{display:block;margin-top:8px;font-weight:700}
+@media(max-width:600px){#bigmap .leaflet-popup-content{width:min(260px,72vw)!important}}
 .popup .tags{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
 .popup .tags span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);padding:2px 6px}
 @media(max-width:760px){.bigmap h1{font-size:24px!important;line-height:1.15;margin:0 0 12px}.bar{grid-template-columns:1.6fr 1fr!important}.bar label{font-size:12px}.bar input,.bar select{padding:9px 10px;font-size:14px}.types label{font-size:13px}.types{margin-bottom:10px}.animals button{padding:4px 9px;font-size:13px}.tag{display:none}.bigmap .eyebrow{display:none}.bar{gap:10px}.types{gap:6px 14px}.animals{margin-bottom:12px}#bigmap{height:62vh!important}}

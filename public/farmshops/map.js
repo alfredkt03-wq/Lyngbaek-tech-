@@ -51,6 +51,7 @@
     if (httpUrl(s.website)) links.push('<a href="' + esc(s.website) + '" target="_blank" rel="noopener nofollow">Website ↗</a>');
     if (/^https:\/\/getrawmilk\.com\//.test(s.sourceUrl || '')) links.push('<a href="' + esc(s.sourceUrl) + '" target="_blank" rel="noopener nofollow">Source listing ↗</a>');
     links.push('<a href="https://www.google.com/maps/dir/?api=1&destination=' + mapsDest(s) + '" target="_blank" rel="noopener">Directions ↗</a>');
+    links.push('<button type="button" class="share" data-share="' + esc(s.id) + '">Copy link</button>');
     return '<div class="popup"><h4>' + esc(s.name) + '</h4><p>' + esc(KINDS[s.kind].label) + ' · ' + esc(milkOf(s).raw) + '</p><p>' + esc(milkOf(s).note) + '</p>' +
       (animalsOf(s).length || (s.also || []).length ? '<div class="tags">' + animalsOf(s).concat(s.also || []).map(function (a) { return '<span>' + esc(a) + '</span>'; }).join('') + '</div>' : '') +
       (where ? '<p>' + esc(where) + '</p>' : '') + (s.description && s.sources && s.sources.indexOf('getrawmilk') !== -1 ? '<p>' + esc(s.description) + '</p>' : '') +
@@ -152,6 +153,7 @@
     if (fit && list.length) { var b = cluster.getBounds(); if (b.isValid()) map.fitBounds(b, { maxZoom: 12, padding: [24, 24] }); }
     listInView();
     shadeRegions(list);
+    writeHash();
   }
 
   // Shows all of the UK and Ireland, and locks the map to that view: no zooming out or panning beyond it.
@@ -243,7 +245,12 @@
 
   function listInView() {
     if (!map || !$('inview')) return;
-    var b = map.getBounds(), list = visible().filter(function (s) { return b.contains([s.lat, s.lon]); });
+    var vis = visible(), b = map.getBounds(), list = vis.filter(function (s) { return b.contains([s.lat, s.lon]); });
+    if (!vis.length && all.length) {
+      $('inviewn').textContent = 'No places match';
+      $('inview').innerHTML = '<li class="none">Nothing matches these filters. <button type="button" class="reset" data-reset>Clear all filters</button></li>';
+      return;
+    }
     $('inviewn').textContent = list.length + (list.length === 1 ? ' place' : ' places') + ' on the map';
     if (origin) list.forEach(function (s) { s._d = origin.distanceTo([s.lat, s.lon]); });
     list.sort(function (a, z) { return origin ? a._d - z._d : a.name.localeCompare(z.name, 'en'); });
@@ -332,12 +339,44 @@
     });
   }
 
+  // The view, filters and open listing live in the address, so any view can be shared or bookmarked.
+  var openId = '', restoring = false, ready = false, START = location.hash; // the shared link, kept until the data is in
+  function writeHash() {
+    if (!map || restoring || !ready || !history.replaceState) return;
+    var c = map.getCenter(), parts = [], off = Object.keys(on).filter(function (k) { return on[k] === false; });
+    if (country) parts.push('c=' + encodeURIComponent(country));
+    if (animal) parts.push('a=' + animal);
+    if (extra) parts.push('x=' + extra);
+    if (q) parts.push('q=' + encodeURIComponent(q));
+    if (off.length) parts.push('off=' + off.join(','));
+    if (openId) parts.push('p=' + encodeURIComponent(openId));
+    history.replaceState(null, '', '#' + map.getZoom() + '/' + c.lat.toFixed(4) + '/' + c.lng.toFixed(4) + (parts.length ? '?' + parts.join('&') : ''));
+  }
+  function readHash() {
+    ready = true;
+    var h = START.replace(/^#/, ''); if (!h) return false;
+    var m = h.split('?'), v = m[0].split('/').map(Number), o = {};
+    (m[1] || '').split('&').forEach(function (kv) { var i = kv.indexOf('='); if (i > 0) o[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); });
+    restoring = true;
+    if (o.c === 'UK' || o.c === 'Ireland') { country = o.c; $('country').value = o.c; }
+    if (/^(cow|goat|sheep|buffalo)$/.test(o.a || '')) animal = o.a;
+    if (/^(eggs|beef|pork|chicken)$/.test(o.x || '')) extra = o.x;
+    if (o.q) { q = o.q; $('q').value = o.q; }
+    if (o.off) o.off.split(',').forEach(function (k) { if (KINDS[k]) on[k] = false; });
+    renderTypes(); renderAnimals(); render(false);
+    if (v.length === 3 && v.every(isFinite)) map.setView([v[1], v[2]], v[0], { animate: false });
+    var s = o.p && dataOf[o.p];
+    if (s) { map.setView([s.lat, s.lon], Math.max(map.getZoom(), 14), { animate: false }); L.popup({ offset: [0, -6] }).setLatLng([s.lat, s.lon]).setContent(popup(s)).openOn(map); openId = s.id; }
+    restoring = false; writeHash();
+    return true;
+  }
+
   function done() {
     if (--pending > 0) return;
     renderTypes();
     renderAnimals();
     $('mstatus').textContent = failed.length ? 'Could not load data for: ' + failed.join(', ') + '.' : '';
-    render(true);
+    if (!readHash()) render(true);
   }
 
   function init() {
@@ -400,7 +439,23 @@
     });
     $('inview').addEventListener('mouseleave', unring);
     var t;
-    $('q').addEventListener('input', function (e) { clearTimeout(t); t = setTimeout(function () { q = e.target.value; render(true); }, 200); });
+    $('q').addEventListener('input', function (e) { clearTimeout(t); t = setTimeout(function () { q = e.target.value; render(true); writeHash(); }, 200); });
+    map.on('moveend', writeHash);
+    // Copy link (popups) and Clear all filters (empty list)
+    document.addEventListener('click', function (e) {
+      var sh = e.target.closest && e.target.closest('button[data-share]');
+      if (sh) {
+        openId = sh.getAttribute('data-share'); writeHash();
+        var url = location.href, done2 = function () { sh.textContent = 'Link copied'; };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done2, function () { window.prompt('Copy this link', url); });
+        else window.prompt('Copy this link', url);
+        return;
+      }
+      if (e.target.closest && e.target.closest('button[data-reset]')) {
+        animal = ''; extra = ''; q = ''; $('q').value = ''; country = ''; $('country').value = ''; on = {};
+        renderTypes(); renderAnimals(); render(false); lockView(); writeHash();
+      }
+    });
     $('country').addEventListener('change', function (e) { country = e.target.value; renderAnimals(); render(true); });
     if ($('animals')) $('animals').addEventListener('click', function (e) {
       var b = e.target.closest && e.target.closest('button[data-an]'); if (!b) return;
@@ -412,10 +467,12 @@
     });
     // Ring the pin whose popup is open, so it stands out among its neighbours.
     map.on('popupopen', function (e) {
+      var sb = e.popup.getElement && e.popup.getElement() && e.popup.getElement().querySelector('button[data-share]');
+      openId = sb ? sb.getAttribute('data-share') : ''; writeHash();
       if (selRing) map.removeLayer(selRing);
       selRing = L.circleMarker(e.popup.getLatLng(), { radius: 13, color: '#173c29', weight: 2.5, fillOpacity: 0, interactive: false }).addTo(map);
     });
-    map.on('popupclose', function () { if (selRing) { map.removeLayer(selRing); selRing = null; } });
+    map.on('popupclose', function () { if (selRing) { map.removeLayer(selRing); selRing = null; } openId = ''; writeHash(); });
     $('types').addEventListener('change', function (e) { var k = e.target.getAttribute('data-kind'); if (k) { on[k] = e.target.checked; render(false); } });
     SOURCES.forEach(function (src) {
       fetchSource(src, 0).then(function (d) { add(d, src.country); }).catch(function () { failed.push(src.country); }).then(done);
