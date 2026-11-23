@@ -407,6 +407,27 @@
       function streetToggle() { var z = map.getZoom(); if (z >= 13 && !map.hasLayer(streetNames)) streetNames.addTo(map); else if (z < 13 && map.hasLayer(streetNames)) map.removeLayer(streetNames); }
       map.on('zoomend', streetToggle);
     }
+    function boostRoads(m) {
+      var MAJOR = /motorway|trunk|primary/, MID = /secondary|tertiary/;
+      (m.getStyle().layers || []).forEach(function (ly) {
+        if (ly['source-layer'] !== 'transportation' || ly.type !== 'line') return;
+        var id = ly.id, f = JSON.stringify(ly.filter || '') + id;
+        var from = MAJOR.test(f) ? 4 : MID.test(f) ? 7 : /minor|service|track|path/.test(f) ? 10 : 8;
+        try { m.setLayerZoomRange(id, Math.min(ly.minzoom || 0, from), 24); } catch (e) { /* keep style default */ }
+        try {
+          var w = m.getPaintProperty(id, 'line-width');
+          var k = MAJOR.test(f) ? 1.6 : MID.test(f) ? 1.4 : 1.25;
+          if (typeof w === 'number') m.setPaintProperty(id, 'line-width', w * k);
+          else if (w) m.setPaintProperty(id, 'line-width', ['*', k, w]);
+          m.setPaintProperty(id, 'line-opacity', 1);
+        } catch (e) { /* expression the style does not allow scaling: leave it */ }
+        // Google-like road colours: orange motorways, amber main roads, yellow B roads, white minor roads with grey edges
+        if (/rail|path|track|ferry/.test(id)) return;
+        var col = /motorway/.test(f) ? '#e8762d' : /trunk|primary/.test(f) ? '#f0a63a' : MID.test(f) ? '#f3c95a' : '#ffffff';
+        if (/casing/.test(id)) col = MAJOR.test(f) ? '#b5531a' : '#a8a39a';
+        try { m.setPaintProperty(id, 'line-color', col); } catch (e) { /* leave the style's colour */ }
+      });
+    }
     var webgl = false;
     try { var cv = document.createElement('canvas'); webgl = !!(window.WebGLRenderingContext && (cv.getContext('webgl2') || cv.getContext('webgl'))); } catch (e) { /* no WebGL */ }
     if (L.maplibreGL && window.maplibregl && webgl) {
@@ -414,6 +435,8 @@
         var gl = L.maplibreGL({ style: 'https://tiles.openfreemap.org/styles/liberty', attribution: '<a href="https://openfreemap.org">OpenFreeMap</a> &copy; <a href="https://www.openmaptiles.org/">OpenMapTiles</a> ' + OSM_ATTR }).addTo(map);
         vectorBase = true;
         var glm = gl.getMaplibreMap && gl.getMaplibreMap();
+        // Roads stand out at every zoom: main roads from country level, every road and lane from town level, drawn wider and darker.
+        if (glm) glm.on('load', function () { boostRoads(glm); });
         if (glm) glm.on('error', function (ev) { if (vectorBase && !glm.isStyleLoaded()) { map.removeLayer(gl); vectorBase = false; rasterBase(); updateLabels(); } });
       } catch (e) { vectorBase = false; rasterBase(); }
     } else rasterBase();
