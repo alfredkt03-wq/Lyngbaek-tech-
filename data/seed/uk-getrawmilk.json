@@ -1728,27 +1728,6 @@
    "updated": ""
   },
   {
-   "id": "uk-crimbledale-raw-milk-grewelthorpe-uk",
-   "kind": "stockist",
-   "name": "Crimbledale Raw Milk",
-   "address": "",
-   "town": "Grewelthorpe",
-   "country": "England",
-   "lat": 54.18135,
-   "lon": -1.64997,
-   "species": "cow",
-   "fluid": "yes",
-   "products": "Cow raw milk",
-   "source": "https://getrawmilk.com/map/crimbledale-raw-milk-grewelthorpe-uk",
-   "also": [],
-   "postcode": "HG4 3BY",
-   "website": "",
-   "social": [],
-   "email": "",
-   "phone": "+447483175419",
-   "updated": "2025-11-30"
-  },
-  {
    "id": "uk-wildcroft-dairy-guildford",
    "kind": "raw_milk",
    "name": "Wildcroft Dairy",
@@ -1879,7 +1858,13 @@
    "social": [],
    "email": "",
    "phone": "+447483175419",
-   "updated": ""
+   "updated": "",
+   "alsoListedAs": [
+    {
+     "name": "Crimbledale Raw Milk (its delivery round, registered as a distributor at a private address)",
+     "source": "https://getrawmilk.com/map/crimbledale-raw-milk-grewelthorpe-uk"
+    }
+   ]
   },
   {
    "id": "uk-park-farm-butchers-hawkhurst-uk",
@@ -4904,7 +4889,7 @@
    "id": "uk-gelli-farm-raw-milk-llangewydd",
    "kind": "raw_milk",
    "name": "Gelli Farm Raw Milk",
-   "address": "",
+   "address": "Gelli Farm, Rogers Lane, Cefn Cribwr",
    "town": "Bridgend",
    "country": "Wales",
    "lat": 51.52475,
@@ -4914,7 +4899,7 @@
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/gelli-farm-raw-milk-llangewydd",
    "also": [],
-   "postcode": "CF32",
+   "postcode": "CF32 0EU",
    "website": "",
    "social": [
     "https://facebook.com/GelliFarmRawMilk"
