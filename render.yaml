@@ -3,6 +3,6 @@ services:
     name: data-platform
     runtime: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm install && (FARMSHOPS_ROUNDS=1 FARMSHOPS_OSM_TIMEOUT=90000 node scripts/build-farmshops.js || true) && (node scripts/build-farmshops-ie.js || true)
     startCommand: npm start
     autoDeploy: true

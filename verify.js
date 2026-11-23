@@ -12,8 +12,15 @@ function ok(msg) { console.log('✓', msg); }
 function fail(msg) { console.log('✗ FEJL:', msg); failures++; }
 
 console.log('=== Tjekker alle server-side JS-filer ===');
+// public/ can contain sub-folders (public/farmshops/), so list files recursively.
+function walk(dir) {
+  return fs.readdirSync(path.join(__dirname, dir), { withFileTypes: true }).flatMap(e =>
+    e.isDirectory() ? walk(`${dir}/${e.name}`) : [`${dir}/${e.name}`]);
+}
 const jsFiles = [
   'src/server.js',
+  ...(fs.existsSync(path.join(__dirname, 'scripts')) ? walk('scripts').filter(f => f.endsWith('.js')) : []),
+  ...walk('public').filter(f => f.endsWith('.js')),
   ...fs.readdirSync(path.join(__dirname, 'src/connectors')).map(f => `src/connectors/${f}`),
   ...fs.readdirSync(path.join(__dirname, 'src/lib')).map(f => `src/lib/${f}`),
 ];
@@ -29,9 +36,9 @@ for (const file of jsFiles) {
 console.log('');
 console.log('=== Tjekker for beskadigede tegn (den type fejl der ramte udbud.html) ===');
 const allFiles = [
-  ...fs.readdirSync(path.join(__dirname, 'public')).map(f => `public/${f}`),
+  ...walk('public'),
   ...jsFiles,
-];
+].filter((f, i, a) => a.indexOf(f) === i);
 for (const file of allFiles) {
   const content = fs.readFileSync(path.join(__dirname, file), 'utf8');
   const badBacktick = (content.match(/\\`/g) || []).length;
@@ -45,8 +52,7 @@ for (const file of allFiles) {
 
 console.log('');
 console.log('=== Tjekker JavaScript inde i hver HTML-side ===');
-for (const file of fs.readdirSync(path.join(__dirname, 'public'))) {
-  if (!file.endsWith('.html')) continue;
+for (const file of walk('public').filter(f => f.endsWith('.html')).map(f => f.slice('public/'.length))) {
   const content = fs.readFileSync(path.join(__dirname, 'public', file), 'utf8');
   const match = content.match(/<script>([\s\S]*?)<\/script>/);
   if (!match) { ok(`${file} (ingen <script>-blok)`); continue; }
