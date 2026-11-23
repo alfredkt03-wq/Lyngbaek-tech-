@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Find raw milk in England | Farm Shop Finder</title>
-<meta name="description" content="Registered raw drinking milk producers and milk vending machines in England, with the rules for buying raw milk.">
+<title>Find raw milk in the UK | Farm Shop Finder</title>
+<meta name="description" content="Registered raw drinking milk producers and milk vending machines in England, Wales and Northern Ireland, with the rules for buying raw milk.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 <link rel="stylesheet" href="style.css">
 </head>
-<body data-mode="milk">
+<body data-mode="milk" data-country="the UK" data-center="54.3,-3.2" data-zoom="6">
 <div class="wrap">
 <header class="top">
   <a class="brand" href="./" aria-label="Farm Shop Finder home">
@@ -32,12 +32,12 @@
 <section class="hero">
   <div>
     <p class="eyebrow">Raw drinking milk</p>
-    <h1>Find raw milk in England.</h1>
+    <h1>Find raw milk in the UK.</h1>
     <p class="lede">Registered producers and milk vending machines near you.</p>
       <div class="filters">
         <div class="full"><label for="q">Search raw milk producers</label>
         <input id="q" type="search" placeholder="Name, town, postcode or product" autocomplete="off"></div>
-        <div><label for="region">Region</label><select id="region"><option value="">All of England</option></select></div>
+        <div><label for="region">Region</label><select id="region"><option value="">All of the UK</option></select></div>
         <div><label for="kind">Type</label><select id="kind"><option value="milk_any">Raw milk and vending machines</option><option value="raw_milk">Raw milk producers (FSA register)</option><option value="milk_vending">Milk vending machines</option></select></div>
       </div>
       <div class="tools">
@@ -61,10 +61,10 @@
   <p class="more" id="more" hidden><button class="btn" type="button">Show more</button></p>
 </section>
 <section class="block" id="rules">
-  <h2>How buying raw milk works in England.</h2>
+  <h2>How buying raw milk works in the UK.</h2>
   <div class="cols">
     <div>
-      <p>Selling raw (unpasteurised) cows’ drinking milk is legal in England, but only directly to the consumer, and only by a registered raw drinking milk producer. In Scotland it is banned.</p>
+      <p>Selling raw (unpasteurised) cows’ drinking milk is legal in England, Wales and Northern Ireland, but only directly to the consumer, and only by a registered raw drinking milk producer. In Scotland all sales of raw drinking milk and raw cream are banned.</p>
       <p>A registered producer may sell:</p>
       <ul>
         <li>at the farm gate or in farmhouse catering, including a vending machine on the farm</li>
@@ -78,7 +78,7 @@
       <p>Producers must be registered with the Food Standards Agency, keep a healthy herd free of TB and brucellosis, pass routine inspections and put a health warning on the label.</p>
       <p><b>Before you buy,</b> check that the producer is on the FSA register and read the FSA’s advice on raw drinking milk, including who it says should avoid it.</p>
       <p><a href="https://www.food.gov.uk/safety-hygiene/raw-drinking-milk" target="_blank" rel="noopener">FSA guidance on raw drinking milk ↗</a></p>
-      <p>Community-run directory with more raw dairy listings (including cheese, butter and kefir): <a href="https://getrawmilk.com/browse/UK/England" target="_blank" rel="noopener">getrawmilk.com, England ↗</a>. It is not an official register, so check the producer against the FSA list.</p>
+      <p>Community-run directory with more raw dairy listings (including cheese, butter and kefir): <a href="https://getrawmilk.com/browse/UK" target="_blank" rel="noopener">getrawmilk.com, England ↗</a>. It is not an official register, so check the producer against the FSA list.</p>
     </div>
   </div>
   <div class="callout"><b>About the pins</b><p>The FSA register gives each producer’s town and postcode area, not a street address, so those pins are approximate. Milk vending machines come from OpenStreetMap volunteers and the milk in them may be pasteurised. Always contact the producer to confirm where and when you can buy.</p></div>

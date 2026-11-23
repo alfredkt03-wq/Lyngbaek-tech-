@@ -1,4 +1,4 @@
-// Farm-shop dataset for England.
+// Farm-shop dataset for the United Kingdom: England, Wales, Scotland and Northern Ireland.
 //   Farm shops + milk vending machines: OpenStreetMap (Overpass API)
 //   Raw drinking milk producers:        Food Standards Agency register (data.gov.uk, OGL v3)
 //   Regions / geocoding:                postcodes.io (free, no key)
@@ -18,8 +18,9 @@ const OVERPASS = [
   'https://overpass.kumi.systems/api/interpreter',
   'https://overpass.private.coffee/api/interpreter',
 ];
-// OSM marks England with ISO3166-2=GB-ENG; the name-based selector is a fallback if that ever returns nothing.
-const AREA_SELECTORS = ['["ISO3166-2"="GB-ENG"]', '["name"="England"]["boundary"="administrative"]["admin_level"="4"]'];
+// The whole UK (ISO3166-1=GB). The name-based selector is a fallback if that ever returns nothing.
+const AREA_SELECTORS = ['["ISO3166-1"="GB"]["admin_level"="2"]', '["name:en"="United Kingdom"]["admin_level"="2"]'];
+const UK = ['England', 'Wales', 'Scotland', 'Northern Ireland'];
 const osmQuery = sel => `[out:json][timeout:180];
 area${sel}->.a;
 (
@@ -29,7 +30,7 @@ area${sel}->.a;
 out center tags;`;
 const ROUNDS = Number(process.env.FARMSHOPS_ROUNDS || 2);
 const OSM_TIMEOUT = Number(process.env.FARMSHOPS_OSM_TIMEOUT || 200000);
-const MIN_OSM_ELEMENTS = 100; // England has far more than this; fewer means a wrong or failed query
+const MIN_OSM_ELEMENTS = 100; // the UK has far more than this; fewer means a wrong or failed query
 const CKAN_PACKAGE = 'https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=raw-drinking-milk-premises-in-england-wales-and-northern-ireland';
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -198,7 +199,7 @@ function normaliseRdm(rows) {
   return out;
 }
 
-// Gives the FSA premises coordinates (from their postcode) and drops anything outside England.
+// Gives the FSA premises coordinates from their postcode, and the UK country they are in.
 async function geocodeRdm(list) {
   const fullOnes = list.filter(s => FULL_PC.test(s.postcode));
   const outcodes = [...new Set(list.filter(s => !FULL_PC.test(s.postcode)).map(s => s.postcode.replace(/\s+/g, '')).filter(p => OUTCODE.test(p)))];
@@ -225,9 +226,9 @@ async function geocodeRdm(list) {
     const full = FULL_PC.test(s.postcode);
     const res = full ? byFull[s.postcode.replace(/\s+/g, '')] : byOut[s.postcode.replace(/\s+/g, '')];
     if (!res || typeof res.latitude !== 'number') continue;
-    const countries = [].concat(res.country || []);
-    if (!countries.includes('England')) continue; // Wales and Northern Ireland are in the FSA list too
-    out.push({ ...s, lat: round(res.latitude), lon: round(res.longitude), approx: !full, precision: full ? 'postcode' : 'area' });
+    const country = [].concat(res.country || []).find(c => UK.includes(c));
+    if (!country) continue;
+    out.push({ ...s, country, lat: round(res.latitude), lon: round(res.longitude), approx: !full, precision: full ? 'postcode' : 'area' });
   }
   return out;
 }
@@ -245,9 +246,7 @@ async function fetchFhrsFarms() {
   const types = (gk(await fhrsJson('/BusinessTypes'), /^businesstypes$/i) || [])
     .filter(t => /farm|grower/i.test(String(gk(t, /^businesstypename$/i) || '')));
   if (!types.length) throw new Error('FHRS: no Farmers/growers business type found');
-  const countries = gk(await fhrsJson('/Countries'), /^countries$/i) || [];
-  const eng = countries.find(c => /^england$/i.test(String(gk(c, /^name$/i) || '')));
-  const countryId = eng ? gk(eng, /^(id|countryid)$/i) : null;
+  const countryId = null; // all UK countries
   const out = [];
   for (const t of types) {
     const tid = gk(t, /^businesstypeid$/i);
@@ -309,7 +308,12 @@ async function enrichRegions(list) {
       }, 2)).json();
       (j.result || []).forEach((x, idx) => {
         const hit = x && x.result && x.result[0];
-        if (hit && hit.country === 'England') { batch[idx].region = hit.region || ''; batch[idx].area = hit.admin_district || ''; }
+        if (hit && UK.includes(hit.country)) {
+          // England has official regions; for Wales, Scotland and Northern Ireland the country is the region.
+          batch[idx].country = hit.country;
+          batch[idx].region = hit.country === 'England' ? (hit.region || 'England') : hit.country;
+          batch[idx].area = hit.admin_district || '';
+        }
       });
     } catch (e) { console.warn('[farmshops] region batch', e.message); }
   });
@@ -351,7 +355,7 @@ async function build() {
     const text = await (await request(res.url, { timeout: 90000 })).text();
     rdm = await geocodeRdm(normaliseRdm(parseCsv(text)));
     fsa = { name: res.name, date: res.date, url: res.url };
-    console.log('[farmshops] FSA raw milk producers in England:', rdm.length);
+    console.log('[farmshops] FSA raw milk producers in the UK:', rdm.length);
   } catch (e) { warnings.push('FSA raw milk register unavailable, kept previous data: ' + e.message); rdm = prevOf('fsa'); }
 
   let farms;
@@ -363,9 +367,9 @@ async function build() {
   if (!osm.length && !rdm.length && !farms.length) throw new Error('No data fetched. ' + warnings.join(' | '));
 
   const prevById = new Map((prev ? prev.shops : []).map(s => [s.id, s]));
-  const shops = [...osm, ...rdm, ...farms].map(s => { const p = prevById.get(s.id); return p && p.region ? { ...s, region: p.region, area: p.area } : s; });
+  const shops = [...osm, ...rdm, ...farms].map(s => { const p = prevById.get(s.id); return p && p.region && p.country ? { ...s, region: p.region, area: p.area, country: p.country } : s; });
   await enrichRegions(shops);
-  // The FSA farm list is UK-wide in places; keep only what the region lookup places in England.
+  // Keep only what the region lookup places in the UK (drops bad coordinates, e.g. in the sea or abroad).
   for (let i = shops.length - 1; i >= 0; i--) if (shops[i].kind === 'farm' && !shops[i].region) shops.splice(i, 1);
 
   const count = {};

@@ -68,7 +68,7 @@
   function mapsDest(s) {
     var p = s.precision || (s.approx ? 'town' : 'exact');
     if (p === 'exact' || p === 'postcode') return s.lat + ',' + s.lon;
-    var region = /^I:/.test(s.id || '') || s._c === 'Ireland' || COUNTRY === 'Ireland' ? 'Ireland' : 'England';
+    var region = /^I:/.test(s.id || '') || s._c === 'Ireland' || COUNTRY === 'Ireland' ? 'Ireland' : (s.country || 'United Kingdom');
     return encodeURIComponent([s.name, s.address, s.town || s.area, s.region ? 'County ' + s.region : '', region].filter(Boolean).join(', '));
   }
 

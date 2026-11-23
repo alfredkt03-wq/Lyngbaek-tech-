@@ -1,7 +1,7 @@
-/* One map for England (/api/farmshops) and Ireland (/api/farmshops-ie). */
+/* One map for the UK (/api/farmshops) and Ireland (/api/farmshops-ie). */
 (function () {
   'use strict';
-  var SOURCES = [{ url: '/api/farmshops', country: 'England' }, { url: '/api/farmshops-ie', country: 'Ireland' }];
+  var SOURCES = [{ url: '/api/farmshops', country: 'UK' }, { url: '/api/farmshops-ie', country: 'Ireland' }];
   var KINDS = {
     farm_shop: { label: 'Farm shop', color: '#3f7a52' },
     farm: { label: 'Farm (food business register)', color: '#8a8f3a' },
@@ -10,9 +10,9 @@
     stockist: { label: 'Shop or delivery point (raw milk)', color: '#7a6a3a' },
     cheese: { label: 'Raw milk cheese producer', color: '#8a6d9b' }
   };
-  // England and Ireland only: the map cannot be zoomed out or panned beyond this box.
+  // The UK and Ireland only: the map cannot be zoomed out or panned beyond this box.
   var BOUNDS = L_bounds();
-  function L_bounds() { return window.L ? L.latLngBounds([49.85, -10.8], [55.85, 1.85]) : null; }
+  function L_bounds() { return window.L ? L.latLngBounds([49.8, -10.8], [60.95, 1.9]) : null; }
   var PREC = { exact: 'exact point', street: 'on the street', townland: 'townland, within about 1 km', postcode: 'postcode centre (within about 100 m)', area: 'postcode area, approximate', town: 'town centre, approximate' };
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
   var regions = null, regionLayer = null, origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
@@ -41,7 +41,7 @@
   function mapsDest(s) {
     var p = s.precision || (s.approx ? 'town' : 'exact');
     if (p === 'exact' || p === 'postcode') return s.lat + ',' + s.lon;
-    var region = /^I:/.test(s.id || '') || s._c === 'Ireland' ? 'Ireland' : 'England';
+    var region = /^I:/.test(s.id || '') || s._c === 'Ireland' ? 'Ireland' : (s.country || 'United Kingdom');
     return encodeURIComponent([s.name, s.address, s.town || s.area, s.region ? 'County ' + s.region : '', region].filter(Boolean).join(', '));
   }
 
@@ -129,7 +129,7 @@
     shadeRegions(list);
   }
 
-  // Shows all of England and Ireland, and locks the map to that view: no zooming out or panning beyond it.
+  // Shows all of the UK and Ireland, and locks the map to that view: no zooming out or panning beyond it.
   function lockView() {
     map.setMaxBounds(null);
     map.setMinZoom(0);
@@ -261,7 +261,7 @@
       $('pfmsg').textContent = 'Finding you…';
       navigator.geolocation.getCurrentPosition(function (pos) {
         var ll = L.latLng(pos.coords.latitude, pos.coords.longitude);
-        if (!map.options.maxBounds || !map.options.maxBounds.contains(ll)) { $('pfmsg').textContent = 'You are outside England and Ireland, so there is nothing to show near you.'; return; }
+        if (!map.options.maxBounds || !map.options.maxBounds.contains(ll)) { $('pfmsg').textContent = 'You are outside the UK and Ireland, so there is nothing to show near you.'; return; }
         goTo(ll.lat, ll.lng, 'Your location');
       }, function () { $('pfmsg').textContent = 'Location was blocked. Type a town or postcode instead.'; }, { timeout: 10000 });
     });
@@ -340,7 +340,9 @@
     document.querySelector('.jump').addEventListener('click', function (e) {
       var c = e.target.getAttribute && e.target.getAttribute('data-go');
       if (c == null) return;
-      country = c; $('country').value = c; if (c === '') { render(false); lockView(); } else render(true);
+      country = c; $('country').value = c; render(false);
+      var box = { UK: [[49.85, -8.3], [60.9, 1.85]], Ireland: [[51.35, -10.6], [55.45, -5.95]] }[c];
+      if (box) map.fitBounds(box, { animate: false }); else lockView();
     });
     $('inview').addEventListener('click', function (e) {
       var b = e.target.closest && e.target.closest('button[data-id]');
