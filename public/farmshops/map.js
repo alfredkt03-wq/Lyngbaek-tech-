@@ -13,7 +13,7 @@
   // England and Ireland only: the map cannot be zoomed out or panned beyond this box.
   var BOUNDS = L_bounds();
   function L_bounds() { return window.L ? L.latLngBounds([49.85, -10.8], [55.85, 1.85]) : null; }
-  var PREC = { exact: 'exact point', street: 'on the street', postcode: 'postcode centre (within about 100 m)', area: 'postcode area, approximate', town: 'town centre, approximate' };
+  var PREC = { exact: 'exact point', street: 'on the street', townland: 'townland, within about 1 km', postcode: 'postcode centre (within about 100 m)', area: 'postcode area, approximate', town: 'town centre, approximate' };
   var FLUID = { yes: 'Raw milk sold', likely: 'Raw milk likely', unknown: 'Raw milk unconfirmed', no: 'No fluid raw milk' };
   var regions = null, regionLayer = null, origin = null, originMark = null, places = [], labelLayer = null, all = [], on = {}, q = '', country = '', map, cluster, markerOf = {}, dataOf = {}, pending = SOURCES.length, failed = [];
 

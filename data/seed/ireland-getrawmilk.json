@@ -73,9 +73,9 @@
    "fluid": "yes",
    "products": "Raw cow milk",
    "source": "https://getrawmilk.com/map/newfoundland-farm-nohoval",
-   "lat": 51.72246,
-   "lon": -8.40176,
-   "precision": "town"
+   "lat": 51.70371,
+   "lon": -8.40341,
+   "precision": "townland"
   },
   {
    "id": "ie-the-little-farm-fermoy",
@@ -118,9 +118,9 @@
    "fluid": "unknown",
    "products": "Cow milk, butter, cream, cheese",
    "source": "https://getrawmilk.com/browse/Ireland/County%20Cork/Cork",
-   "lat": 51.89851,
-   "lon": -8.47264,
-   "precision": "town"
+   "lat": 51.88038,
+   "lon": -8.52093,
+   "precision": "exact"
   },
   {
    "id": "ie-cork-rooftop-farm-cork",
@@ -238,9 +238,9 @@
    "fluid": "no",
    "products": "Goat cheese, some raw milk (no fluid milk)",
    "source": "https://getrawmilk.com/map/st-tola-irish-goat-cheese-inagh-ireland",
-   "lat": 52.90717,
-   "lon": -9.23451,
-   "precision": "town"
+   "lat": 52.90303,
+   "lon": -9.17788,
+   "precision": "exact"
   },
   {
    "id": "ie-unnamed-honesty-box-rossnowlagh",
@@ -283,9 +283,9 @@
    "fluid": "yes",
    "products": "Cow milk, butter, cream, cheese",
    "source": "https://getrawmilk.com/map/sheridans-cheesemongers-donaghmede-dublin-ie",
-   "lat": 53.34938,
-   "lon": -6.26056,
-   "precision": "town"
+   "lat": 53.3946,
+   "lon": -6.16226,
+   "precision": "exact"
   },
   {
    "id": "ie-sheridans-cheesemongers-ilac-centre-dublin",
@@ -358,9 +358,9 @@
    "fluid": "yes",
    "products": "Cow milk, butter, cream",
    "source": "https://getrawmilk.com/map/sheridans-cheesemongers-beacon-court-dublin-ireland",
-   "lat": 53.34938,
-   "lon": -6.26056,
-   "precision": "town"
+   "lat": 53.27823,
+   "lon": -6.2156,
+   "precision": "street"
   },
   {
    "id": "ie-corleggy-cheeses-at-temple-bar-food-market-dublin",
@@ -418,9 +418,9 @@
    "fluid": "likely",
    "products": "Cow milk, butter, cream, cheese",
    "source": "https://getrawmilk.com/map/sheridans-cheesemongers-blanchardstown-centre-ie",
-   "lat": 53.38446,
-   "lon": -6.38294,
-   "precision": "town"
+   "lat": 53.3938,
+   "lon": -6.39107,
+   "precision": "exact"
   },
   {
    "id": "ie-food-plus-balbriggan-balbriggan",
@@ -1033,9 +1033,9 @@
    "fluid": "unknown",
    "products": "Cow milk (delivery location)",
    "source": "https://getrawmilk.com/browse/Ireland/County%20Meath/Trim",
-   "lat": 53.55429,
-   "lon": -6.78978,
-   "precision": "town"
+   "lat": 53.5626,
+   "lon": -6.76648,
+   "precision": "street"
   },
   {
    "id": "ie-o-brien-s-supervalu-kells-kells",
