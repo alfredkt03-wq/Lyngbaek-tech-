@@ -258,7 +258,7 @@
    "email": "info@stichelton.co.uk",
    "phone": "+441623844883",
    "updated": "",
-   "precision": "postcode",
+   "precision": "area",
    "alsoListedAs": [
     "Cheese maker; raw milk for Stichelton comes from Welbeck herd"
    ]
@@ -5001,7 +5001,7 @@
    "email": "",
    "phone": "+441559363297",
    "updated": "",
-   "precision": "postcode"
+   "precision": "area"
   },
   {
    "id": "uk-dyfi-dairy-machynlleth-wales",
@@ -5204,7 +5204,7 @@
    "phone": "+441909478725",
    "updated": "",
    "source": "https://www.welbeck.co.uk/welbeck-dairy/",
-   "precision": "postcode"
+   "precision": "area"
   }
  ],
  "checked": "2026-11-23: every UK entry matched to its live getrawmilk page (address, postcode, map point, contact); same-business duplicates within 300 m merged; every pin cross-checked: within 1.5 km of its full postcode (152) or on/next to its listed road in OpenStreetMap (80)"
