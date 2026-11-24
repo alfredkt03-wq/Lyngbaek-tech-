@@ -271,11 +271,14 @@
   }
 
   // Place finder: type a town, village or postcode, or use your location. The list then sorts by distance.
-  function goTo(lat, lon, label) {
+  var accMark = null;
+  function goTo(lat, lon, label, acc) {
     origin = L.latLng(lat, lon);
     if (originMark) map.removeLayer(originMark);
+    if (accMark) map.removeLayer(accMark), accMark = null;
     originMark = L.circleMarker(origin, { radius: 6, color: '#fff', weight: 2, fillColor: '#1d4ed8', fillOpacity: 1, interactive: false }).addTo(map);
-    map.setView(origin, 11, { animate: false });
+    if (acc) accMark = L.circle(origin, { radius: acc, color: '#1d4ed8', weight: 1, fillColor: '#1d4ed8', fillOpacity: 0.08, interactive: false }).addTo(map);
+    map.setView(origin, acc && acc < 1000 ? 13 : 11, { animate: false });
     var near = all.filter(function (s) { return origin.distanceTo([s.lat, s.lon]) <= 25000; }).length;
     $('pfmsg').textContent = label + ': ' + near + (near === 1 ? ' place' : ' places') + ' within 15 miles. Nearest first in the list.';
     listInView(); updateLabels();
@@ -358,11 +361,16 @@
     $('near').addEventListener('click', function () {
       if (!navigator.geolocation) { $('pfmsg').textContent = 'Your browser cannot share its location.'; return; }
       $('pfmsg').textContent = 'Finding you…';
+      // Ask for the GPS-quality fix (not a Wi-Fi guess) and never reuse an old position.
       navigator.geolocation.getCurrentPosition(function (pos) {
-        var ll = L.latLng(pos.coords.latitude, pos.coords.longitude);
+        var ll = L.latLng(pos.coords.latitude, pos.coords.longitude), acc = Math.round(pos.coords.accuracy || 0);
         if (!map.options.maxBounds || !map.options.maxBounds.contains(ll)) { $('pfmsg').textContent = 'You are outside the UK and Ireland, so there is nothing to show near you.'; return; }
-        goTo(ll.lat, ll.lng, 'Your location');
-      }, function () { $('pfmsg').textContent = 'Location was blocked. Type a town or postcode instead.'; }, { timeout: 10000 });
+        goTo(ll.lat, ll.lng, 'Your location', acc);
+        if (acc > 1000) $('pfmsg').textContent += ' Your position is only accurate to about ' + acc + ' m, so type a town or postcode for a precise result.';
+        else if (acc) $('pfmsg').textContent += ' (accurate to about ' + acc + ' m)';
+      }, function (err) {
+        $('pfmsg').textContent = err && err.code === 1 ? 'Location was blocked. Allow location for this site, or type a town or postcode.' : 'Could not get a precise position. Type a town or postcode instead.';
+      }, { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 });
     });
   }
 
