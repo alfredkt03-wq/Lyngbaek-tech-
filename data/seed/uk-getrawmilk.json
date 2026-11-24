@@ -235,20 +235,20 @@
    "updated": "2026-11-09"
   },
   {
-   "id": "uk-stichelton-dairy-bassetlaw",
-   "kind": "raw_milk",
+   "id": "uk-stichelton-dairy-cuckney",
+   "kind": "cheese",
    "name": "Stichelton Dairy",
-   "address": "Creswell Road",
-   "town": "Bassetlaw",
+   "address": "Collingthwaite Farm, Cuckney",
+   "town": "Mansfield",
    "country": "England",
-   "lat": 53.24303,
-   "lon": -1.17561,
+   "lat": 53.241355,
+   "lon": -1.175332,
    "species": "cow",
    "fluid": "yes",
-   "products": "Cow raw milk",
+   "products": "Raw milk cheese (Stichelton)",
    "source": "https://getrawmilk.com/map/stichelton-dairy-bassetlaw",
    "also": [],
-   "postcode": "",
+   "postcode": "NG20 9NP",
    "website": "https://stichelton.co.uk",
    "social": [
     "https://facebook.com/Stichelton",
@@ -257,7 +257,11 @@
    ],
    "email": "info@stichelton.co.uk",
    "phone": "+441623844883",
-   "updated": ""
+   "updated": "",
+   "precision": "postcode",
+   "alsoListedAs": [
+    "Cheese maker; raw milk for Stichelton comes from Welbeck herd"
+   ]
   },
   {
    "id": "uk-biddenden-vineyards-uk",
@@ -4979,24 +4983,25 @@
    "id": "uk-llaeth-meillionen-milk-llandysul",
    "kind": "raw_milk",
    "name": "Llaeth Meillionen Milk",
-   "address": "",
+   "address": "Pantfeillionen, Horeb",
    "town": "Llandysul",
    "country": "Wales",
-   "lat": 52.05967,
-   "lon": -4.33344,
+   "lat": 52.06667,
+   "lon": -4.335853,
    "species": "cow",
    "fluid": "yes",
    "products": "Cow raw milk",
    "source": "https://getrawmilk.com/map/llaeth-meillionen-milk-llandysul",
    "also": [],
-   "postcode": "",
+   "postcode": "SA44 4JR",
    "website": "",
    "social": [
     "https://facebook.com/llaethmeillionenmilk"
    ],
    "email": "",
    "phone": "+441559363297",
-   "updated": ""
+   "updated": "",
+   "precision": "postcode"
   },
   {
    "id": "uk-dyfi-dairy-machynlleth-wales",
@@ -5178,6 +5183,28 @@
    "email": "weirsorganicfarm@hotmail.com",
    "phone": "07526997501",
    "updated": "2026-11-09"
+  },
+  {
+   "id": "uk-welbeck-farm-shop",
+   "kind": "milk_vending",
+   "name": "Welbeck Farm Shop",
+   "address": "Courtyard at Welbeck, Welbeck Estate",
+   "town": "Worksop",
+   "postcode": "S80 3LW",
+   "country": "England",
+   "lat": 53.262081,
+   "lon": -1.176178,
+   "species": "cow",
+   "fluid": "yes",
+   "products": "Cow raw milk (Welbeck Dairy vending machine)",
+   "also": [],
+   "website": "https://www.welbeck.co.uk",
+   "social": [],
+   "email": "",
+   "phone": "+441909478725",
+   "updated": "",
+   "source": "https://www.welbeck.co.uk/welbeck-dairy/",
+   "precision": "postcode"
   }
  ],
  "checked": "2026-11-23: every UK entry matched to its live getrawmilk page (address, postcode, map point, contact); same-business duplicates within 300 m merged; every pin cross-checked: within 1.5 km of its full postcode (152) or on/next to its listed road in OpenStreetMap (80)"
