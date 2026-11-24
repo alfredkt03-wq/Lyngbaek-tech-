@@ -442,7 +442,20 @@
 
   function init() {
     if (!window.L) { $('mcount').textContent = 'The map library did not load. Check your connection and reload.'; return; }
-    map = L.map('bigmap', { scrollWheelZoom: true, zoomControl: false, zoomSnap: 0.5, zoomDelta: 1, wheelPxPerZoomLevel: 28, wheelDebounceTime: 20, zoomAnimation: true, maxBoundsViscosity: 1 }).setView([53.6, -4.5], 5);
+    map = L.map('bigmap', { scrollWheelZoom: false, zoomControl: false, zoomSnap: 0.5, zoomDelta: 1, zoomAnimation: true, maxBoundsViscosity: 1 }).setView([53.6, -4.5], 5);
+  // Mouse wheel zoom: zooming in is 28% quicker than the Leaflet default (28 px per level), zooming out 12% quicker.
+  (function wheelZoom() {
+    var PX_IN = 14 / 1.28, PX_OUT = 14 / 1.12, acc = 0, el = document.getElementById('bigmap');
+    el.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      if (!e.deltaY) return;
+      acc = (acc < 0 && e.deltaY < 0) || (acc > 0 && e.deltaY > 0) ? acc + e.deltaY : e.deltaY;
+      var inward = acc < 0, per = inward ? PX_IN : PX_OUT, steps = Math.trunc(Math.abs(acc) / per);
+      if (!steps) return;
+      acc = acc - Math.sign(acc) * steps * per;
+      map.setZoom(Math.min(map.getMaxZoom(), Math.max(map.getMinZoom(), map.getZoom() + (inward ? 1 : -1) * 0.5 * steps)), { animate: true });
+    }, { passive: false });
+  })();
     // Basemap. First choice: a vector map (OpenFreeMap "Liberty", OpenStreetMap data) with every road and lane, buildings,
     // road numbers and place and street names at all zooms. If WebGL or the vector map is unavailable, the raster road map is used.
     var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
